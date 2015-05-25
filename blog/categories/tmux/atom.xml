@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tmux | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/tmux/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#14 tmuxinatorで開発・運用を便利に]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator/"/>
+    <updated>2013-02-25T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
+今日はtmuxinatorというtmuxのセッション管理ツールを紹介します。</p>
+
+<!--more-->
+
+
+<h1><span style="text-decoration: underline;">tmuxとは？</span></h1>
+
+<p><a href="http://tmux.sourceforge.net/">tmux</a>は、CUI上でウィンドウを管理するために用いられるソフトウェアです。</p>
+
+<p>いわゆるターミナルマルチプレクサというやつですね。</p>
+
+<p>tmux以外で有名なターミナルマルチプレクサに <a href="http://www.gnu.org/software/screen/">screen </a>があります。</p>
+
+<p>詳しく知りたい方は、ぜひ調べて貰えればと思います。</p>
+
+<p>こちらがとっても参考になると思います。</p>
+
+<p>→ <a href="http://atnd.org/events/22320">ターミナルマルチプレクサ Advent Calendar 2011</a></p>
+
+<h1><span style="text-decoration: underline;">tmuxinatorとは？</span></h1>
+
+<p>今日の本題です。</p>
+
+<p><a href="https://github.com/aziz/tmuxinator/">tmuxinator </a>は、tmuxで起動するウィンドウやレイアウトを事前に設定しておき、</p>
+
+<p>tmuxinatorコマンドを実行することにより設定通りのウィンドウ配置にするツールです。</p>
+
+<p>インストールや設定方法はこちらのブログが参考になるかと思います。</p>
+
+<p><a href="http://qiita.com/items/869b00fdde27c2225989">→tmuxinatorで一瞬で開発環境を起動する</a></p>
+
+<p>僕が実行したインストール方法も以下に記載しておきます。</p>
+
+<p><code>bash
+$ gem install tmuxinator
+$ echo ' [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] &amp;&amp; source $HOME/.tmuxinator/scripts/tmuxinator ' &gt;&gt; ${HOME}/.bashrc
+$ source ${HOME}/.bashrc
+</code></p>
+
+<p>tmuxinatorは環境変数 $EDITOR と $SHELL を参照するので、</p>
+
+<p>設定していない場合は設定を行います。</p>
+
+<p><code>bash
+$ echo 'export EDITOR=/usr/bin/vim' &gt;&gt; ${HOME}/.bashrc
+$ echo 'export SHELL=/bin/bash' &gt;&gt; ${HOME}/.bashrc
+</code></p>
+
+<p>tmuxinatorを使用する準備が整ったかどうかは、</p>
+
+<p>tmuxinator doctor コマンドで確認できます。</p>
+
+<p><code>bash
+$ tmuxinator doctor
+  checking if tmux is installed ==&gt; Yes
+  checking if $EDITOR is set ==&gt; Yes
+  checking if $SHELL is set ==&gt; Yes
+</code></p>
+
+<p>また、tmuxinatorコマンドにはmuxというaliasが貼られているので、</p>
+
+<p>mux doctor でも同様に確認できます。</p>
+
+<p>以降はmuxコマンドを用いて説明していきます。</p>
+
+<h1><span style="text-decoration: underline;">設定方法</span></h1>
+
+<p>tmuxinatorの設定を行なっていきます。</p>
+
+<p>設定ファイルの作成は、mux new ${PROJECT_NAME} で行います。</p>
+
+<p>コマンドを実行すると、環境変数で指定したエディタで設定ファイルが開かれます。</p>
+
+<p>設定はyaml形式で記述していきます。</p>
+
+<p>デフォルトの設定ファイルは以下のようになっていると思います。</p>
+
+<p>``` yaml</p>
+
+<h1>~/.tmuxinator/Test.yml</h1>
+
+<h1>you can make as many tabs as you wish&hellip;</h1>
+
+<p>project_name: Tmuxinator
+project_root: ~/code/rails_project
+socket_name: foo # Not needed.  Remove to use default socket
+rvm: 1.9.2@rails_project
+pre: sudo /etc/rc.d/mysqld start
+tabs:
+  &ndash; editor:</p>
+
+<pre><code>  layout: main-vertical
+  panes:
+    - vim
+    - #empty, will just run plain bash
+    - top
+</code></pre>
+
+<ul>
+<li>shell: git pull</li>
+<li>database: rails db</li>
+<li>server: rails s</li>
+<li>logs: tail -f logs/development.log</li>
+<li>console: rails c</li>
+<li>capistrano:</li>
+<li>server: ssh me@myhost
+```</li>
+</ul>
+
+
+<p>rvm: の後にバージョンを指定する事で、</p>
+
+<p>プロジェクトで使用するRubyのバージョンを選べます。</p>
+
+<p>pre: の後にコマンドを記述する事で、</p>
+
+<p>プロジェクトを起動する前に実行するコマンドを指定する事が出来ます。</p>
+
+<p>tabs: の後にプロジェクトで起動するウィンドウを記述する事が出来ます。</p>
+
+<p><code>
+tabs:
+  - shell: git pull
+  - database: rails db
+  - server: rails s
+</code></p>
+
+<ul>
+<li>WINDOW名 : 実行コマンド</li>
+</ul>
+
+
+<p>のように記述していきます。</p>
+
+<p>``` yaml
+&ndash; editor:</p>
+
+<pre><code>  layout: main-vertical
+  panes:
+    - vim
+    - #empty, will just run plain bash
+    - top
+</code></pre>
+
+<p>```</p>
+
+<p>このように記述した場合、main-verticalレイアウトで3つのpaneが開かれます。</p>
+
+<p>Railsの設定ファイルの例は、</p>
+
+<p>本記事の上部で紹介したブログを参考にされるといいかと思います。</p>
+
+<h1><strong><span style="text-decoration: underline;">djangoの例</span></strong></h1>
+
+<p>参考までに、僕が使用しているdjangoの開発環境での設定ファイルを紹介します。</p>
+
+<p>``` yaml</p>
+
+<h1>~/.tmuxinator/test.yml</h1>
+
+<h1>you can make as many tabs as you wish&hellip;</h1>
+
+<p>project_name: Test
+project_root: /path/to/project
+pre: pgrep mysqld || mysqld_safe &mdash;log-error=${HOME}/mysqld_error.log &amp;
+tabs:
+  &ndash; shell:</p>
+
+<pre><code>  layout: main-vertical
+  panes:
+    - ls
+    - python manage.py shell
+    - python manage.py runserver
+</code></pre>
+
+<ul>
+<li>models: cd application/ &amp;&amp; vim models.py</li>
+<li>view: cd views/</li>
+<li>template: cd templates/</li>
+<li>js: cd assets/js/
+```</li>
+</ul>
+
+
+<p>プロジェクトを開始する際は mux ${PROJECT_NAME} で起動します。</p>
+
+<p>上記ファイルで mux Testを行うと、以下のようにtmuxが起動します。</p>
+
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator.png"><img class="alignnone size-full wp-image-452" alt="tmuxinator" src="http://rrreeeyyy.github.io/images/blog/tmuxinator.png" width="599" height="337" /></a></p>
+
+<p>2番目のウィンドウでは vim  models.py が実行されて、</p>
+
+<p>3,4,5番目のウィンドウでは指定のパスにcdしている状態です。</p>
+
+<h1><strong><span style="text-decoration: underline;">運用の例</span></strong></h1>
+
+<p>続いて運用の際の例です。</p>
+
+<p>障害が発生した時に、</p>
+
+<p>「Webサーバ入って、ロードアベレージ見て、プロセス見て、ログ見て…。</p>
+
+<p>あ、DBサーバにも入らなきゃ…</p>
+
+<p>DBサーバでもロードアベレージ見て、プロセス見て…。</p>
+
+<p>そういえばアプリケーションサーバの調子はどうだろうか…。」</p>
+
+<p>みたいなことはよくある話ですね。tmuxinatorでコマンド1発にしてみましょう。</p>
+
+<p>以下のように設定ファイルを記述します。</p>
+
+<p>``` yaml</p>
+
+<h1>~/.tmuxinator/example.yml</h1>
+
+<h1>you can make as many tabs as you wish&hellip;</h1>
+
+<p>project_name: Example
+project_root: ~/
+tabs:
+  &ndash; web_front:</p>
+
+<pre><code>  layout: main-vertical
+  panes:
+    - ssh web-01
+    - ssh web-01 -t sudo less /var/log/nginx/error.log$(date +%Y%m%d)
+    - ssh web-01 -t top
+</code></pre>
+
+<ul>
+<li>app:
+  layout: main-vertical
+  panes:
+
+<pre><code>- ssh app-01
+- ssh app-01 -t top
+</code></pre></li>
+<li>db:
+  layout: main-vertical
+  panes:
+
+<pre><code>- ssh db-01
+- ssh db-01 -t mysql -u root -p
+- ssh db-01 -t sudo less /var/lib/mysql/error.log
+</code></pre>
+
+<p>```</p></li>
+</ul>
+
+
+<p>mux example してやると以下のようになります。</p>
+
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator_example.png"><img class="alignnone size-full wp-image-453" alt="tmuxinator_example" src="http://rrreeeyyy.github.io/images/blog/tmuxinator_example.png" width="600" height="337" /></a></p>
+
+<p>&nbsp;</p>
+
+<p>もちろん2番目のwindowではappサーバにログインし、</p>
+
+<p>3番目のwindowではdbサーバにログインしている状態になっています。</p>
+
+<p>&nbsp;</p>
+
+<p>どうだったでしょうか。tmuxinator、みなさん是非使ってみて下さい。</p>
+
+<p>※ ちなみにscreenで同じ事をする <a href="https://github.com/jondruse/screeninator">screeninator </a>もあります。</p>
+]]></content>
+  </entry>
+  
+</feed>

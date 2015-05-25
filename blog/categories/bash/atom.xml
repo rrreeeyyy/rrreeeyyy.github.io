@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bash | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/bash/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[シェルスクリプトを書く時覚えておくこと一選！]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2014/04/21/set-euo-pipefail/"/>
+    <updated>2014-04-21T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2014/04/21/set-euo-pipefail</id>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<p><code>bash
+set -euo pipefail
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

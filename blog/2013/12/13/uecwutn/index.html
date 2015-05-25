@@ -1,0 +1,634 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>#17 最高の学内無線LANにしようぜ - rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="#17 最高の学内無線LANにしようぜ こんにちわ。れいです。 UEC Advent Calendar の13日目の記事です。 昨日の記事は nari さんによる 最高のごはんにしようぜ です。 お腹空きますね………。 はじめに 電気通信大学に通っている学生の皆さんなら 全学無線LAN &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">#17 最高の学内無線LANにしようぜ</h1>
+	<div class="entry-content" itemprop="articleBody"><p>こんにちわ。れいです。</p>
+
+<p><a href="http://www.adventar.org/calendars/113">UEC Advent Calendar</a> の13日目の記事です。</p>
+
+<p>昨日の記事は nari さんによる <a href="http://www.nari64.com/?p=441">最高のごはんにしようぜ</a> です。</p>
+
+<p>お腹空きますね………。</p>
+
+<!--more-->
+
+
+<h1>はじめに</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> 使ってますよね？</p>
+
+<p>今日は <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> を今までよりちょっと便利に使う方法を紹介します。</p>
+
+<hr />
+
+<h1>何が不便なのか</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>一度は <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> に不便を感じた事がありますよね？<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>uecwutnはゴミ</p>&mdash; こはく (@alstamber) <a href="https://twitter.com/alstamber/statuses/400537218663460864">2013, 11月 13</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>そもそも、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> で割り当てられるIP帯では</p>
+
+<p>基本的に学外のネットワークと通信する事は出来ません。</p>
+
+<p>そこで、 proxy サーバを用いて学外のネットワークと通信を行います。</p>
+
+<p>ここで幾つかの制限が生まれるので、不便になる訳です。</p>
+
+<p>恐らく、普通に設定をするとWebブラウジングするのが限界です。<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<h1>ssh をする</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>学外のサーバに ssh 接続をして作業がしたくて堪らないですよね？</p>
+
+<p>先述の通り、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> では学外のネットワークに直接接続することは出来ません。</p>
+
+<p>そこで、一度学外に到達できる学内サーバに ssh をして、</p>
+
+<p>そこから更に学外のサーバに ssh をする必要があります。</p>
+
+<p>この辺りは賢い電気通信大学の皆さんなら経験があると思います。</p>
+
+<p>通常ならこうしますね。</p>
+
+<p>(学内サーバを uec , 学外サーバを server1 とします。) <sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>ssh uec -lusername
+</span><span class='line'><span class="o">[</span>username@uec ~<span class="o">]</span><span class="nv">$ </span>ssh server1 -lmyname
+</span><span class='line'><span class="o">[</span>myname@server1 ~<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>もう少し慣れた人はこうするでしょうか <sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>ssh uec -lusername -t ssh server1 -lmyname
+</span><span class='line'><span class="o">[</span>myname@server1 ~<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>良いでしょう。でもこういうものがあります。</p>
+
+<p><a href="http://www.cc.uec.ac.jp/info/news/2011/06/20110606-proxyssh.html">プロクシサーバにおけるSSHプロトコルサポート開始のお知らせ</a></p>
+
+<p>proxy サーバが 2011/6/6 より ssh プロトコルをサポートしています。</p>
+
+<p>proxy サーバを proxy-server ,ポートを 8080 とすると、こういうふうに出来ますよね。<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>ssh -o <span class="s1">&#39;ProxyCommand nc -X connect -x proxy-server:8080 %h %p&#39;</span> server1
+</span><span class='line'><span class="o">[</span>myname@server1 ~<span class="o">]</span><span class="err">$</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>なんだか良さそうですね、ただちょっと長いですね。
+.bashrc に alias 定義しますか？</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>cat ~/.bashrc | grep ssh-uec
+</span><span class='line'><span class="nb">alias </span>ssh-uec<span class="o">=</span><span class="s2">&quot;ssh -o &#39;ProxyCommand nc -X connect -x proxy-east.uec.ac.jp:8080 %h %p&#39; -o &#39;ServerAliveInterval=60&#39;&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>うーん、微妙ですね。こっちのほうがいいでしょうか？</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>cat ~/.ssh/config
+</span><span class='line'>Host server1
+</span><span class='line'>    ProxyCommand nc -X connect -x proxy-server:8080 %h %p
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これだと server1 に行きたいときいつも proxy を経由しちゃいますね…。</p>
+
+<p>ssh の -F オプションを使ってファイルを別管理にするか、こんな風にするしかないかな？</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost: ~ myname<span class="nv">$ </span>cat ~/.ssh/config
+</span><span class='line'>Host *%proxy
+</span><span class='line'>    ProxyCommand nc -X connect -x proxy-server:8080 %h %p
+</span><span class='line'>
+</span><span class='line'>Host server1
+</span><span class='line'>    User myname
+</span><span class='line'>
+</span><span class='line'>localhost: ~ myname<span class="nv">$ </span>ssh server1%proxy <span class="c"># 学内から自宅サーバに接続</span>
+</span><span class='line'>localhost: ~ myname<span class="nv">$ </span>ssh server1 <span class="c"># 学外から自宅サーバに接続</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>シェルスクリプトで使うコンフィグを書き換えるとか色々あると思いますが、</p>
+
+<p>もっと良いソリューションがある人は教えて下さい。</p>
+
+<p>ssh を手に入れてしまえばこっちのものです。</p>
+
+<h1>http , https で接続する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>当然ターミナル上から gem install したり brew install したいですよね？</p>
+
+<p>しかし、Mac のターミナルは システムの proxy を引き継ぎません。 <sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></p>
+
+<p>http_proxy, https_proxy, ALL_PROXY などの環境変数を使います。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span>http://proxy-server:8080/
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span>http://proxy-server:8080/
+</span><span class='line'><span class="nv">$ </span><span class="nb">export </span><span class="nv">ALL_PROXY</span><span class="o">=</span>http://proxy-server:8080/
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>お家に帰ったらこうですね。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span><span class="nb">unset </span>http_proxy
+</span><span class='line'><span class="nv">$ </span><span class="nb">unset </span>https_proxy
+</span><span class='line'><span class="nv">$ </span><span class="nb">unset </span>ALL_PROXY
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>さて、 電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>当然 github を学内で使いたくなりますよね？</p>
+
+<p>git は http_proxy を見てくれないです。なのでこうです。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git config --global http.proxy proxy-server
+</span><span class='line'><span class="nv">$ </span>git config --global https.proxy proxy-server
+</span><span class='line'><span class="nv">$ </span>git config --global url.<span class="s2">&quot;https://&quot;</span>.insteadOf git://
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>お家に帰ったらこうですね。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>git config --global --unset http.proxy
+</span><span class='line'><span class="nv">$ </span>git config --global --unset https.proxy
+</span><span class='line'><span class="nv">$ </span>git config --global --unset url.<span class="s2">&quot;https://&quot;</span>.insteadOf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>徐々に快適になってきましたね。</p>
+
+<p>しかし毎回やるのは面倒ですよね。</p>
+
+<p>優秀な皆さんなら自動化したくなるはずです。</p>
+
+<p>Mac には airport と言うコマンドがあり、それでネットワークの状況を取得できます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これを使って、SSID 毎に設定を切り替えるスクリプトを書いてみましょう。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'><span class="nv">AIRPORT</span><span class="o">=</span><span class="s2">&quot;/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport&quot;</span>
+</span><span class='line'><span class="k">if </span><span class="nb">test</span> <span class="s2">&quot;` ${AIRPORT} -I |grep [^B]SSID|awk &#39;{print $2}&#39;`&quot;</span> <span class="o">=</span> <span class="s2">&quot;uecwutn&quot;</span>; <span class="k">then</span>
+</span><span class='line'><span class="k">  </span><span class="nb">export </span><span class="nv">http_proxy</span><span class="o">=</span>http://proxy-east.uec.ac.jp:8080/
+</span><span class='line'>  <span class="nb">export </span><span class="nv">https_proxy</span><span class="o">=</span>https://proxy-east.uec.ac.jp:8080/
+</span><span class='line'>  <span class="nb">export </span><span class="nv">ALL_PROXY</span><span class="o">=</span>http://proxy-east.uec.ac.jp:8080/
+</span><span class='line'>  git config --global http.proxy proxy-server
+</span><span class='line'>  git config --global https.proxy proxy-server
+</span><span class='line'>  git config --global url.<span class="s2">&quot;https://&quot;</span>.insteadOf git://
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'><span class="k">  </span><span class="nb">unset </span>http_proxy
+</span><span class='line'>  <span class="nb">unset </span>https_proxy
+</span><span class='line'>  <span class="nb">unset </span>ALL_PROXY
+</span><span class='line'>  git config --global --unset http.proxy
+</span><span class='line'>  git config --global --unset https.proxy
+</span><span class='line'>  git config --global --unset url.<span class="s2">&quot;https://&quot;</span>.insteadOf
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>いちいち叩くの面倒そうなので、 .bashrc 辺りに書き込んであげるといいと思います。</p>
+
+<p>さらにさらに、無線につなぐたびに認証を求められるのは面倒なので、そこも自動化しましょう。</p>
+
+<p>curl コマンドで form に ID と Password を POST することで認証を抜けることが出来ます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>curl -d <span class="s2">&quot;fname=wba_login&amp;username=${STUDENT_ID}&amp;key=${STUDENT_PW}&quot;</span> https://xxx.xxx.xxx.jp/aaa/login.htm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>また、Mac ユーザの中には ネットワーク環境 で Proxy を使うかどうか切り替えてる方もいるかもしれません。</p>
+
+<p>こんなコマンドがあります。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>/usr/sbin/scselect <span class="k">${</span><span class="nv">NETENV_NAME</span><span class="k">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで、ネットワーク環境で定義された環境に変更することが出来ます。</p>
+
+<p>但し、日本語の環境名は使えないので注意してください。</p>
+
+<h1>メールを受信する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>学内でももちろんメールチェックに暇がないですよね？</p>
+
+<p>ところが、学内では先述の通りメールは受信できません…。</p>
+
+<p>一部の賢い電気通信大学の学生の皆さんなら、</p>
+
+<p>自宅にメールサーバがあると思うので、 Roundcube 等を構築すればいいと思います。<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup></p>
+
+<p>しかし、どうしても学内で Thunderbird 等のメールクライアントからメールを受信したい人も居ますよね？</p>
+
+<p>ssh を手に入れてしまった私達に不可能はありません。</p>
+
+<p>ssh ポートフォワーディングをしましょう。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost<span class="nv">$ </span>ssh myserver -L 10110:localhost:110
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで、 myserver の 110 番ポートと localhost の 10110 番ポートがつながります。</p>
+
+<p>telnet で確認してみてください。<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>telnet localhost 10110
+</span><span class='line'>Trying ::1...
+</span><span class='line'>Connected to localhost.
+</span><span class='line'>Escape character is <span class="s1">&#39;^]&#39;</span>.
+</span><span class='line'>+OK
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>gmail が受信したいんじゃ！！ という方はこうです。<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost<span class="nv">$ </span>ssh myserver -L 10995:pop.gmail.com:995
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>あとは Thunderbird で localhost 10995 などに対応するメールアカウントを作ってあげてください。<sup id="fnref:10"><a href="#fn:10" rel="footnote">10</a></sup></p>
+
+<p>IMAP, SMTP 等も同様の方法で出来るので割愛します。</p>
+
+<h1>LINE する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>超絶リア充で LINE の確認に暇がないですよね？</p>
+
+<p>しかし学内では当然 LINE は出来ません。</p>
+
+<p>そこで VPN を使います。<sup id="fnref:11"><a href="#fn:11" rel="footnote">11</a></sup></p>
+
+<p>お馴染みポートフォワードです。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>localhost<span class="nv">$ </span>ssh myserver -L 11194:vpn-server:1194
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>そして VPN につないで、適当にルーティングをいじってあげれば LINE 出来ます。<sup id="fnref:12"><a href="#fn:12" rel="footnote">12</a></sup></p>
+
+<p>LINE のログイン認証をするサーバは gd2.line.naver.jp なので、次のようにルーティングを変更します。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># route -nv add -host gd2.line.never.jp ${GATEWAY_IP}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>また、メールの受信なども、VPN があればルーティングでなんとかなります。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># route -nv add -host imap.googlemail.com ${GATEWAY_IP}</span>
+</span><span class='line'><span class="c"># route -nv add -host smtp.googlemail.com ${GATEWAY_IP}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>終わりに</h1>
+
+<p>ネットワークの知識と ssh の接続が確立できればなんでも出来ますね。</p>
+
+<p>決して最後はめんどくさくなって手を抜いた訳ではありません。すみません。</p>
+
+<p>明日は僕と研究室が一緒の <a href="http://flavors.me/alstamber">こはくくん</a> の記事です。楽しみです。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>こはく君の記事は明日です。乞うご期待。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>具体的にどのサービスが使えないとかは時間なかったのでちゃんと検証してないです。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>面倒なのでパスフレーズ無し公開鍵認証です。<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>ssh の -t オプションは pseudo-tty を強制的に割り当てます。<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>nc 周りは頑張って調べてください。<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>当然ですが…。<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>もしくは mutt など。変態色高まる気がしますが。<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+<li id="fn:8">
+<p>myserver の 25番ポートが正しく動いていることが前提。<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
+<li id="fn:9">
+<p>一部の経路は暗号化されないので注意してくださいね。<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
+<li id="fn:10">
+<p>POPS, SMTPS, IMAPS は telnet では当然確認できないです。 openssl コマンド使ってくださいね。<a href="#fnref:10" rev="footnote">&#8617;</a></p></li>
+<li id="fn:11">
+<p>電気通信大学に通っている学生の皆さんならVPNサーバ持ってますよね？<a href="#fnref:11" rev="footnote">&#8617;</a></p></li>
+<li id="fn:12">
+<p>スタンプは別のサーバから飛んでくるので別にルーティングする必要があった気がします。<a href="#fnref:12" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+  <a href="http://b.hatena.ne.jp/entry/http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/';
+        var disqus_url = 'http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

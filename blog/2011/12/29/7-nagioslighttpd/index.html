@@ -1,0 +1,396 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>#7 nagios+lighttpd - rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="#7 Nagios+lighttpd 今日はさくっと設定の紹介をして終わりです。 nagiosをlighttpdで動かすときの設定例です。 アレコレ説明するのは面倒なので、はりつけちゃいます 1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">#7 Nagios+lighttpd</h1>
+	<div class="entry-content" itemprop="articleBody"><p>今日はさくっと設定の紹介をして終わりです。</p>
+
+<p>nagiosをlighttpdで動かすときの設定例です。</p>
+
+<!--more-->
+
+
+<p>アレコレ説明するのは面倒なので、はりつけちゃいます</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$HTTP["url"] =~ "^/nagios" {
+</span><span class='line'>        server.document-root = "/usr/local/nagios-3.2.3/share/"
+</span><span class='line'>        server.indexfiles    = ( "index.php" )
+</span><span class='line'>        var.servername = "coco-01"
+</span><span class='line'>        accesslog.filename = "/var/log/lighttpd/" + var.servername + "_nagios_access.log"
+</span><span class='line'>        server.errorlog = "/var/log/lighttpd/" + var.servername + "_nagios_error.log"
+</span><span class='line'>
+</span><span class='line'>        cgi.assign = ( ".cgi" =&gt; "" ,
+</span><span class='line'>        )
+</span><span class='line'>        fastcgi.server = (
+</span><span class='line'>                ".php" =&gt; (
+</span><span class='line'>                        "localhost" =&gt; (
+</span><span class='line'>                                 "host" =&gt; "127.0.0.1",
+</span><span class='line'>                                "port" =&gt; "9000"
+</span><span class='line'>                                )))
+</span><span class='line'>
+</span><span class='line'>        alias.url = (
+</span><span class='line'>        "/nagios/cgi-bin" =&gt; "/usr/local/nagios-3.2.3/sbin/",
+</span><span class='line'>        "/nagios" =&gt; "/usr/local/nagios-3.2.3/share/"
+</span><span class='line'>        )
+</span><span class='line'>
+</span><span class='line'>        auth.backend = "htpasswd"
+</span><span class='line'>        auth.backend.htpasswd.userfile = "/usr/local/lighttpd-1.4.29/.nagiospw"
+</span><span class='line'>        auth.require = ( "/" =&gt;
+</span><span class='line'>        (
+</span><span class='line'>        "method" =&gt; "basic",
+</span><span class='line'>        "realm" =&gt; "Nagios Secret Zone",
+</span><span class='line'>        "require" =&gt; "valid-user"
+</span><span class='line'>        )
+</span><span class='line'> )      
+</span><span class='line'>}
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>大体こんな感じです。<br/>
+nagiosは3.2.3をソースから入れてます<br/>
+prefixを/usr/local/nagios-3.2.3でconfigureしてます。</p>
+
+<p>lighttpdはprefixを/usr/local/lighttpd-1.4.29でconfigureしてます</p>
+
+<p>phpはphp-fpmを使って、localhostの9000番ポートがlistenしてる状態です。</p>
+
+<p>標準のlighttpdのconfigの書式を知っている人なら、そんなに難しくないでしょう。</p>
+
+<p>ポイントは2点ぐらいです。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>alias.url = (
+</span><span class='line'>   "/nagios/cgi-bin" =&gt; "/usr/local/nagios-3.2.3/sbin/",
+</span><span class='line'>   "/nagios" =&gt; "/usr/local/nagios-3.2.3/share/"
+</span><span class='line'> )
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ここと、</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cgi.assign = ( ".cgi" =&gt; "" ,
+</span><span class='line'> )
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ここだけです。<br/>
+nagiosは、サイト自体を表示する部分が<br/>
+/usr/local/nagios-3.2.3/share/<br/>
+に置いてあって、<br/>
+cgiを司る部分が、<br/>
+/usr/local/nagios-3.2.3/sbin/<br/>
+に置いてあります、ので、<br/>
+/nagios/cgi-binのディレクトリにアクセスされた場合にはcgiの方を読みに行き、<br/>
+/nagiosのサイト表示部分にアクセスされたら普通のindex.php等が置いてあるフォルダを読みに行くように設定しているだけです。</p>
+
+<p>次いでcgi.assignの設定ですが、少々お行儀が悪い設定です。<br/>
+が、しかし、nagiosのcgiを見て頂ければ分かる通り、<br/>
+(/usr/local/nagios-3.2.3/sbin/の中身を見てみてね)<br/>
+nagiosのcgiは何とバイナリファイルです。<br/>
+ソースを見てみると、C言語です。<br/>
+(ソースのフォルダの中のnagios-3.2.3/cgi配下にあります)</p>
+
+<p>と言う事で、関連づけせずにそのままlighttpdのcgiモジュールに投げてます。</p>
+
+<p>…これで実行出来るから驚きなのですが…。</p>
+
+<p>他にも、mailmanとかのコンパイル済みのバイナリファイル等のcgiをlighttpd上で実行したい場合は、<br/>
+上のような設定にすると動作します。<br/>
+(友人はUPSのWeb設定画面をこの方法で動かしていたような気がします。。。)</p>
+
+<p>実は脱apacheでnagiosを動かしたい！と思い立ってから、<br/>
+nginxで動かそうと試行錯誤して1週間程度やっていましたが、結局あきらめてlighttpdに乗り換えたら、こんな簡単な設定で出来たので正直拍子抜けしました。<br/>
+(nginxで動かそうとしたときは、nagiosのcgiのソースコードをfcgi化してfcgiwrapperで動かそうとして結局失敗&#8230;)</p>
+
+<p>なので、apacheじゃないwebサーバを検討している方々で、apacheみたいにcgiを動かしたい！って方は、lighttpdがオススメなんじゃないでしょうか。<br/>
+nginxは確かに軽量で高速なwebサーバなのですが、cgiの実行に関しては全く外部委託せざるを得ないので…<br/>
+(fcgiwrapperやphp-fpm,spawn-fcgiなど)</p>
+
+<p>速度に関して言えば、nginxとlighttpdでほぼ大差はないように感じます(実際に厳密なベンチを取ったわけではないですが&#8230;)</p>
+
+<p>これからはもしかしたら、nginx+lighttpdなんていう構成が流行るかもしれませんね？</p>
+
+<p>設定ファイルもそこそこ簡単なので、lighttpdは割とオススメです！</p>
+
+<p>そんな感じで、次回はもっとちゃんとした事を書こうと思います。<br/>
+(恐らく時期的に自サーバの再構築が終わってるので、その構成とかについて書きたいなあなんて考えてます…)</p>
+
+<p>それでは。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+  <a href="http://b.hatena.ne.jp/entry/http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

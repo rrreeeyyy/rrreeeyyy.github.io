@@ -1,0 +1,391 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>#16 #isucon 3 に学生枠で出て惨敗してました - rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="#16 #isucon 3 に学生枠で出て惨敗してました こんにちわ。れいです。 isuconというやつに出てました。 isucon(iikanjini speed up contest) お題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングバトル、 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">#16 #isucon 3 に学生枠で出て惨敗してました</h1>
+	<div class="entry-content" itemprop="articleBody"><p>こんにちわ。れいです。</p>
+
+<p><a href="http://isucon.net/">isucon</a>というやつに出てました。</p>
+
+<!--more-->
+
+
+<h1>isucon(iikanjini speed up contest)</h1>
+
+<blockquote><p>お題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングバトル、</p>
+
+<p>それがISUCONです。</p></blockquote>
+
+<p>とのことです</p>
+
+<hr />
+
+<h1>チーム</h1>
+
+<p>「( (0) / (0)) ☆祝☆」という読めないチーム名で参加してました。</p>
+
+<p>「omedeto くん」という名前が付いているらしいです。</p>
+
+<p>詳しくは後述のnari_exさんのblogを読んでください。</p>
+
+<p><a href="https://twitter.com/nari_ex">nari_ex</a> さん と <a href="https://twitter.com/kur_neko">kur_neko</a> さんと僕の3人チームです。</p>
+
+<p>3人とも電気通信大学と言うところの大学生で、</p>
+
+<p>nari_exさんと僕は学部4年生で、kur_nekoさんは入学年度が1つ下です。(※)</p>
+
+<hr />
+
+<h1>予選(2013/10/5)</h1>
+
+<p>この日は確か体中に謎の腫瘍(恐らく粉瘤腫)が炎症を起こしてから3日目ぐらいで、</p>
+
+<p>朝からロキソニンを飲んで予選に参加していた記憶があります。</p>
+
+<p>と言ったコンディションだったので、毛ほどもチームの役に立った記憶がありません。</p>
+
+<p>何をしていたのか定かではないですが、</p>
+
+<p>Varnishを入れようと思って諦めたり、Redisでいくつかの値をキャッシュしようとしたりしてました。</p>
+
+<p>(いずれも時間内に終わらずに挫折している)</p>
+
+<p>あ、Markdownの外部プロセスの呼び出しをやめてRedcarpetを使うようにしました。</p>
+
+<p>予選も本選もRubyを使っていました。</p>
+
+<p>Ruby/Python/Nodeは経験があったので、</p>
+
+<p>そのどれかにしようということだったのですが特に決めておらず、</p>
+
+<p>予選でベンチマークを取った結果Rubyが一番早かったのでRubyにしました。</p>
+
+<p>主にnari_exさんがクエリをチューニングして、</p>
+
+<p>kur_nekoさんがNginxとMySQLのパラメータチューニングをしてました。</p>
+
+<p>僕は痛みと闘いながら呻いてました。みんなありがとう。</p>
+
+<p>お陰で途中の発表では1位になって場が沸き立ったりしました。</p>
+
+<p>が、その後伸び悩んだのでスコアとしては全然低い感じで落ち着いてしまったのでした。</p>
+
+<p>学生枠で確か2位(繰り上がり1位)の成績で本選出場を決めたのでした。</p>
+
+<hr />
+
+<h1>本選(2013/11/9)</h1>
+
+<p>場所は渋谷ヒカリエのLINE株式会社オフィス！</p>
+
+<p><img src="/images/blog/isucon-line.jpg" alt="渋谷ヒカリエLINE株式会社オフィス" /></p>
+
+<p>めっちゃ綺麗だった。いつもLINE使ってます。ありがとうございます。</p>
+
+<p>クリアファイル貰ったりもしました。</p>
+
+<p><img src="/images/blog/isucon-filer.jpg" alt="こいつの名前なんていうんだったっけ..." /></p>
+
+<p>始まる直前までめっちゃドキドキしてました。</p>
+
+<p>Redbullを買ったのにモンスターエナジーを貰ってしまったので両方飲んだりして過ごしてました。</p>
+
+<p>開会式の時にレギュレーションを聞いてから、18時になってしまうまでは一瞬のような感じでした。</p>
+
+<p>僕らのチームがやったことは、nari_exさんが既に素晴らしくまとめてくださってました。</p>
+
+<p><a href="http://www.nari64.com/?p=221">ISUCON 決勝に学生枠で出場してきました(惨敗)</a></p>
+
+<p>僕は主にRubyの実装を担当してました。</p>
+
+<p>実装スピードが単純に遅いのも反省点ですし、</p>
+
+<p>今回目指した構成の場合、各サーバ毎にアプリケーションのコードを微妙に変えなければならなかったので、</p>
+
+<p>その辺をうまーく調整できなかったので大分時間を食ってしまった感じがします。</p>
+
+<p>あとは、ミドルウェアをいじってる側とかなり競合してしまい、</p>
+
+<p>待ち時間が発生したりデバッグが困難だったりしたのでも時間を食った感じがします。</p>
+
+<p>効率的に開発/デプロイする環境についてもう少し考えて準備しておくべきだったと反省してます。</p>
+
+<p>(というより、この記事を書くにあたって改めて考えた結果、どんどん反省点が出てきたので書きながら反省している)</p>
+
+<p>まあ結果はタイトルにある通り惨敗でございます。</p>
+
+<p>(もしスコアが出ていれば学生1位のチームと同じぐらいだった気がしますが、</p>
+
+<p>たらればの話となり負け犬の遠吠え感が出ている)</p>
+
+<hr />
+
+<h1>懇親会</h1>
+
+<p>あとはビールを飲んだり(ごちそうさまです)</p>
+
+<p><img src="/images/blog/isucon-beer.jpg" alt="ビールごちそうさまです" /></p>
+
+<p>ピザを食べたり(ごちそうさまです)</p>
+
+<p><img src="/images/blog/isucon-pizza.jpg" alt="ピザごちそうさまです" /></p>
+
+<p>夜景を眺めてみたり</p>
+
+<p><img src="/images/blog/isucon-build.jpg" alt="夜景眺めていたら「負けたのそんなにショックだった？飛び降りはダメだよ！！」と説かれた" /></p>
+
+<p>あとは学生枠の方々と喋ったり、他チームの方と喋ったりしていました。</p>
+
+<hr />
+
+<h1>感想</h1>
+
+<p>良くも悪くも自分(そしてチーム)の実力を定量的に評価できたと思っています。</p>
+
+<p>そして己の無力さに打ちひしがれたのでリスヵ…ではなくて研鑽を積みたいと思います。</p>
+
+<p>来年からは新卒1年目という肩書になってしまうので、学生枠参加は無理ですが、</p>
+
+<p>果たせなかった学生枠1位はkur_nekoさんとその後輩達に託し、</p>
+
+<p>社会人枠で参加して1位を目指す予定です。頑張ります。</p>
+
+<h1>余談</h1>
+
+<p>余談ですが、</p>
+
+<p>ISUCON終わったあとnari_exさんと家の近くの公園で寒空の下2時間ほど反省会をした結果、</p>
+
+<p>あまりに寒すぎて風邪を引いておよそ三日三晩寝こむ羽目になりました。</p>
+
+<p>結果としてブログを書くのが遅れることとなりました。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+  <a href="http://b.hatena.ne.jp/entry/http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/';
+        var disqus_url = 'http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

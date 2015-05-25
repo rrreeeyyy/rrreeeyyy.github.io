@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: PHP | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/php/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#7 nagios+lighttpd]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/"/>
+    <updated>2011-12-29T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd</id>
+    <content type="html"><![CDATA[<p>今日はさくっと設定の紹介をして終わりです。</p>
+
+<p>nagiosをlighttpdで動かすときの設定例です。</p>
+
+<!--more-->
+
+
+<p>アレコレ説明するのは面倒なので、はりつけちゃいます</p>
+
+<p>```
+$HTTP[&ldquo;url&rdquo;] =~ &ldquo;^/nagios&rdquo; {</p>
+
+<pre><code>    server.document-root = "/usr/local/nagios-3.2.3/share/"
+    server.indexfiles    = ( "index.php" )
+    var.servername = "coco-01"
+    accesslog.filename = "/var/log/lighttpd/" + var.servername + "_nagios_access.log"
+    server.errorlog = "/var/log/lighttpd/" + var.servername + "_nagios_error.log"
+
+    cgi.assign = ( ".cgi" =&gt; "" ,
+    )
+    fastcgi.server = (
+            ".php" =&gt; (
+                    "localhost" =&gt; (
+                             "host" =&gt; "127.0.0.1",
+                            "port" =&gt; "9000"
+                            )))
+
+    alias.url = (
+    "/nagios/cgi-bin" =&gt; "/usr/local/nagios-3.2.3/sbin/",
+    "/nagios" =&gt; "/usr/local/nagios-3.2.3/share/"
+    )
+
+    auth.backend = "htpasswd"
+    auth.backend.htpasswd.userfile = "/usr/local/lighttpd-1.4.29/.nagiospw"
+    auth.require = ( "/" =&gt;
+    (
+    "method" =&gt; "basic",
+    "realm" =&gt; "Nagios Secret Zone",
+    "require" =&gt; "valid-user"
+    )
+</code></pre>
+
+<p> )    <br/>
+}</p>
+
+<p>```</p>
+
+<p>大体こんな感じです。<br/>
+nagiosは3.2.3をソースから入れてます<br/>
+prefixを/usr/local/nagios-3.2.3でconfigureしてます。</p>
+
+<p>lighttpdはprefixを/usr/local/lighttpd-1.4.29でconfigureしてます</p>
+
+<p>phpはphp-fpmを使って、localhostの9000番ポートがlistenしてる状態です。</p>
+
+<p>標準のlighttpdのconfigの書式を知っている人なら、そんなに難しくないでしょう。</p>
+
+<p>ポイントは2点ぐらいです。</p>
+
+<p>```
+alias.url = (
+   &ldquo;/nagios/cgi-bin&rdquo; => &ldquo;/usr/local/nagios-3.2.3/sbin/&rdquo;,
+   &ldquo;/nagios&rdquo; => &ldquo;/usr/local/nagios-3.2.3/share/&rdquo;
+ )</p>
+
+<p>```</p>
+
+<p>ここと、</p>
+
+<p>```
+cgi.assign = ( &ldquo;.cgi&rdquo; => &ldquo;&rdquo; ,
+ )</p>
+
+<p>```</p>
+
+<p>ここだけです。<br/>
+nagiosは、サイト自体を表示する部分が<br/>
+/usr/local/nagios-3.2.3/share/<br/>
+に置いてあって、<br/>
+cgiを司る部分が、<br/>
+/usr/local/nagios-3.2.3/sbin/<br/>
+に置いてあります、ので、<br/>
+/nagios/cgi-binのディレクトリにアクセスされた場合にはcgiの方を読みに行き、<br/>
+/nagiosのサイト表示部分にアクセスされたら普通のindex.php等が置いてあるフォルダを読みに行くように設定しているだけです。</p>
+
+<p>次いでcgi.assignの設定ですが、少々お行儀が悪い設定です。<br/>
+が、しかし、nagiosのcgiを見て頂ければ分かる通り、<br/>
+(/usr/local/nagios-3.2.3/sbin/の中身を見てみてね)<br/>
+nagiosのcgiは何とバイナリファイルです。<br/>
+ソースを見てみると、C言語です。<br/>
+(ソースのフォルダの中のnagios-3.2.3/cgi配下にあります)</p>
+
+<p>と言う事で、関連づけせずにそのままlighttpdのcgiモジュールに投げてます。</p>
+
+<p>…これで実行出来るから驚きなのですが…。</p>
+
+<p>他にも、mailmanとかのコンパイル済みのバイナリファイル等のcgiをlighttpd上で実行したい場合は、<br/>
+上のような設定にすると動作します。<br/>
+(友人はUPSのWeb設定画面をこの方法で動かしていたような気がします。。。)</p>
+
+<p>実は脱apacheでnagiosを動かしたい！と思い立ってから、<br/>
+nginxで動かそうと試行錯誤して1週間程度やっていましたが、結局あきらめてlighttpdに乗り換えたら、こんな簡単な設定で出来たので正直拍子抜けしました。<br/>
+(nginxで動かそうとしたときは、nagiosのcgiのソースコードをfcgi化してfcgiwrapperで動かそうとして結局失敗&#8230;)</p>
+
+<p>なので、apacheじゃないwebサーバを検討している方々で、apacheみたいにcgiを動かしたい！って方は、lighttpdがオススメなんじゃないでしょうか。<br/>
+nginxは確かに軽量で高速なwebサーバなのですが、cgiの実行に関しては全く外部委託せざるを得ないので…<br/>
+(fcgiwrapperやphp-fpm,spawn-fcgiなど)</p>
+
+<p>速度に関して言えば、nginxとlighttpdでほぼ大差はないように感じます(実際に厳密なベンチを取ったわけではないですが&#8230;)</p>
+
+<p>これからはもしかしたら、nginx+lighttpdなんていう構成が流行るかもしれませんね？</p>
+
+<p>設定ファイルもそこそこ簡単なので、lighttpdは割とオススメです！</p>
+
+<p>そんな感じで、次回はもっとちゃんとした事を書こうと思います。<br/>
+(恐らく時期的に自サーバの再構築が終わってるので、その構成とかについて書きたいなあなんて考えてます…)</p>
+
+<p>それでは。</p>
+]]></content>
+  </entry>
+  
+</feed>

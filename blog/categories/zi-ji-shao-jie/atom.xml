@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 自己紹介 | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/zi-ji-shao-jie/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#1 blogはじめました。]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post/"/>
+    <updated>2011-11-07T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post</id>
+    <content type="html"><![CDATA[<p>どうもこんにちわ。れいです。</p>
+
+<p>なんとなく、日々思った事とか、技術的な事とか、<br/>
+色々ながーくまとめて書くところが欲しいなと思って、ブログを構築してみました。<br/>
+(単にブログの構築がやってみたかっただけと言う説もあります。）</p>
+
+<p>さて、最初の記事なので簡単に自己紹介をする事にしましょう。</p>
+
+<!--more-->
+
+
+<p>・あなたは誰ですか？<br/>
+はい、私はれいです。<br/>
+Twitterでは <a title="rrreeeyyy" href="https://twitter.com/#!/rrreeeyyy" target="_blank">rrreeeeyyy</a> なんて名前でやってます。<br/>
+(Reyが取れない→rrreeeyyyにするっていう安直な発想より。)<br/>
+mixiもやっていますが、こちらは高校や大学の知人だけに公開してる感じなので、<br/>
+気になったら探してみてください。本名で見つかりますよw</p>
+
+<p>・なにをしている人ですか？<br/>
+一応、大学生をやってると言うことになります。<br/>
+都内某所の国立理系大学に通ってます。<br/>
+(っていうと頭良さそうぽく聞こえるのでよく使うのですが、頭の方は普通です。)</p>
+
+<p>１年前から都内某所のベンチャー企業で、<br/>
+インフラエンジニアのスタッフとして働いています。<br/>
+何をしているところかと言うと、サーバの保守をしている会社です。<br/>
+サーバってなんですか、保守ってなにするんですか、<br/>
+と言う問いにはいずれ答えて行きたいと思っています…。</p>
+
+<p>あと、個人的にですが奇妙なサイトを作っていたりします。<br/>
+何か面白い事をしたくて始めたのですが、<br/>
+今は友人4人でてんやわんややっていたりします。<br/>
+非常に面白いです。</p>
+
+<p>&nbsp;</p>
+
+<p>と言う事で、このブログは大学生が考えた貧弱な発想やら、<br/>
+1年目のインフラエンジニアみたいな事をしている人が考えた、<br/>
+貧弱な技術に関するアレコレなんかを書いて行きたいと思っているので、<br/>
+興味が湧いたら是非読んでみてください。よろしくお願いします。</p>
+]]></content>
+  </entry>
+  
+</feed>

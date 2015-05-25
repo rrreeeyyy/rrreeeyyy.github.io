@@ -1,1 +1,604 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="Feb 23rd, 2015 勉強会 若手インフラエンジニア現状確認会 #wakateinfra に参加したまとめ 若手インフラエンジニア現状確認会に参加してきた。とにかく最高だった。 Read on &rarr; Dec 31st, 2014 振り返り 2014 年振り返り 2014 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-02-23T00:00:00+09:00" data-updated="true" itemprop="datePublished">Feb 23<span>rd</span>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/02/23/infra-younger/" itemprop="url">若手インフラエンジニア現状確認会 #wakateinfra に参加したまとめ</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>若手インフラエンジニア現状確認会に参加してきた。とにかく最高だった。</p>
+
+
+		
+		<a href="/blog/2015/02/23/infra-younger/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-31T00:00:00+09:00" data-updated="true" itemprop="datePublished">Dec 31<span>st</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/zhen-rifan-ri/'>振り返り</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/12/31/2014/" itemprop="url">2014 年振り返り</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>2014 年もありがとうございました。2015 年も皆様よろしくお願いします。</p>
+
+
+		
+		<a href="/blog/2014/12/31/2014/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-13T00:00:00+09:00" data-updated="true" itemprop="datePublished">Dec 13<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/webapp/'>webapp</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/12/13/webapp/" itemprop="url">IT インフラエンジニアに Web アプリエンジニア養成読本をオススメする 6 個ぐらいの理由</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p><a href="http://qiita.com/advent-calendar/2014/webapp_mook">Web アプリエンジニア養成読本 Advent Calendar 2014</a> の 13 日目の記事です。</p>
+
+<p>ここまで著者の方で連続しているので僕が普通の書評記事のようなものを書いていいのかな、と思わなくもないですが、<br/>
+登録してしまったので書こうと思います (それに、本当にオススメなのです)。</p>
+
+
+		
+		<a href="/blog/2014/12/13/webapp/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T00:00:00+09:00" data-updated="true" itemprop="datePublished">Jun 23<span>rd</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/infrastructure/'>infrastructure</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/06/23/techfesta/" itemprop="url">July Tech Festa 2014 ( #techfesta ) に行きました</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>昨年に引き続き、July Tech Festa (2014) に行ったのでそれとなくまとめを書きます。</p>
+
+<p>そうは言っても Twitter で全部メモを取っていたので、</p>
+
+<p>ダラダラ Tweet を振り返りながら所感を書きます。</p>
+
+<p>Script タグが多くてレンダリングに時間が掛かるかも。ご容赦下さい。</p>
+
+
+		
+		<a href="/blog/2014/06/23/techfesta/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-12T00:00:00+09:00" data-updated="true" itemprop="datePublished">May 12<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/infrastructure/'>infrastructure</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/05/12/serverspec-and-infrataster/" itemprop="url">Serverspec と Infrataster でサーバのテストをする</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>サーバの構築・運用の効率化の為に Test-Driven Infrastructure をする手法として、</p>
+
+<p><a href="http://serverspec.org/">Serverspec</a> が登場して 1 年近く経ちました。</p>
+
+<p>そして最近、Infrastructure Behavior Testing Framework として、</p>
+
+<p><a href="https://github.com/ryotarai/infrataster">Infrataster</a> が登場しました。</p>
+
+<p>今日は、上記で紹介した 2 つを組み合わせて使用し、</p>
+
+<p>実際にどのようにサーバのテストを行うかについて書きます。</p>
+
+
+		
+		<a href="/blog/2014/05/12/serverspec-and-infrataster/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-21T00:00:00+09:00" data-updated="true" itemprop="datePublished">Apr 21<span>st</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/bash/'>bash</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/04/21/set-euo-pipefail/" itemprop="url">シェルスクリプトを書く時覚えておくこと一選！</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		
+		
+		<a href="/blog/2014/04/21/set-euo-pipefail/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-17T00:00:00+09:00" data-updated="true" itemprop="datePublished">Mar 17<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/infrastructure/'>infrastructure</a>, <a class='category' href='/blog/categories/ipvs/'>ipvs</a>, <a class='category' href='/blog/categories/linux/'>linux</a>, <a class='category' href='/blog/categories/loadbalancer/'>loadbalancer</a>, <a class='category' href='/blog/categories/mruby/'>mruby</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/03/17/mruby-ipvs/" itemprop="url">#18 Mruby-ipvs を実装し卒業論文を書きました</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Linux の L4 ロードバランサ機能である IPVS を、</p>
+
+<p>mruby から利用できるようにする mruby-ipvs という mrbgem を実装し、</p>
+
+<p>その mruby-ipvs に関して卒業論文を書きました。</p>
+
+
+		
+		<a href="/blog/2014/03/17/mruby-ipvs/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-13T00:00:00+09:00" data-updated="true" itemprop="datePublished">Dec 13<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/advent-calendar/'>Advent Calendar</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/12/13/uecwutn/" itemprop="url">#17 最高の学内無線LANにしようぜ</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>こんにちわ。れいです。</p>
+
+<p><a href="http://www.adventar.org/calendars/113">UEC Advent Calendar</a> の13日目の記事です。</p>
+
+<p>昨日の記事は nari さんによる <a href="http://www.nari64.com/?p=441">最高のごはんにしようぜ</a> です。</p>
+
+<p>お腹空きますね………。</p>
+
+
+		
+		<a href="/blog/2013/12/13/uecwutn/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-11T00:00:00+09:00" data-updated="true" itemprop="datePublished">Nov 11<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/11/11/isucon-3/" itemprop="url">#16 #isucon 3 に学生枠で出て惨敗してました</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>こんにちわ。れいです。</p>
+
+<p><a href="http://isucon.net/">isucon</a>というやつに出てました。</p>
+
+
+		
+		<a href="/blog/2013/11/11/isucon-3/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-15T00:00:00+09:00" data-updated="true" itemprop="datePublished">Jul 15<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mian-qiang-hui/'>勉強会</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/07/15/15-techfesta/" itemprop="url">#15 July Tech Festa( #TechFesta )に行きました</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>こんにちわ。れいです。<br/>
+昨日は<a href="http://www.techfesta.jp/">July Tech Festa</a>というITエンジニア夏の祭典に行って来ました！</p>
+
+
+		
+		<a href="/blog/2013/07/15/15-techfesta/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>#4 GlusterFSのinstall - rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="#4 GlusterFSのinstall こんばんわ、れいです。
+今日は社内勉強会に参加してきました〜。
+MySQLの話とか、CTOのscreen捌きとか、readコマンドについてとか、サーバ移設についてとか色々あったのですが、
+( &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/blog/2011/12/08/glusterfs-install/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">#4 GlusterFSのinstall</h1>
+	<div class="entry-content" itemprop="articleBody"><p>こんばんわ、れいです。<br/>
+今日は社内勉強会に参加してきました〜。<br/>
+MySQLの話とか、CTOのscreen捌きとか、readコマンドについてとか、サーバ移設についてとか色々あったのですが、<br/>
+(僕は昨日構築したscreenについて本当に初歩的な部分だけLTしました;)<br/>
+その中で最も興味を惹かれた &#8220;GlusterFS&#8221; についてちょっとだけ書きたいと思います。</p>
+
+<!--more-->
+
+
+<h1>ナニサ？</h1>
+
+<p id="firstHeading">
+  GlusterFSってなにさ？って話から。
+</p>
+
+
+
+
+<p id="firstHeading">
+  GlusterFSについて知ったのは実は今日が初めてだったのですが、要は分散ファイルシステムですね。
+</p>
+
+
+<p>こんなことが出来るらしいです。</p>
+
+<ul>
+<li>ファイルベースのミラーリングとレプリケーション</li>
+<li>ファイルベースのストライピング</li>
+<li>ファイルベースの負荷分散</li>
+<li>ボリュームのフェイルオーバー</li>
+<li>スケジューリングとディスクキャッシュ</li>
+<li>ディスククオータ</li>
+</ul>
+
+
+<div>
+  (Wikipediaからの引用です:)
+</div>
+
+
+
+
+<div>
+  詳しくは、検索して調べてみてください。
+</div>
+
+
+
+
+<div>
+  日本語で解説している所もちょっとありますよ〜。
+</div>
+
+
+
+
+<div>
+  さて、本日僕がやろうとしてるのは、そのGlusterFSのinstallです。
+</div>
+
+
+
+
+<div>
+  もし上手くいったら、そのうち実際の設定とかも書いて行きたいですね。
+</div>
+
+
+
+
+<div>
+  GlusterFSのインストールですが、
+</div>
+
+
+<h2>yumではいります。</h2>
+
+<p>epelかなにかのレポジトリを追加すれば</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yum install glusterfs-server glusterfs-fuse</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで入るんじゃないかな、たぶん。(試してません。)</p>
+
+<h1></h1>
+
+<p>&#8211; おわり &#8211;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>えっと嘘です。</p>
+
+<p>&nbsp;</p>
+
+<h1>やってみよう！</h1>
+
+<p>ところで、yumで入るのはちょっと古いです。</p>
+
+<p>最新バージョンの方がいいですよね？</p>
+
+<p>&nbsp;</p>
+
+<p>さて、</p>
+
+<p>お手軽なのはrpmです。</p>
+
+<p>2011年12/8現在の最新バージョンの3.2.5ですが、rpmがあります。</p>
+
+<p>今回はそいつを使う事にしましょう。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># cat /etc/redhat-release
+</span><span class='line'>CentOS Linux release 6.0 (Final)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>CentOS6系です。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># wget http://download.gluster.com/pub/gluster/glusterfs/3.2/LATEST/CentOS/6/glusterfs-core-3.2.5-2.el6.x86_64.rpm
+</span><span class='line'># wget http://download.gluster.com/pub/gluster/glusterfs/3.2/LATEST/CentOS/6/glusterfs-fuse-3.2.5-2.el6.x86_64.rpm
+</span><span class='line'># wget http://download.gluster.com/pub/gluster/glusterfs/3.2/LATEST/CentOS/6/glusterfs-geo-replication-3.2.5-2.el6.x86_64.rpm</span></code></pre></td></tr></table></div></figure>
+
+
+<p>そんな感じでrpmをダウンロードします。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># rpm -ivh glusterfs-*</span></code></pre></td></tr></table></div></figure>
+
+
+<p>インストールします。</p>
+
+<p>終わりです。</p>
+
+<p>ワオ、お手軽！！！！</p>
+
+<p>(こんなに上手く行かない事もありそうですが&#8230;)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># /etc/init.d/glusterd start
+</span><span class='line'>Starting glusterd:                                         [  OK  ]</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># ps aufx|grep [g]luster
+</span><span class='line'>root     14995  0.0  0.1  45056  7880 ?        Ssl  02:29   0:00 /opt/glusterfs/3.2.5/sbin/glusterd</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># /usr/sbin/gluster -V
+</span><span class='line'>glusterfs 3.2.5 built on Nov 15 2011 08:43:14
+</span><span class='line'>Repository revision: git://git.gluster.com/glusterfs.git
+</span><span class='line'>Copyright (c) 2006-2011 Gluster Inc. &lt;http://www.gluster.com&gt;
+</span><span class='line'>GlusterFS comes with ABSOLUTELY NO WARRANTY.
+</span><span class='line'>You may redistribute copies of GlusterFS under the terms of the GNU General Public License.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>無事、起動した感じですね。</p>
+
+<p>さて、ちょっと内容が薄いですが、今晩中に動作確認とか使用感を書ききる自信があまりないので<br/>
+(設定ファイルとかよくわかってないので&#8230;)<br/>
+それは次回以降の記事にしたいと思います。<br/>
+仮想サーバでのインストールも先ほど終えたので、これからちょっと色々弄くってみたいとおもいます！</p>
+
+<p>glusterfsについてとか他にも面白いネタがあれば是非教えてください:)</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+  <a href="http://b.hatena.ne.jp/entry/http://rrreeeyyy.github.io/blog/2011/12/08/glusterfs-install/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

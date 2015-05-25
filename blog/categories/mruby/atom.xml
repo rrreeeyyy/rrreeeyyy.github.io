@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mruby | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/mruby/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#18 mruby-ipvs を実装し卒業論文を書きました]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2014/03/17/mruby-ipvs/"/>
+    <updated>2014-03-17T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2014/03/17/mruby-ipvs</id>
+    <content type="html"><![CDATA[<p>Linux の L4 ロードバランサ機能である IPVS を、</p>
+
+<p>mruby から利用できるようにする mruby-ipvs という mrbgem を実装し、</p>
+
+<p>その mruby-ipvs に関して卒業論文を書きました。</p>
+
+<!--more-->
+
+
+<hr />
+
+<h1>動機</h1>
+
+<p><a href="http://www.uec.ac.jp/">電気通信大学</a> という大学の 4 年生に無事進級できた為、</p>
+
+<p>卒業論文を書く必要がありました。</p>
+
+<p>大学に通いながら、<a href="http://heartbeats.jp/">株式会社ハートビーツ</a> で学生スタッフとして働いていた経験上、</p>
+
+<p>Linux カーネル内に実装されている L4 ロードバランサ機能である <a href="http://www.linuxvirtualserver.org/software/ipvs.html">IP Virtual Server</a> (IPVS) の、</p>
+
+<p>インタフェースに不便しており、なんとかしたいという気持ちがありました。</p>
+
+<p>個人的に Ruby が好きであることに加え、<a href="http://www.getchef.com/chef/">Chef</a> に代表されるような、</p>
+
+<p>インフラストラクチャ自動化フレームワークが Ruby で書かれ始めていること、</p>
+
+<p>更に、<a href="https://github.com/matsumoto-r/mod_mruby">mod_mruby</a> といった <a href="http://forum.mruby.org/">mruby</a> を用いたインタフェースの登場もあり、</p>
+
+<p>卒業論文のテーマとして、IPVS のインタフェースを mruby で実装することを選択しました。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<hr />
+
+<h1>mruby-ipvs について</h1>
+
+<p>mruby-ipvs は、先述の通り Linux の L4 ロードバランサ機能である IPVS を、</p>
+
+<p>mruby から操作できるようにした mrbgem です。</p>
+
+<p>今のところ、mgem コマンドからインストールすることが出来ないため、<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<p>build_config.rb や gembox を直接編集し、任意の場所に下記を追記するなどしてください。</p>
+
+<p><code>
+  conf.gem :git =&gt; 'https://github.com/rrreeeyyy/mruby-ipvs'
+</code></p>
+
+<p>リポジトリの example にありますが、下記のように記述することが出来ます。</p>
+
+<p>```ruby
+s = IPVS::Service.new({
+  &lsquo;addr&rsquo; => &lsquo;10.0.0.1:80&rsquo;,
+  &lsquo;port&rsquo; => 80,
+  &lsquo;sched_name&rsquo; => &lsquo;wrr&rsquo;
+}).add_service
+d1 = IPVS::Dest.new({
+  &lsquo;addr&rsquo; => &lsquo;192.168.0.1&rsquo;,
+  &lsquo;port&rsquo; => 80,
+  &lsquo;weight&rsquo; => 1
+})
+d2 = IPVS::Dest.new({
+  &lsquo;addr&rsquo; => &lsquo;192.168.0.2&rsquo;,
+  &lsquo;port&rsquo; => 80,
+  &lsquo;weight&rsquo; => 1
+})
+s.add_dest(d1)
+s.add_dest(d2)</p>
+
+<p>d1.weight = 3
+```</p>
+
+<p>Service と Destination をそれぞれインスタンスとして生成します。</p>
+
+<p>Service は add_service や del_service することで、</p>
+
+<p>IPVS に登録したり削除したりすることが出来ます。</p>
+
+<p>Destination は Service インスタンスの add_dest メソッドの引数に渡すことで、</p>
+
+<p>その Service の Destination として IPVS に登録されます。</p>
+
+<p>インスタンスを作る際の引数の与え方で、振り分けメソッドや重みなどを変更できます。<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<p><a href="https://github.com/rrreeeyyy/mruby-ipvs/blob/master/example/keepalived.rb">こんな感じ</a> に書くことで、Keepalived のような構文で書くことも出来たりします。</p>
+
+<p>将来的には、他の mrbgem を用いてヘルスチェックを行いながら、</p>
+
+<p>動的に振り分け先を追加したり、重みを変更したり、何らかのスクリプトを実行したり…など、</p>
+
+<p>IPVS にまつわる操作を自動化する一助になればいいなと思っています。<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+
+<hr />
+
+<h1>リポジトリ</h1>
+
+<p><a href="https://github.com/rrreeeyyy/mruby-ipvs">mruby-ipvs</a></p>
+
+<p>正直、コードの質が良くなかったり、未実装な部分がかなりあるのですが、</p>
+
+<p>使えることには使えるので公開します。</p>
+
+<p>今月で無事に大学を卒業出来るようですが、実装は続けようと思っているので、</p>
+
+<p>pull-request やバグ報告などあれば頂けると幸いです。</p>
+
+<p>今後にご期待ください。</p>
+
+<p>近日中に mgem からインストールできるように pull-request を出したいと思っています。<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></p>
+
+<hr />
+
+<h1>論文</h1>
+
+<p><a href="http://rrreeeyyy.com/thesis/thesis.pdf">論文</a></p>
+
+<p><a href="http://rrreeeyyy.com/thesis/GraduationSlide.pdf">発表スライド</a></p>
+
+<p>論文に関しては、構成がめちゃくちゃだったり、</p>
+
+<p>誤りがあるような気がする箇所がそれなりにあるのですが、</p>
+
+<p>読めることには読めるので公開します。(あんまり見ないで下さい)</p>
+
+<hr />
+
+<h1>謝辞</h1>
+
+<p>所属していた <a href="http://ipl-www.cs.uec.ac.jp/dokuwiki/public/start">岩崎・中野・鵜川研究室</a> の皆様には大変お世話になりました。</p>
+
+<p>(特に、指導教員の皆様や、助言を頂いた諸先輩方、更に僕の論文の誤りを最も多く検出してくれた <a href="https://twitter.com/nari_ex">@nari_ex</a> さん)</p>
+
+<p>また、<a href="http://heartbeats.jp/">株式会社ハートビーツ</a> の皆様にも大変お世話になりました。</p>
+
+<p>(特に、誕生日プレゼントと称して研究室に物資を送り届けてくれた <a href="https://twitter.com/ka_maekawa/">@ka_maekawa</a> さん)</p>
+
+<p>更に、<a href="https://github.com/matsumoto-r/mod_mruby">mod_mruby</a> の作者である <a href="https://twitter.com/matsumotory">@matsumotory</a> さんに、</p>
+
+<p>直接の面識やお話したことはないものの、研究の動機を与えてくださったことに感謝申し上げます。</p>
+
+<p>また、mruby に関する様々な情報を Web 上に公開してくださってるみなさん、大変参考になりました。</p>
+
+<p>ありがとうございました。</p>
+
+<hr />
+
+<p>2014/3/18 0:16 追記</p>
+
+<p>無事、mgem-list に pull-request を出し、<a href="https://github.com/mruby/mgem-list/pull/72">mergeされました</a></p>
+
+<p>ので、今後は mgem コマンドから build_config.rb の追記分を生成することが出来ます。</p>
+
+<p>mgem の使い方に関しては、<a href="http://blog.matsumoto-r.jp/?p=3310">今日からmrubyをはじめる人へ</a> が大変参考になるので、</p>
+
+<p>そちらをご覧ください。"mruby-ipvs" という名前で登録してあります。</p>
+
+<hr />
+
+<p>※このブログの内容は個人の見解であり、所属する組織の公式見解でも組織を代表するものでもありません※</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>更に、C 言語で書かれた libipvs を使用するのに、mruby で実装することが都合がよかったのです<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>すみません！ ※2014/3/18 に追加されました<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>未実装のパラメータがいくつもあります<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>そのためには未実装の箇所が多すぎます<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>大阪行きの新幹線の中で書いているので、大阪から帰ってきたらにします。<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

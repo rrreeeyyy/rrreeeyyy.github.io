@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#5 KeepAlivedを入れる(おまけ付)]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2011/12/14/5-keepalived-install/"/>
+    <updated>2011-12-14T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2011/12/14/5-keepalived-install</id>
+    <content type="html"><![CDATA[<p>入れる。<br/>
+(単なる作業メモ…)</p>
+
+<p>作業手順<br/>
+CentOS6系</p>
+
+<p>カーネルのバージョン</p>
+
+<p>2.6.32-71.29.1.el6.x86_64</p>
+
+<p><a href="http://www.keepalived.org/software/keepalived-1.2.2.tar.gz">http://www.keepalived.org/software/keepalived-1.2.2.tar.gz</a></p>
+
+<!--more-->
+
+
+<p>カーネル組み込みのIPVSのバージョン確認</p>
+
+<p>```</p>
+
+<h1>grep VERSION_CODE /usr/include/linux/ip_vs.h</h1>
+
+<h1>define IP_VS_VERSION_CODE      0x010201</h1>
+
+<p>```</p>
+
+<p>=>1.2.1であることを確認</p>
+
+<p>yum install ipvsadmする際に、<br/>
+上で確認したカーネル組み込みのIPVSのバージョンより、<br/>
+yumで入れるipvsadmのバージョンが新しい事を確認すること。</p>
+
+<p>ipvsadm入れてkeepalivedをおもむろにconfigure</p>
+
+<p><code>``
+[root@rrreeeyyy keepalived-1.2.2]# yum install ipvsadm
+[root@rrreeeyyy src]# wget http://www.keepalived.org/software/keepalived-1.2.2.tar.gz
+[root@rrreeeyyy src]# tar zxfv keepalived-1.2.2.tar.gz
+[root@rrreeeyyy src]# cd keepalived-1.2.2
+[root@rrreeeyyy keepalived-1.2.2]# ./configure --with-kernel-dir=/lib/modules/</code>uname -r`/build</p>
+
+<p>configure: error: Popt libraries is required
+```</p>
+
+<p>popt librariesがないので入れておもむろにconfigure</p>
+
+<p>```
+[root@rrreeeyyy keepalived-1.2.2]# yum install popt-devel</p>
+
+<p>[root@rrreeeyyy keepalived-1.2.2]# ./configure &mdash;with-kernel-dir=/lib/modules/<code>uname -r</code>/build</p>
+
+<p>Keepalived version       : 1.2.2
+Compiler                 : gcc
+Compiler flags           : -g -O2
+Extra Lib                : -lpopt -lssl -lcrypto
+Use IPVS Framework       : Yes
+IPVS sync daemon support : Yes
+IPVS use libnl           : No
+Use VRRP Framework       : Yes
+Use Debug flags          : No
+```</p>
+
+<p>IPVS use libnlがNoになってるので入れておもむろに</p>
+
+<p>```
+[root@rrreeeyyy keepalived-1.2.2]# yum install libnl-devel</p>
+
+<p>[root@rrreeeyyy keepalived-1.2.2]# ./configure &mdash;with-kernel-dir=/lib/modules/<code>uname -r</code></p>
+
+<h2>Keepalived configuration</h2>
+
+<p>Keepalived version       : 1.2.2
+Compiler                 : gcc
+Compiler flags           : -g -O2
+Extra Lib                : -lpopt -lssl -lcrypto  -lnl
+Use IPVS Framework       : Yes
+IPVS sync daemon support : Yes
+IPVS use libnl           : Yes
+Use VRRP Framework       : Yes
+Use Debug flags          : No</p>
+
+<p>[root@rrreeeyyy keepalived-1.2.2]# make</p>
+
+<p>Make complete
+[root@rrreeeyyy keepalived-1.2.2]# make install</p>
+
+<p>```</p>
+
+<p>起動スクリプトの類をなんとか</p>
+
+<p>```
+[root@rrreeeyyy bin]# ln -s /usr/local/src/keepalived-1.2.2/bin/keepalived /usr/sbin/keepalived
+[root@rrreeeyyy bin]# cp -a /usr/local/src/keepalived-1.2.2/keepalived/etc/init.d/keepalived.rh.init /etc/init.d/keepalived
+[root@rrreeeyyy bin]# cp -a /usr/local/src/keepalived-1.2.2/keepalived/etc/init.d/keepalived.sysconfig /etc/sysconfig/keepalived</p>
+
+<p>```</p>
+
+<p>```
+mkdir /etc/keepalived</p>
+
+<p>```</p>
+
+<p>をしてあげてその下にkeepalived.conf等の設定ファイルを置く。<br/>
+設定ファイルのsample</p>
+
+<p>```
+/usr/local/src/keepalived-1.2.2/keepalived/etc/keepalived/keepalived.conf</p>
+
+<p>```</p>
+
+<p>においてあるので、/etc/keepalived配下にコピーする。</p>
+
+<p>```</p>
+
+<h1>ip addr show</h1>
+
+<pre><code>inet 192.168.200.16/32 scope global eth0
+inet 192.168.200.17/32 scope global eth0
+inet 192.168.200.18/32 scope global eth0
+</code></pre>
+
+<h1>ipvsadm -Ln</h1>
+
+<p>IP Virtual Server version 1.2.1 (size=4096)
+Prot LocalAddress:Port Scheduler Flags
+  &ndash;> RemoteAddress:Port           Forward Weight ActiveConn InActConn
+TCP  192.168.200.100:443 rr persistent 50
+TCP  192.168.201.100:1358 rr persistent 50
+  &ndash;> 192.168.200.200:1358         Masq    1      0          0
+TCP  10.10.10.3:1358 rr persistent 50</p>
+
+<p>```</p>
+
+<p>こんなかんじで、VIPとipvsadmの振り分けが一応設定されていれば恐らくインストール成功。<br/>
+あとは頑張ってkeepalived.confを書く。</p>
+
+<p>おわり</p>
+
+<h1>おまけ:</h1>
+
+<h1>仮想ホストにruby入れる</h1>
+
+<p>おもむろに</p>
+
+<p><code>
+[root@coco-01 ruby-1.9.3-p0]# wget ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p0.tar.gz
+[root@coco-01 ruby-1.9.3-p0]# tar zxfv ruby-1.9.3-p0.tar.gz
+[root@coco-01 ruby-1.9.3-p0]# ./configure --prefix=/usr/local/ruby-1.9.3/
+[root@coco-01 ruby-1.9.3-p0]# make
+[root@coco-01 ruby-1.9.3-p0]# make install
+</code></p>
+
+<p>おわり</p>
+
+<p>と思いきや</p>
+
+<p><code>
+[root@coco-01 ruby-1.9.3]# gem install sinatra
+/usr/local/ruby-1.9.3/lib/ruby/1.9.1/yaml.rb:56:in `':
+It seems your ruby installation is missing psych (for YAML output).
+To eliminate this warning, please install libyaml and reinstall your ruby.
+</code></p>
+
+<p>こんなエラーが出たので、libyamlを入れる事に。<br/>
+CentOSはyumでレポジトリ追加しなきゃいけないぽくて面倒だったのでビルドした。</p>
+
+<p>```
+[root@coco-01 src]# wget <a href="http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz">http://pyyaml.org/download/libyaml/yaml-0.1.4.tar.gz</a>
+[root@coco-01 src]# tar zxfv yaml-0.1.4.tar.gz
+[root@coco-01 yaml-0.1.4]# ./configure
+[root@coco-01 yaml-0.1.4]# make
+[root@coco-01 yaml-0.1.4]# make install
+[root@coco-01 bin]# vim /etc/ld.so.conf.d/libyaml.conf</p>
+
+<p>(+) /usr/local/lib</p>
+
+<p>[root@coco-01 yaml-0.1.4]# ldconfig
+```</p>
+
+<p>rubyを再度上の手順でリコンパイルしてmake&amp;&amp;make install</p>
+
+<p>gemのエラーが無事消える</p>
+
+<p>おわり</p>
+]]></content>
+  </entry>
+  
+</feed>

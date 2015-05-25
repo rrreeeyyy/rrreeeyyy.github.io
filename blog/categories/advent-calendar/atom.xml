@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Advent Calendar | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/advent-calendar/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#17 最高の学内無線LANにしようぜ]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/"/>
+    <updated>2013-12-13T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
+
+<p><a href="http://www.adventar.org/calendars/113">UEC Advent Calendar</a> の13日目の記事です。</p>
+
+<p>昨日の記事は nari さんによる <a href="http://www.nari64.com/?p=441">最高のごはんにしようぜ</a> です。</p>
+
+<p>お腹空きますね………。</p>
+
+<!--more-->
+
+
+<h1>はじめに</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> 使ってますよね？</p>
+
+<p>今日は <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> を今までよりちょっと便利に使う方法を紹介します。</p>
+
+<hr />
+
+<h1>何が不便なのか</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>一度は <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> に不便を感じた事がありますよね？<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>uecwutnはゴミ</p>&mdash; こはく (@alstamber) <a href="https://twitter.com/alstamber/statuses/400537218663460864">2013, 11月 13</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>そもそも、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> で割り当てられるIP帯では</p>
+
+<p>基本的に学外のネットワークと通信する事は出来ません。</p>
+
+<p>そこで、 proxy サーバを用いて学外のネットワークと通信を行います。</p>
+
+<p>ここで幾つかの制限が生まれるので、不便になる訳です。</p>
+
+<p>恐らく、普通に設定をするとWebブラウジングするのが限界です。<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<h1>ssh をする</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>学外のサーバに ssh 接続をして作業がしたくて堪らないですよね？</p>
+
+<p>先述の通り、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> では学外のネットワークに直接接続することは出来ません。</p>
+
+<p>そこで、一度学外に到達できる学内サーバに ssh をして、</p>
+
+<p>そこから更に学外のサーバに ssh をする必要があります。</p>
+
+<p>この辺りは賢い電気通信大学の皆さんなら経験があると思います。</p>
+
+<p>通常ならこうしますね。</p>
+
+<p>(学内サーバを uec , 学外サーバを server1 とします。) <sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<p><code>bash
+localhost: ~ myname$ ssh uec -lusername
+[username@uec ~]$ ssh server1 -lmyname
+[myname@server1 ~]$
+</code></p>
+
+<p>もう少し慣れた人はこうするでしょうか <sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+
+<p><code>bash
+localhost: ~ myname$ ssh uec -lusername -t ssh server1 -lmyname
+[myname@server1 ~]$
+</code></p>
+
+<p>良いでしょう。でもこういうものがあります。</p>
+
+<p><a href="http://www.cc.uec.ac.jp/info/news/2011/06/20110606-proxyssh.html">プロクシサーバにおけるSSHプロトコルサポート開始のお知らせ</a></p>
+
+<p>proxy サーバが 2011/6/6 より ssh プロトコルをサポートしています。</p>
+
+<p>proxy サーバを proxy-server ,ポートを 8080 とすると、こういうふうに出来ますよね。<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></p>
+
+<p><code>bash
+localhost: ~ myname$ ssh -o 'ProxyCommand nc -X connect -x proxy-server:8080 %h %p' server1
+[myname@server1 ~]$
+</code></p>
+
+<p>なんだか良さそうですね、ただちょっと長いですね。
+.bashrc に alias 定義しますか？</p>
+
+<p><code>bash
+localhost: ~ myname$ cat ~/.bashrc | grep ssh-uec
+alias ssh-uec="ssh -o 'ProxyCommand nc -X connect -x proxy-east.uec.ac.jp:8080 %h %p' -o 'ServerAliveInterval=60'"
+</code></p>
+
+<p>うーん、微妙ですね。こっちのほうがいいでしょうか？</p>
+
+<p>```bash
+localhost: ~ myname$ cat ~/.ssh/config
+Host server1</p>
+
+<pre><code>ProxyCommand nc -X connect -x proxy-server:8080 %h %p
+</code></pre>
+
+<p>```</p>
+
+<p>これだと server1 に行きたいときいつも proxy を経由しちゃいますね…。</p>
+
+<p>ssh の -F オプションを使ってファイルを別管理にするか、こんな風にするしかないかな？</p>
+
+<p>```bash
+localhost: ~ myname$ cat ~/.ssh/config
+Host *%proxy</p>
+
+<pre><code>ProxyCommand nc -X connect -x proxy-server:8080 %h %p
+</code></pre>
+
+<p>Host server1</p>
+
+<pre><code>User myname
+</code></pre>
+
+<p>localhost: ~ myname$ ssh server1%proxy # 学内から自宅サーバに接続
+localhost: ~ myname$ ssh server1 # 学外から自宅サーバに接続
+```</p>
+
+<p>シェルスクリプトで使うコンフィグを書き換えるとか色々あると思いますが、</p>
+
+<p>もっと良いソリューションがある人は教えて下さい。</p>
+
+<p>ssh を手に入れてしまえばこっちのものです。</p>
+
+<h1>http , https で接続する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>当然ターミナル上から gem install したり brew install したいですよね？</p>
+
+<p>しかし、Mac のターミナルは システムの proxy を引き継ぎません。 <sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></p>
+
+<p>http_proxy, https_proxy, ALL_PROXY などの環境変数を使います。</p>
+
+<p><code>bash
+$ export http_proxy=http://proxy-server:8080/
+$ export https_proxy=http://proxy-server:8080/
+$ export ALL_PROXY=http://proxy-server:8080/
+</code></p>
+
+<p>お家に帰ったらこうですね。</p>
+
+<p><code>bash
+$ unset http_proxy
+$ unset https_proxy
+$ unset ALL_PROXY
+</code></p>
+
+<p>さて、 電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>当然 github を学内で使いたくなりますよね？</p>
+
+<p>git は http_proxy を見てくれないです。なのでこうです。</p>
+
+<p><code>bash
+$ git config --global http.proxy proxy-server
+$ git config --global https.proxy proxy-server
+$ git config --global url."https://".insteadOf git://
+</code></p>
+
+<p>お家に帰ったらこうですね。</p>
+
+<p><code>bash
+$ git config --global --unset http.proxy
+$ git config --global --unset https.proxy
+$ git config --global --unset url."https://".insteadOf
+</code></p>
+
+<p>徐々に快適になってきましたね。</p>
+
+<p>しかし毎回やるのは面倒ですよね。</p>
+
+<p>優秀な皆さんなら自動化したくなるはずです。</p>
+
+<p>Mac には airport と言うコマンドがあり、それでネットワークの状況を取得できます。</p>
+
+<p><code>bash
+/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I
+</code></p>
+
+<p>これを使って、SSID 毎に設定を切り替えるスクリプトを書いてみましょう。</p>
+
+<p>```bash</p>
+
+<h1>!/bin/bash</h1>
+
+<p>AIRPORT=&ldquo;/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport&rdquo;
+if test &ldquo;<code>${AIRPORT} -I |grep [^B]SSID|awk '{print $2}'</code>&rdquo; = &ldquo;uecwutn&rdquo;; then
+  export http_proxy=<a href="http://proxy-east.uec.ac.jp:8080/">http://proxy-east.uec.ac.jp:8080/</a>
+  export https_proxy=<a href="https://proxy-east.uec.ac.jp:8080/">https://proxy-east.uec.ac.jp:8080/</a>
+  export ALL_PROXY=<a href="http://proxy-east.uec.ac.jp:8080/">http://proxy-east.uec.ac.jp:8080/</a>
+  git config &mdash;global http.proxy proxy-server
+  git config &mdash;global https.proxy proxy-server
+  git config &mdash;global url.&ldquo;<a href="https://">https://</a>&rdquo;.insteadOf git://
+else
+  unset http_proxy
+  unset https_proxy
+  unset ALL_PROXY
+  git config &mdash;global &mdash;unset http.proxy
+  git config &mdash;global &mdash;unset https.proxy
+  git config &mdash;global &mdash;unset url.&ldquo;<a href="https://">https://</a>&rdquo;.insteadOf
+fi
+```</p>
+
+<p>いちいち叩くの面倒そうなので、 .bashrc 辺りに書き込んであげるといいと思います。</p>
+
+<p>さらにさらに、無線につなぐたびに認証を求められるのは面倒なので、そこも自動化しましょう。</p>
+
+<p>curl コマンドで form に ID と Password を POST することで認証を抜けることが出来ます。</p>
+
+<p><code>bash
+$ curl -d "fname=wba_login&amp;username=${STUDENT_ID}&amp;key=${STUDENT_PW}" https://xxx.xxx.xxx.jp/aaa/login.htm
+</code></p>
+
+<p>また、Mac ユーザの中には ネットワーク環境 で Proxy を使うかどうか切り替えてる方もいるかもしれません。</p>
+
+<p>こんなコマンドがあります。</p>
+
+<p><code>bash
+$ /usr/sbin/scselect ${NETENV_NAME}
+</code></p>
+
+<p>これで、ネットワーク環境で定義された環境に変更することが出来ます。</p>
+
+<p>但し、日本語の環境名は使えないので注意してください。</p>
+
+<h1>メールを受信する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>学内でももちろんメールチェックに暇がないですよね？</p>
+
+<p>ところが、学内では先述の通りメールは受信できません…。</p>
+
+<p>一部の賢い電気通信大学の学生の皆さんなら、</p>
+
+<p>自宅にメールサーバがあると思うので、 Roundcube 等を構築すればいいと思います。<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup></p>
+
+<p>しかし、どうしても学内で Thunderbird 等のメールクライアントからメールを受信したい人も居ますよね？</p>
+
+<p>ssh を手に入れてしまった私達に不可能はありません。</p>
+
+<p>ssh ポートフォワーディングをしましょう。</p>
+
+<p><code>bash
+localhost$ ssh myserver -L 10110:localhost:110
+</code></p>
+
+<p>これで、 myserver の 110 番ポートと localhost の 10110 番ポートがつながります。</p>
+
+<p>telnet で確認してみてください。<sup id="fnref:8"><a href="#fn:8" rel="footnote">8</a></sup></p>
+
+<p><code>bash
+$ telnet localhost 10110
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
++OK
+</code></p>
+
+<p>gmail が受信したいんじゃ！！ という方はこうです。<sup id="fnref:9"><a href="#fn:9" rel="footnote">9</a></sup></p>
+
+<p><code>bash
+localhost$ ssh myserver -L 10995:pop.gmail.com:995
+</code></p>
+
+<p>あとは Thunderbird で localhost 10995 などに対応するメールアカウントを作ってあげてください。<sup id="fnref:10"><a href="#fn:10" rel="footnote">10</a></sup></p>
+
+<p>IMAP, SMTP 等も同様の方法で出来るので割愛します。</p>
+
+<h1>LINE する</h1>
+
+<p>電気通信大学に通っている学生の皆さんなら、</p>
+
+<p>超絶リア充で LINE の確認に暇がないですよね？</p>
+
+<p>しかし学内では当然 LINE は出来ません。</p>
+
+<p>そこで VPN を使います。<sup id="fnref:11"><a href="#fn:11" rel="footnote">11</a></sup></p>
+
+<p>お馴染みポートフォワードです。</p>
+
+<p><code>bash
+localhost$ ssh myserver -L 11194:vpn-server:1194
+</code></p>
+
+<p>そして VPN につないで、適当にルーティングをいじってあげれば LINE 出来ます。<sup id="fnref:12"><a href="#fn:12" rel="footnote">12</a></sup></p>
+
+<p>LINE のログイン認証をするサーバは gd2.line.naver.jp なので、次のようにルーティングを変更します。</p>
+
+<p>```bash</p>
+
+<h1>route -nv add -host gd2.line.never.jp ${GATEWAY_IP}</h1>
+
+<p>```</p>
+
+<p>また、メールの受信なども、VPN があればルーティングでなんとかなります。</p>
+
+<p>```bash</p>
+
+<h1>route -nv add -host imap.googlemail.com ${GATEWAY_IP}</h1>
+
+<h1>route -nv add -host smtp.googlemail.com ${GATEWAY_IP}</h1>
+
+<p>```</p>
+
+<h1>終わりに</h1>
+
+<p>ネットワークの知識と ssh の接続が確立できればなんでも出来ますね。</p>
+
+<p>決して最後はめんどくさくなって手を抜いた訳ではありません。すみません。</p>
+
+<p>明日は僕と研究室が一緒の <a href="http://flavors.me/alstamber">こはくくん</a> の記事です。楽しみです。</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>こはく君の記事は明日です。乞うご期待。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>具体的にどのサービスが使えないとかは時間なかったのでちゃんと検証してないです。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>面倒なのでパスフレーズ無し公開鍵認証です。<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>ssh の -t オプションは pseudo-tty を強制的に割り当てます。<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>nc 周りは頑張って調べてください。<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>当然ですが…。<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>もしくは mutt など。変態色高まる気がしますが。<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+<li id="fn:8">
+<p>myserver の 25番ポートが正しく動いていることが前提。<a href="#fnref:8" rev="footnote">&#8617;</a></p></li>
+<li id="fn:9">
+<p>一部の経路は暗号化されないので注意してくださいね。<a href="#fnref:9" rev="footnote">&#8617;</a></p></li>
+<li id="fn:10">
+<p>POPS, SMTPS, IMAPS は telnet では当然確認できないです。 openssl コマンド使ってくださいね。<a href="#fnref:10" rev="footnote">&#8617;</a></p></li>
+<li id="fn:11">
+<p>電気通信大学に通っている学生の皆さんならVPNサーバ持ってますよね？<a href="#fnref:11" rev="footnote">&#8617;</a></p></li>
+<li id="fn:12">
+<p>スタンプは別のサーバから飛んでくるので別にルーティングする必要があった気がします。<a href="#fnref:12" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

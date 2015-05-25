@@ -1,0 +1,890 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Serverspec と Infrataster でサーバのテストをする - rrreeeyyy.com</title>
+	<meta name="author" content="rrreeeyyy">
+
+	
+	<meta name="description" content="Serverspec と Infrataster でサーバのテストをする サーバの構築・運用の効率化の為に Test-Driven Infrastructure をする手法として、 Serverspec が登場して 1 年近く経ちました。 そして最近、Infrastructure &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="rrreeeyyy.com" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("yoshikawa@rrreeeyyy.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+</div>
+<hgroup>
+  <h1><a href="/">rrreeeyyy.com</a></h1>
+  
+</hgroup>
+
+<p class="subtitle"></p>
+<nav id="main-nav"><ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+<section class="aboutme">
+  <p>
+    コード書いたりサーバ触ったり美味い飯食べたり旅行したりカラオケ行ったりベース弾いたりする 23 歳
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/rrreeeyyy" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/rrreeeyyy" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+</div>
+    
+      
+<section class="lastfm">
+<h4>Recently Scrobbled</h4>
+<style type="text/css">
+  #lastfmList li{ text-align: left; }
+</style>
+<ul id="lastfmList">
+  <li class="loading">Updating tracks...</li>
+</ul>
+<script lang="Javascript">
+    /*
+* JavaScript Pretty Date
+* Copyright (c) 2011 John Resig (ejohn.org)
+* Licensed under the MIT and GPL licenses.
+*/
+
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate(time){
+        diff = ((new Date()).getTime()/1000 - time),
+        day_diff = Math.floor(diff / 86400);
+
+      if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
+        return;
+
+      return day_diff == 0 && (
+          diff < 60 && "just now" ||
+          diff < 120 && "1 minute ago" ||
+          diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+          diff < 7200 && "1 hour ago" ||
+          diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+        day_diff == 1 && "Yesterday" ||
+        day_diff < 7 && day_diff + " days ago" ||
+        day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
+    }
+</script>
+<script lang="Javascript">
+    function showLastfmFeed(json){
+        if(json.recenttracks == 'undefined'){
+            return
+        }
+
+        var tracklist = document.getElementById('lastfmList'),
+            content = '';
+
+        $.each(json.recenttracks.track, function(i, track){
+            var interval = (track.date == undefined) ? 'now playing' : prettyDate(track.date['uts']);
+            content += '<li id="lastfmItem_'+i+'"><a href="'+ track.url +'">'+ track.name +'</a> by '+ track.artist['#text'] +'<span class="date"> ' + interval + '</span></li>';
+        });
+
+        tracklist.innerHTML = content;
+    }
+</script>
+</section>
+
+
+    
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Serverspec と Infrataster でサーバのテストをする</h1>
+	<div class="entry-content" itemprop="articleBody"><p>サーバの構築・運用の効率化の為に Test-Driven Infrastructure をする手法として、</p>
+
+<p><a href="http://serverspec.org/">Serverspec</a> が登場して 1 年近く経ちました。</p>
+
+<p>そして最近、Infrastructure Behavior Testing Framework として、</p>
+
+<p><a href="https://github.com/ryotarai/infrataster">Infrataster</a> が登場しました。</p>
+
+<p>今日は、上記で紹介した 2 つを組み合わせて使用し、</p>
+
+<p>実際にどのようにサーバのテストを行うかについて書きます。</p>
+
+<!--more-->
+
+
+<hr />
+
+<h1>書くこと・書かないこと</h1>
+
+<h2>&ndash; 書くこと</h2>
+
+<ul>
+<li>Serverspec と Infrataster を両方使った Test-Driven Infrastructure の一手法に関して</li>
+</ul>
+
+
+<p>今日書くのは、Serverspec と Infrataster を組み合わせることで、</p>
+
+<p>Serverspec がカバーしている領域と Infrataster がカバーしている領域の両方をテストする一手法に関してです。</p>
+
+<h2>&ndash; 書かないこと</h2>
+
+<ul>
+<li>Test-Driven Infrastructure についてのベストプラクティス</li>
+<li>TDD や BDD と言ったそもそものテスト手法について</li>
+</ul>
+
+
+<p>これらは、個々人やプロジェクト単位で、ベストプラクティス・手法が異なると思っています。</p>
+
+<p>その為、ここに書いてある事が必ずもベストではありません。(もちろん、マッチする人も居るかもしれません)</p>
+
+<p>また、そもそもの言葉の定義や、Test-Driven Infrastructure のあり方について等は書きません。</p>
+
+<h1>前提</h1>
+
+<ul>
+<li>Ruby がインストールされていること <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>bundler がインストールされていること <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
+</ul>
+
+
+<h1>インストール</h1>
+
+<p>まずは、テストを行うプロジェクト用のディレクトリを用意し、</p>
+
+<p>Serverspec と Infrataster をインストールします。</p>
+
+<p>また、Infrataster で MySQL のテストを行うため、</p>
+
+<p><a href="https://github.com/ryotarai/infrataster-plugin-mysql">infrataster-plugin-mysql</a> も同時にインストールします。<sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir servertest
+</span><span class='line'><span class="nb">cd </span>servertest
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>bundle init
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;gem &quot;rake&quot;&#39;</span> &gt;&gt; Gemfile
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;gem &quot;serverspec&quot;&#39;</span> &gt;&gt; Gemfile
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;gem &quot;infrataster&quot;&#39;</span> &gt;&gt; Gemfile
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;gem &quot;infrataster-plugin-mysql&quot;&#39;</span> &gt;&gt; Gemfile
+</span><span class='line'>
+</span><span class='line'>bundle install --path vendor/bundle
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>設定</h1>
+
+<p>ホスト固有の設定値等を用いるために、</p>
+
+<p>Serverspec のテストの実行を、</p>
+
+<p><a href="http://serverspec.org/advanced_tips.html">advanced_tips</a> の &ldquo;How to use host specific properties&rdquo; に沿ったものにします。</p>
+
+<p>Rakefile を以下のように書きます。</p>
+
+<h2>&ndash; Rakefile</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$EDITOR</span> Rakefile
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;rake&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;rspec/core/rake_task&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">properties</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;properties.yml&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">desc</span> <span class="s2">&quot;Run serverspec to all hosts&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:spec</span> <span class="o">=&gt;</span> <span class="s1">&#39;serverspec:all&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">namespace</span> <span class="ss">:serverspec</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">task</span> <span class="ss">:all</span> <span class="o">=&gt;</span> <span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">key</span><span class="o">|</span> <span class="s1">&#39;serverspec:&#39;</span> <span class="o">+</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="p">}</span>
+</span><span class='line'>  <span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">desc</span> <span class="s2">&quot;Run serverspec to </span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>    <span class="ss">RSpec</span><span class="p">:</span><span class="ss">:Core</span><span class="o">::</span><span class="no">RakeTask</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">to_sym</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>      <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TARGET_HOST&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="n">key</span>
+</span><span class='line'>      <span class="n">t</span><span class="o">.</span><span class="n">pattern</span> <span class="o">=</span> <span class="s1">&#39;spec/{&#39;</span> <span class="o">+</span> <span class="n">properties</span><span class="o">[</span><span class="n">key</span><span class="o">][</span><span class="ss">:roles</span><span class="o">].</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;}/*_spec.rb&#39;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>spec_helper.rb</h2>
+
+<p>次に spec というディレクトリを作成しておき、</p>
+
+<p>spec 配下に spec_helper.rb を生成します。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>mkdir spec
+</span><span class='line'><span class="nv">$EDITOR</span> spec/spec_helper.rb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ここで、Serverspec の設定と Infrataster のサーバ定義を同時に行います。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;serverspec&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;pathname&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;net/ssh&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;yaml&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;infrataster/rspec&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;infrataster-plugin-mysql&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kp">include</span> <span class="ss">Serverspec</span><span class="p">:</span><span class="ss">:Helper</span><span class="o">::</span><span class="no">Ssh</span>
+</span><span class='line'><span class="kp">include</span> <span class="ss">Serverspec</span><span class="p">:</span><span class="ss">:Helper</span><span class="o">::</span><span class="no">DetectOS</span>
+</span><span class='line'><span class="kp">include</span> <span class="ss">Serverspec</span><span class="p">:</span><span class="ss">:Helper</span><span class="o">::</span><span class="no">Properties</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">properties</span> <span class="o">=</span> <span class="no">YAML</span><span class="o">.</span><span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;properties.yml&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">properties</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">host</span><span class="o">|</span>
+</span><span class='line'>  <span class="ss">Infrataster</span><span class="p">:</span><span class="ss">:Server</span><span class="o">.</span><span class="n">define</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">properties</span><span class="o">[</span><span class="n">host</span><span class="o">][</span><span class="ss">:name</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="n">host</span><span class="p">,</span>
+</span><span class='line'>    <span class="ss">ssh</span><span class="p">:</span> <span class="p">{</span><span class="n">host_name</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="ss">user</span><span class="p">:</span> <span class="n">properties</span><span class="o">[</span><span class="n">host</span><span class="o">][</span><span class="ss">:user</span><span class="o">]</span><span class="p">,</span> <span class="ss">keys</span><span class="p">:</span> <span class="o">[</span><span class="s1">&#39;~/.ssh/id_rsa&#39;</span><span class="o">]</span><span class="p">},</span>
+</span><span class='line'>    <span class="ss">from</span><span class="p">:</span> <span class="n">properties</span><span class="o">[</span><span class="n">host</span><span class="o">][</span><span class="ss">:from</span><span class="o">]</span><span class="p">,</span>
+</span><span class='line'>    <span class="ss">mysql</span><span class="p">:</span> <span class="p">{</span><span class="ss">user</span><span class="p">:</span> <span class="n">properties</span><span class="o">[</span><span class="n">host</span><span class="o">][</span><span class="ss">:mysql_user</span><span class="o">]</span><span class="p">,</span> <span class="ss">password</span><span class="p">:</span> <span class="n">properties</span><span class="o">[</span><span class="n">host</span><span class="o">][</span><span class="ss">:mysql_password</span><span class="o">]</span><span class="p">}</span>
+</span><span class='line'>  <span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">RSpec</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">c</span><span class="o">.</span><span class="n">host</span>  <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TARGET_HOST&#39;</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">set_property</span> <span class="n">properties</span><span class="o">[</span><span class="n">c</span><span class="o">.</span><span class="n">host</span><span class="o">]</span>
+</span><span class='line'>  <span class="n">options</span> <span class="o">=</span> <span class="ss">Net</span><span class="p">:</span><span class="ss">:SSH</span><span class="o">::</span><span class="no">Config</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">host</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">user</span>    <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:user</span><span class="o">]</span> <span class="o">||</span> <span class="no">Etc</span><span class="o">.</span><span class="n">getlogin</span>
+</span><span class='line'>  <span class="n">c</span><span class="o">.</span><span class="n">ssh</span>   <span class="o">=</span> <span class="ss">Net</span><span class="p">:</span><span class="ss">:SSH</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">host</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">c</span><span class="o">.</span><span class="n">os</span>    <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">check_os</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>&ndash; properties.yml</h2>
+
+<p>ホスト毎の定義や設定値を書く yaml ですが、</p>
+
+<p>ここでは以下のような例にします。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$EDITOR</span> properties.yml
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">rrreeeyyy.com</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:roles</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">base</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:proxy</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:rrreeeyyy</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">web-01.rrreeeyyy.com</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:roles</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">base</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">web</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:web</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:rrreeeyyy</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">db-01.rrreeeyyy.com</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:roles</span><span class="p-Indicator">:</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">base</span>
+</span><span class='line'>    <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">db</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:db</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:user</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:rrreeeyyy</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:from</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">:web</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:mysql_user</span><span class="p-Indicator">:</span> <span class="s">&#39;username&#39;</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">:mysql_password</span><span class="p-Indicator">:</span> <span class="s">&#39;password&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こうすることで、Serverspec では以下のホストに対し任意のテストを実行します。<sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup></p>
+
+<ul>
+<li>rrreeeyyy.com</li>
+<li>web-01.rrreeeyyy.com</li>
+<li>db-01.rrreeeyyy.com</li>
+</ul>
+
+
+<p>また、Infrataster 側では、以下のホストが定義されたことになります。</p>
+
+<ul>
+<li>:proxy</li>
+<li>:web</li>
+<li>:db</li>
+</ul>
+
+
+<h1>テストを書く</h1>
+
+<p>先ほど yaml ファイルで定義した role 毎にディレクトリを作成します。</p>
+
+<p>その配下に置かれた *_spec.rb というファイルは、テスト実行時に全て実行されます。</p>
+
+<p>spec 配下のディレクトリ構成を以下のようにします。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">.</span>
+</span><span class='line'><span class="l-Scalar-Plain">├── base</span>
+</span><span class='line'><span class="l-Scalar-Plain">│   └── base_spec.rb</span>
+</span><span class='line'><span class="l-Scalar-Plain">├── db</span>
+</span><span class='line'><span class="l-Scalar-Plain">│   └── db_spec.rb</span>
+</span><span class='line'><span class="l-Scalar-Plain">├── spec_helper.rb</span>
+</span><span class='line'><span class="l-Scalar-Plain">└── web</span>
+</span><span class='line'>    <span class="l-Scalar-Plain">└── web_spec.rb</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>それぞれの spec ファイルについて見ていきます。</p>
+
+<h2>&ndash; base_spec.rb</h2>
+
+<p>全てのホストの role に base がついているので、</p>
+
+<p>この spec ファイルに書いてあるテストは、定義した全てのホストで実行されます。</p>
+
+<p>そのため、22 番ポートが Listen しているかをテストしています。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">22</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>他にも、ntp や sysctl の設定などで、全ホストで共通するものを書いていくと良いと思います。</p>
+
+<p>もちろん、ディレクトリ内にある *_spec.rb ファイルは全て実行されるため、</p>
+
+<p>ntp_spec.rb, sshd_spec.rb, sysctl_spec.rb 等に分けても問題ありません。</p>
+
+<p>むしろ、テストが肥大化してきたらファイルを分割するべきかと思います。</p>
+
+<p>にも、ntp や sysctl の設定などで、全ホストで共通するものを書いていくと良いと思います。</p>
+
+<p>もちろん、ディレクトリ内にある *_spec.rb ファイルは全て実行されるため、</p>
+
+<p>ntp_spec.rb, sshd_spec.rb, sysctl_spec.rb 等に分けても問題ありません。</p>
+
+<p>むしろ、テストが肥大化してきたらファイルを分割するべきかと思います。</p>
+
+<h2>&ndash; web_spec.rb</h2>
+
+<p>web_spec.rb は web ディレクトリ配下にあるため、</p>
+
+<p>role に web がついている、web-01.rrreeeyyy.com サーバでのみ実行されます。</p>
+
+<p>80 番ポートが Listen していることに加えて、</p>
+
+<p>rrreeeyyy.com へアクセスし、レスポンスに &lsquo;rrreeeyyy &ndash; Powered by&rsquo; が含まれていること、</p>
+
+<p>レスポンスヘッダの content-type が text/html であることをテストしています。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">server</span><span class="p">(</span><span class="n">property</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">describe</span> <span class="n">http</span><span class="p">(</span><span class="s1">&#39;http://&#39;</span> <span class="o">+</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TARGET_HOST&#39;</span><span class="o">].</span><span class="n">gsub</span><span class="p">(</span><span class="s1">&#39;web-01.&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">it</span> <span class="s2">&quot;responds content including &#39;rrreeeyyy - Powered by&#39;&quot;</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="kp">include</span><span class="p">(</span><span class="s1">&#39;rrreeeyyy - Powered by&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">it</span> <span class="s2">&quot;responds as &#39;text/html&#39;&quot;</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s1">&#39;content-type&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">match</span><span class="p">(</span><span class="sr">%r{^text/html}</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>なお、Infrataster の http は Ruby HTTP クライアントライブラリである Faraday を使用しています。</p>
+
+<p>後述の :from を用いると、特定のホストからアクセスした時にどのように表示されるか、などもテスト可能です。</p>
+
+<p>また、Web アプリケーションのテストフレームワークである Capybara を使用することも可能なので、</p>
+
+<p>複雑な Web アプリケーションのルーティング等もテスト可能だと思われます。</p>
+
+<h2>&ndash; db_spec.rb</h2>
+
+<p>db_spec.rb は db ディレクトリ配下にあるため、</p>
+
+<p>role に db がついている、db-01.rrreeeyyy.com サーバでのみ実行されます。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;spec_helper&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">3306</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">server</span><span class="p">(</span><span class="ss">:db</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">describe</span> <span class="n">mysql_query</span><span class="p">(</span><span class="s1">&#39;SHOW STATUS&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">it</span> <span class="s1">&#39;returns positive uptime&#39;</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">row</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">find</span> <span class="p">{</span><span class="o">|</span><span class="n">r</span><span class="o">|</span> <span class="n">r</span><span class="o">[</span><span class="s1">&#39;Variable_name&#39;</span><span class="o">]</span> <span class="o">==</span> <span class="s1">&#39;Uptime&#39;</span> <span class="p">}</span>
+</span><span class='line'>      <span class="n">expect</span><span class="p">(</span><span class="n">row</span><span class="o">[</span><span class="s1">&#39;Value&#39;</span><span class="o">].</span><span class="n">to_i</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">be</span> <span class="o">&gt;</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Infrataster は :from が付いていると、定義されたサーバからの振る舞いをテストします。</p>
+
+<p>今回の場合、db サーバには :from :web が付いている為、</p>
+
+<p>web-01 サーバから db-01 サーバへ MySQL で接続できるかをテストします。</p>
+
+<p>仕組みとしては、db-01 サーバの 3306 番ポートを、</p>
+
+<p>web-01 サーバを経由してローカルへ SSH ポートフォワードします。<sup id="fnref:5"><a href="#fn:5" rel="footnote">5</a></sup></p>
+
+<p>その後、Ruby の mysql2 ライブラリを用いて、クエリを発行します。</p>
+
+<p>なお、3306 番ポートが LISTEN しているかどうかテストする部分に関しては、</p>
+
+<p>Serverspec の管轄内になるので、内部的には db-01 サーバに SSH して、</p>
+
+<p>netstat の結果を取得してテストしています。</p>
+
+<h1>何がいいか、どんな風にテストを書いていくかの例</h1>
+
+<h2>&ndash; 何がいいか</h2>
+
+<p>Serverspec と Infrataster はテスト対象のレイヤーが少々異なっています。</p>
+
+<p>Infrataster は 次の記事のように、nginx のルーティングをテストしたり、</p>
+
+<ul>
+<li><a href="http://apehuci-kitaitimakoto.sqale.jp/apehuci/?date=20140505">[Infrataster] InfratasterでNginxのルーティングのテスト書いてる</a></li>
+</ul>
+
+
+<p>MySQL のクエリを発行し、その結果をテストするなど、</p>
+
+<p>かなりアプリケーションに近いレイヤーでのテストを行います。</p>
+
+<p>その一方で、サーバ内にインストール済のパッケージや、設定ファイルの詳細をテストするのはやや困難です。<sup id="fnref:6"><a href="#fn:6" rel="footnote">6</a></sup></p>
+
+<p>Serverspec では、サーバ内の設定や、導入済みのパッケージなど、</p>
+
+<p>Infrataster よりやや低いレイヤーにフォーカスしてテストを行うのが得意なように見えます。</p>
+
+<p>その一方で、MySQL のクエリを発行した結果をテストするのはやや困難です。</p>
+
+<p>この 2 つを組み合わせて使用することにより、サーバのより広いレイヤーに対してテストを行うことが可能になります。</p>
+
+<h2>&ndash; どんな風にテストを書いていくかの例</h2>
+
+<p>あくまで一例ですが、頭の整理的にこんな使い方も出来ます。</p>
+
+<h3>&ndash; Web アプリをデプロイする対象のサーバ構築をテストしたい</h3>
+
+<ul>
+<li>デプロイする Web アプリは &lsquo;Hello World&rsquo; と画面に出力する</li>
+</ul>
+
+
+<p>まずこれを書く</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="n">http</span><span class="p">(</span><span class="s1">&#39;http://app&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;responds content including &#39;Hello World&#39;&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="kp">include</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然失敗するわけです。</p>
+
+<ul>
+<li>そうだ、Web アプリがレスポンスを返すためには 80 番ポートを Listen する必要があるなあ</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">http</span><span class="p">(</span><span class="s1">&#39;http://app&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;responds content including &#39;Hello World&#39;&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="kp">include</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上にテストを書きます。</p>
+
+<ul>
+<li>そうだ、80 番ポートを Listen するためには httpd が入っている必要があるなあ</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="n">package</span><span class="p">(</span><span class="s1">&#39;httpd&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_installed</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">port</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_listening</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="n">http</span><span class="p">(</span><span class="s1">&#39;http://app&#39;</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s2">&quot;responds content including &#39;Hello World&#39;&quot;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="kp">include</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>更に上にテストを書きます。</p>
+
+<p>ここで初めて、ansible や chef の playbook や cookbook を書き始めます。<sup id="fnref:7"><a href="#fn:7" rel="footnote">7</a></sup></p>
+
+<p>そしてテストをすると、一番上のテストは通るわけです、じゃあ次は 80 番ポートの Listen ,</p>
+
+<p>じゃあ次は index.html の設置 &hellip; 等とコードベースでテストをしながらサーバを構築していく。</p>
+
+<p>&hellip; なんて方法も、ありじゃないでしょうか？</p>
+
+<h1>まとめ</h1>
+
+<ul>
+<li>サーバ構築のテストツールである Serverspec と Infrataster を一緒に使うテスト手法について説明
+
+<ul>
+<li>広いレイヤーでテストが出来る
+
+<ul>
+<li>Nginx のルーティングや、MySQL のクエリ実行結果 (Infrataster)</li>
+<li>特定のホストから見た、他のテストの振る舞い (Infrataster)</li>
+<li>サーバにインストールされているプロダクトの設定ファイルの詳細 (Serverspec)</li>
+<li>サーバの iptables の設定値 (Serverspec)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Serverspec と Infrataster を使ったテスト駆動インフラ構築の一例
+
+<ul>
+<li>目的からトップダウンでテストを書いて、ボトムアップで構築していく方法</li>
+<li>あくまで一例なので、合う合わないは当然ある</li>
+</ul>
+</li>
+</ul>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>本記事では 2.1.2 で検証しましたが、1.9 以降なら恐らく正常動作するでしょう。<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>gem install bundler で入ります。<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Ruby の mysql ライブラリのインストール時に、mysql-devel のようなライブラリを必要とします。<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+<li id="fn:4">
+<p>もちろん、この時点ではまだテストを書いていないので、何も実行されません。<a href="#fnref:4" rev="footnote">&#8617;</a></p></li>
+<li id="fn:5">
+<p>ポート番号は、Infrataster::Server.define の mysql に port オプションを与えれば変更可能です。<a href="#fnref:5" rev="footnote">&#8617;</a></p></li>
+<li id="fn:6">
+<p>ssh.exec を用いれば可能に見えます。それは serverspec の command で mysql クエリを発行すれば infrataster のテストが出来るのと同じように。<a href="#fnref:6" rev="footnote">&#8617;</a></p></li>
+<li id="fn:7">
+<p>あるいは、涙を流しながら手で yum install httpd を実行します。<a href="#fnref:7" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+  <a href="http://b.hatena.ne.jp/entry/http://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+			</div>
+			<footer id="footer" class="inner"><p>
+  Copyright &copy; 2015 - rrreeeyyy -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'rrreeeyyy';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/';
+        var disqus_url = 'http://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-42448575-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+
+		</div>
+	</div>
+  <script lang="Javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=rrreeeyyy117&limit=2&api_key=3b2106d1067559bf919d4c3f88dc652c&format=json&callback=showLastfmFeed"></script>
+</body>
+</html>

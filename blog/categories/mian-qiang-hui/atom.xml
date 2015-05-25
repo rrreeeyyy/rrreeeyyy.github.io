@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 勉強会 | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/mian-qiang-hui/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[若手インフラエンジニア現状確認会 #wakateinfra に参加したまとめ]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2015/02/23/infra-younger/"/>
+    <updated>2015-02-23T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2015/02/23/infra-younger</id>
+    <content type="html"><![CDATA[<p>若手インフラエンジニア現状確認会に参加してきた。とにかく最高だった。</p>
+
+<!--more-->
+
+
+<hr />
+
+<h1>若手インフラエンジニア現状確認会</h1>
+
+<p>きっかけはこれです。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/rrreeeyyy">@rrreeeyyy</a> <a href="https://twitter.com/deeeet">@deeeet</a> <a href="https://twitter.com/y_uuk1">@y_uuk1</a> 飲み会しよ <a href="http://t.co/zUehyYnP7v">pic.twitter.com/zUehyYnP7v</a></p>&mdash; okumura takahiro (@hfm) <a href="https://twitter.com/hfm/status/558265671209869312">2015, 1月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><a href="http://blog-ja.mackerel.io/entry/2015/01/08/120457">Mackerel Meetup #3 Tokyo</a> に参加した辺りで若手少ないかつ交流そんなにないよね、みたいになって開催が決定した。</p>
+
+<p>あれよあれよという間に各社から有名若手がバンバン集まってきてこの中に居ていいのか&hellip;みたいな気分はあったんだけど、参加してみたらとにかく最高だった。</p>
+
+<h1>資料</h1>
+
+<p>各人の発表資料(無い人もいる)とちょっとしたまとめ、思ったことを付しておく。</p>
+
+<hr />
+
+<iframe src="http://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/44922062" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://rrreeeyyy.github.io//www.slideshare.net/hifumis/20150220-wakateinfraengineergenjohkakuninkai" title="若手インフラエンジニア現状確認会 @hfm #wakateinfra" target="_blank">若手インフラエンジニア現状確認会 @hfm #wakateinfra</a> </strong> from <strong><a href="http://rrreeeyyy.github.io//www.slideshare.net/hifumis" target="_blank">Takahiro Okumura</a></strong> </div></strong></p>
+
+<p>ペパボ、IRC の様子をみても Twitter の様子を見てもとても良い雰囲気で仕事が出来ているように見えてとても羨ましい。</p>
+
+<p>IRC の Kernel チャンネルみたいなのはみんな「良さそう」とか「欲しい」とか言っていたので、若者は意外とカーネルに興味がある模様です(私も含め)。</p>
+
+<p>これからやりたい事として「カーネルレイヤの勉強」という風に言っていた(構成管理ツールはもう飽きたとのこと)。</p>
+
+<p>自動化コード化と叫ばれる中で、カーネルレイヤの勉強がやりたい！と言う若者は中々珍しいよねとか、</p>
+
+<p>構成管理ツールのような上位レイヤだけでなく、もっと低レイヤの勉強も必要だよねとか、そんな事を話した気がする。</p>
+
+<hr />
+
+<script async class="speakerdeck-embed" data-id="31149b69a5274faeb04ada21eb26849d" data-ratio="1.77777777777778" src="http://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>個人的な感想だけど、<a href="https://twitter.com/deeeet">@deeeet</a> くんは本当に彗星のように現れたと思っていて、</p>
+
+<p>印象的な素晴らしい発表/ブログ記事等の発信を続けてるのはどういうモチベーションなんだろうと割と気になっていたけどそれが分かってめっちゃ良かった。</p>
+
+<p>あと「筋肉運用」という単語がその場でめっちゃウケて、自動化されていなかったり属人でとにかく頑張るみたいな運用を指す単語だと思うんだけど的確で良かった。</p>
+
+<p>本当に自動化/効率化に対する意欲が高くて、そういう運用に嫌悪感すら感じると言っていてすごいなと思った。</p>
+
+<p>自分もある程度妥協してしまう点があるので、見習わなければならない。</p>
+
+<hr />
+
+<p><a href="http://yuuki.hatenablog.com/">ゆううきブログ</a></p>
+
+<p>資料最初の 3 ページぐらい喋って、あとはここ数年のブログ記事読みながら話してた感じだった。</p>
+
+<p>彼もまた良いブログ/発表のアウトプットが常日頃からできていて素晴らしいなあと思っている。</p>
+
+<p>聞くところによるとはてなには、年間でもっともはてブがついた記事を書いた人を評価する制度があるらしい(会社のブログに書くと 2 倍の値で評価されるらしい)。</p>
+
+<p>そうやって各個人がアウトプットした成果を定量的に評価する制度は結構珍しいような気がしていて、良いなと個人的に思った。</p>
+
+<p>あと輪読会があって羨ましい。</p>
+
+<p>システム系の論文をカジュアルに読める会みたいなのがもっと増えるといいよね、と若手で話していた(いくつかあるのは知っているのだけれど僕はまだあんまり参加出来てない)。</p>
+
+<p>例えば SICP の輪読会や CTMCP の輪読会のように、タネンバウム先生の本を読むようなイベント等もあってもいいかもしれない。</p>
+
+<p><a href="https://github.com/papers-we-love/papers-we-love">paper-we-love</a> という論文紹介のリポジトリが紹介されたのはこの辺だったかな。</p>
+
+<hr />
+
+<p><a href="https://twitter.com/ryot_a_rai">@ryot_a_rai</a> 氏の発表。</p>
+
+<p>Infrataster, Itamae &hellip; と兎に角最高のツールをバンバン出してくれてる。</p>
+
+<p>どういう理由で今の会社にいるとか、いつ IT 系にそもそも興味持ったとかの話聞けてめっちゃ良かった。</p>
+
+<p>あとはク社のサイトの構造がどうなってるとか、中はどんな風になってるみたいな話をした。</p>
+
+<p>実は <a href="https://github.com/ryotarai/waker">waker</a> というのも作っていてそれもどうやら動いてるらしい。</p>
+
+<p>話の中に「NoOps」という単語が出てきてとても印象的だった。全てが自動化された究極の境地っぽい、最高。</p>
+
+<p>インフラのテストについても喋った気がする、僕自身はもう少し色々なテストが自動になればいいなと思っていて、以下の 2 つを挙げた気がする。</p>
+
+<ul>
+<li>冗長性のテスト</li>
+<li>パフォーマンステスト</li>
+</ul>
+
+
+<p>現場だと、この辺は未だに手動でやっていたり、半自動程度にしかなっていないことがある。</p>
+
+<p>NoOps を目指すならこの辺りの部分もしっかりテストして確信を得て、かつ周りを説得できる材料として用意しないといけないのかも、と思っている。</p>
+
+<p>でも NoOps とは良い言葉だ。インフラエンジニアに限らず色々な職種の人が自動化を行いここを目指す必要がある気がしている。</p>
+
+<hr />
+
+<script async class="speakerdeck-embed" data-id="853dba70b43c40b49068deb17ef57e29" data-ratio="1.33333333333333" src="http://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+
+
+<p><a href="http://catatsuy.hateblo.jp/entry/2015/02/21/205303">若手インフラエンジニア現状確認会で発表しました #wakateinfra &ndash; catatsuyとは</a></p>
+
+<p>かなり現場感のある話で良かった。</p>
+
+<p>特に、配信サーバ関連で使われているツールと、移行の時の事故で盛り上がった気がする。</p>
+
+<p>筋肉運用にあたるんだけど、何回も発生する作業ではないし、こういう移設/移行作業をいかに自動化/効率化するかというのは結構課題かもしれない。</p>
+
+<p>最初から自動化されているならいいんだけど、そうも言ってられないので、ここ数年はそういうことで悩むのだろうなと思った。</p>
+
+<hr />
+
+<iframe src="http://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/44931609" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117/infra-younger" title="Infra younger" target="_blank">Infra younger</a> </strong> from <strong><a href="http://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
+
+<p>そしてこれが私の発表。</p>
+
+<p>自動化効率化が進み、インフラエンジニアの仕事はどんどん無くなると予想している。</p>
+
+<p>単純にインタフェースやシステムに関わるロジックを直接書くプログラマより早く、インフラエンジニアの戸口は減少すると思っている(消滅するとは全く思っていない)。</p>
+
+<p>もちろんアプリケーションのロジックや規模にもよるが、多くの人間は GAE や Heroku を使えば十分であることが多かったり、色々よしなにやってくれるクラウドサービスも多くある。</p>
+
+<p>その辺のサービスが発展した時に、我々はどうすれば(あるいは何をしている)のだろうね？と言うのが問いだった。</p>
+
+<p>全く答えは出てない(出てないのでここで色々議論したかったという狙いがある)のだけど、特に悲観的になっていると言う訳ではない。</p>
+
+<p>スライド中にあるように、提供するサービスに応じて、どのサービスを組み合わせる、どの基盤を使うとコストが最小になり、効率的に運用できるか考える人の存在というのはもちろん必要だし、</p>
+
+<p>各種クラウドやモニタリング等のサービスを提供する側の事業者というのも勿論必要だと思う。</p>
+
+<p>また、<a href="https://twitter.com/hfm">@hfm</a> くんが、研究開発や次世代のミドルウェアの開発で食っていく道というのもあるよね、と言っていて確かにそういえばそうだと思った。</p>
+
+<p>Linux カーネルの勉強をすれば安全かといえば、まあそういうわけでもなく、Linux がなくなったら(しばらくはなくならないという話にはなったが)どうしようという話にもなった。</p>
+
+<p>とにかく上っ面でなく論理的で本質的で応用の効きやすい知識(とはなんだろうね？)をしっかり学ぶ必要があるよね、という結論になったのが深夜 1 時辺りだったかもしれない。</p>
+
+<p>僕は結構適当な人間なので、こういう問いかけをしておきながら、仕事がなくなるのは大歓迎(収入がなくなるのは歓迎でない)なので、自動化が進んだらまた考えようと思っている。</p>
+
+<p>とはいえ考えないと仕事ばかりなくなって収入を得ることができなくなる可能性もあるので、日々うんうん悩みながら暮らすしかなさそう。結果なるようになってくれると嬉しい。</p>
+
+<hr />
+
+<p>とにかく最高で、普段気になってる皆がどういう成り立ちで今の活動をしているのかとか、どういう事をやっているのかというのが分かって大変良かった。</p>
+
+<p>インフラエンジニアといっても各社様々で、全く違うことをしていたり、かと思えば同じようなことで悩んでいた。</p>
+
+<p>そういう人たちが一同に会してビールを片手に夢や悩みや考えを共有する会が最高でないわけが無かった。</p>
+
+<p>今までそういう機会はあまり多くなかったので、参加出来て大変良かった。次回(京都？)も絶対行くぞ！</p>
+
+<p>最後に、企画してくれた <a href="https://twitter.com/hfm">@hfm</a> くんと参加した <a href="https://twitter.com/deeeet">@deeeet</a> くん、<a href="https://twitter.com/y_uuk1">@y_uuk1</a> くん、 <a href="https://twitter.com/ryot_a_rai">@ryot_a_rai</a> くんと、ビール/会場を準備してくれた <a href="https://twitter.com/catatsuy">@catatsuy</a> くんと会場を貸してくれた pixiv 社に感謝！</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[July Tech Festa 2014 ( #techfesta ) に行きました]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2014/06/23/techfesta/"/>
+    <updated>2014-06-23T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2014/06/23/techfesta</id>
+    <content type="html"><![CDATA[<p>昨年に引き続き、July Tech Festa (2014) に行ったのでそれとなくまとめを書きます。</p>
+
+<p>そうは言っても Twitter で全部メモを取っていたので、</p>
+
+<p>ダラダラ Tweet を振り返りながら所感を書きます。</p>
+
+<p>Script タグが多くてレンダリングに時間が掛かるかも。ご容赦下さい。</p>
+
+<!--more-->
+
+
+<hr />
+
+<p>おさらい: <a href="http://2014.techfesta.jp/">July Tech Festa (JTF)</a> とは</p>
+
+<blockquote><p>開催趣旨</p>
+
+<p>クラウド環境が普及し、関連した話題が盛り上がり、これにしたがい、これらを裏側で実現する開発者の技術修得の意欲が高まってきています。また、各種ITトレンドが凄まじい速度で移り変わり、技術者同士が活発に交流し、情報交換と人脈構築をしようという動きが顕著にみられます。これらの意欲と活動に応じるため、ITに係るエンジニアの知的興味を満足するための夏の祭典として当イベントを開催いたします。</p></blockquote>
+
+<p>とのこと。講演がいくつかあり、一日を通じて回っていく形式でした。</p>
+
+<p><a href="http://2014.techfesta.jp/p/program.html">JTF の講演一覧はこちら</a>で、僕は以下の講演を聞きました。</p>
+
+<ul>
+<li><a href="http://2014.techfesta.jp/p/program.html#keynote">基調講演: Serverspecに見る技術トレンドを生み出すヒント</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#specialnote">特別講演: Google Cloud Platform 最新動向</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#specialnote2">特別講演: Dockerのエンタープライズ開発での活用モデル</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#b30">B30: フロントエンドで普及が進むビルドツールたち</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#f40">F40: Serfでシステム監視と運用を楽しくする話</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#d51">D51: Docker ― 俺の環境ではその不具合は起きないを撲滅する</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#d52">D52: Dockerで考えるマルチクラウドの未来</a></li>
+<li><a href="http://2014.techfesta.jp/p/program.html#invitednote">招待講演: 大規模エンターテイメントサイトを支える技術</a></li>
+</ul>
+
+
+<p>それぞれツイートと所感を振り返ります。</p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#keynote">基調講演: Serverspecに見る技術トレンドを生み出すヒント</a></h1>
+
+<p><a href="http://serverspec.org/">Serverspec</a> 作者の <a href="http://mizzy.org/">@mizzy</a> さんによる、</p>
+
+<p>Serverspec をどのようにして生み出したかに関する講演でした。</p>
+
+<p>スライドはこちら。</p>
+
+<script async class="speakerdeck-embed" data-id="a0f99a20dbe00131d9c52a008baf6e6b" data-ratio="1.77777777777778" src="http://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>そして僕のツイート。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>Serverspec に見る技術トレンドを生み出すヒント <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480516192323387392">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>おおおお Deckset だ！！ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480516058487328768">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>このスライドでも使われている Deckset、Markdown でカッコイイ良いプレゼンを作れるので皆さんオススメです (1700JPY)  <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480517822204760065">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>アプリケーションレイヤでは一般的に行われてた事をインフラレイヤに持ってきたという事が Serverspec のコードと同等かそれ以上に価値があるなあと思ってる <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480520270289985536">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Serverspec のスペルは Serverspec/serverspec/SERVERSPEC のいずれかを使ってね！(重要) (僕は Serverspec 派) <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480520841411559424">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>KISS の原則って大事だなーと言う話なんだよなーこれ、僕も色々詰め込もうとしすぎる癖があるからちゃんと意識しないといけない <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480522368905797632">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>別領域で成功しているプラクティスを持ち込むという話、やはり出てきた。ここは本当に大きいと個人的に思う。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480527120112693248">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>名前重要。直球、覚えやすい、何するものか類推しやすい。基本だけど大事だよね。 (あれ、でも Chef？Sensu？Puppet？...) <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480527458412662786">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>メジャーなキーワード/プロダクトに乗っかる、なんかちょっと卑怯な感じがしちゃうけど大事だよね <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480527749556092928">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>ドキュメントのわかりやすさ、大事。ドキュメントを書け。ウッ... <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480527875624300545">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>ツール自体のシンプルさ Keep it simple, stupid だ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480527979294892032">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>エージェントレスとても重要。分かる。「いくら便利でも、サーバに色々入れるのはイヤですよね？」→ めっちゃ嫌です。だからこそインフラツールの Go 製が進んでる気がする。python 2.4 とかは嫌なんや... <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480528848497299456">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>使うまでの敷居を下げる、とりあえず試せる、動かせるっていうのは大事 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480529088088522752">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>自分一人でやりすぎない、欲しい機能があれば自分で実装してくれという気概、でもこれはどちらかと言えば若干流行ってからじゃないと難しいね <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480529251523772416">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>技術トレンドを生もうと思わない、自分がほしいもの、面白いと思うものを自分のために作ってみる。「人類の技術発展のための無償開発」(笑) というスタンスではいいものは出来ない。そうやな。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480530362804617217">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>まとめ：「技術トレンドを生み出す近道はない」自分がほしいもの、面白いと思うものを作る/公開する。積み重ねると素晴らしい物が生める、かもしれない <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480530587820625920">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>「Shut the fuck up and write some code」！！！！ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480530800857714688">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>「Openness is our driver for excellence」<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480530885997891585">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>「知之者不如好之者、好之者不如楽之者」孔子の言葉やんな <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480531225111584768">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>僕が (そして恐らくみんなが) Serverspec のいいなあと思っている所が余すところ無く紹介されてた気がする。</p>
+
+<p>他レイヤでの成功事例を別レイヤに持ってくるとか、</p>
+
+<p>KISS の法則を守るとか、とりあえず動かせるようにするっていうのがやはり大きい気がしてる。</p>
+
+<p>これから先は多分 Go 製の監視エージェントとか、</p>
+
+<p>サービスディスカバリツール (は一応既にあるか) とかインベントリツールとか、</p>
+
+<p>モニタリングツールとかが流行るんじゃないかなあ。</p>
+
+<p>Go で書くと「とりあえず動かせる」の部分を容易に解決できる気がしている。</p>
+
+<p>インフラ自動化とかコードで管理っていうのはこれから更に進行する気がしていて、</p>
+
+<p>今丁度弱いのが上で挙げた辺りなんじゃないかなあと思っている。もう既に誰か開発してそう。</p>
+
+<p>そういう意味では僕とか (僕と同列に語るのは大変失礼なんだけど)、<a href="https://twitter.com/matsumotory">@matsumotory</a> さんなんかは、</p>
+
+<p>mruby を用いてインフラ自動化を達成しようとしてる。とはいえ mruby は若干導入の敷居が高かったりするので、</p>
+
+<p>その辺りもなんとかしないといけないのかな、と思ったりもした。</p>
+
+<p>あと個人的な目標というか、まあ僕以外にも当てはまる人もいると思うんだけど、とにかく</p>
+
+<p>「Shut the fuck up and write some code」 であって、</p>
+
+<p>僕はまだまだたくさんコードを書かなきゃいけないフェーズにいる。</p>
+
+<p>mizzy さんは少なくとも 100 は種々世に出してるわけで、</p>
+
+<p>とにかく自分/他人に便利な物をもっと作らなきゃいかんなという事だった。</p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#specialnote">特別講演: Google Cloud Platform 最新動向</a></h1>
+
+<p>スライド無いのかな。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>Google Cloud Platform で実現する Google スケールのアプリケーション開発 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480535169561284608">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Google Cloud SQL、中身 MySQL なんだね <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480537320307699712">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Google App Engine が処理するリクエスト件数 280 億件/日 ヤバイ。Cloud Datastore 6.3 兆件。桁が違う。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480537721744535552">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Google App Engine、XMPP の機能があったり Task Queue の機能があるの知らなかった。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480538112058068992">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>AKB48 のイベントサイト、最大 23000QPS きてたらしい、ワールドカップのコカ・コーラ公式のモザイクサイトも GAE。GAE なら捌けるよ！とのこと <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480540069145477122">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>GCE、安定したディスク・ネットワークI/O、安定性が売りとのこと。高速なインスタンス起動、VM あたり 20 〜 40 秒とのこと。僕が使ってみた感じでも本当に早く起動する。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480540550626439168">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>GCE、高速なネットワークが売り。リージョンをまたいだ通信も早いらしい。ロードバランサは google の検索サイトと全く同じインフラを使用してるらしい。暖機運転なしで 100 万 QPS が捌ける。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480541295220228096">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>GCE、使い続けると勝手に割引が適用される！知らなかった。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480541574607032320">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>BigQuery、簡単な SQL を書けば数億というオーダのデータを数秒〜数十秒で捌ける。らしい。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480542120567009281">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>出、出ー fluent-plugin-bigquery <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480543621288976384">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>GCE、最近弊社内で割と流行っている？というか検証が進んでいて、</p>
+
+<p><a href="http://heartbeats.jp/hbblog/gcp/">いくつか会社ブログに記事が書かれてたりしてる。</a></p>
+
+<p>調べてみれば分かるんだけど本当に情報がなくて、</p>
+
+<p>これからまさに盛り上がっていく？んじゃないかなと言う感じがある。</p>
+
+<p>やっぱり後発の利点なんだけど、AWS の痒い所に手が届く系のクラウドなんじゃないかなと思ったり、</p>
+
+<p>天下の Google 様のインフラはやっぱすげーと感じさせてくれるオーバーテクノロジーみたいなのが味わえる。</p>
+
+<p>BigQuery とか GCE の起動の早さなんかはその典型で、</p>
+
+<p>Docker を build するより GCE で仮想マシン build した方が場合によっては早く起動してしまう…。</p>
+
+<p>色々サービスの詳解とか BigQuery のデモとかもあったので、</p>
+
+<p>使ってみて色々アウトプットすると先駆者になれる気がする。</p>
+
+<p>僕も検証やら個人の CI 環境やらで使い始めた途中なので、何かあればアウトプットしたい。</p>
+
+<hr />
+
+<blockquote class="twitter-tweet" lang="ja"><p>お昼 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/YDc4PEY6l3">pic.twitter.com/YDc4PEY6l3</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480547343108820993">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<hr />
+
+<blockquote class="twitter-tweet" lang="ja"><p>Oisix さんの Vegeel 。去年の カジュール (だっけ？) がめっちゃ美味しかったからそれ系かと思ったら割としっかり野菜ジュースだった。でも野菜ジュースにしては飲みやすい可能性がある。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/D7IQoCOop8">pic.twitter.com/D7IQoCOop8</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480557120350195713">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<hr />
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/ALWHSSXux7">pic.twitter.com/ALWHSSXux7</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480516408187432960">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>朝無料で配ってた。あとお菓子もめっちゃあった。太っ腹。</p>
+
+<hr />
+
+<p>次、Docker 聞いたんだけど Docker いくつも聞いたからまとめて後ろの方に書きます。</p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#b30">B30: フロントエンドで普及が進むビルドツールたち</a></h1>
+
+<p><a href="http://www.osscafe.net/ja/">下北沢オープンソースカフェ</a> の <a href="https://twitter.com/cognitom">@cognitom</a> さんの講演。</p>
+
+<script async class="speakerdeck-embed" data-id="9da6bf20dc020131d9c52a008baf6e6b" data-ratio="1.77777777777778" src="http://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+
+
+<p>本職はインフラエンジニアなんだけど、趣味でフロント開発やってて割と好きでなので、つい聞きに行ってしまった。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>本業はインフラエンジニアですが趣味でフロントエンド開発やってるのでフロントエンドの話を聞きにきました。フロントエンドで普及が進むビルドツールたち - Grunt、glup ほか <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480570586700054528">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>割と最近 JavaScript 書きたくてたまらないんだけど特に対象物がないので Python 書いてることが多い。今日ここでモチベーション上げたい。</p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480571751135318017">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>弊社、リブライズの導入事例っぽいものとして一瞬紹介されました <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480573261567102976">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>フルスタックエンジニアになるべく野菜工場を始めた。！？ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480573379464806400">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>スライドもデモサイトもいちいち全てオシャレですごい。あのセンス欲しい。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480574146623983616">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>glupfile、gruntfile に比べてなんかパイプラインっぽいメソッドチェインで書けててめっちゃ良さそう <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480574912147361792">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>BrowserSync めっちゃすごいな。これは感動的だ。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480576364752297984">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Gulp に感動して「おぉ〜」とか言いまくってる <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480576530699911168">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>僕のフロントエンド開発脳みそは 7 ヶ月前に Gruntfile を書いた所で終わってました。Gulpfile めっちゃ簡潔すぎる。素晴らしい。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480577632551968768">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Web Fundamentals by Google もタスクランナーに gulp を採用している <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480578528484671488">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>incremental build や変更箇所を見てだけのビルド。出力先を複数にするビルド。複数から入力するビルド。順番を指定したビルド。Grunt でも出来てたけど Gulp だととても綺麗に書けてる感じがして良い。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480580574956896256">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>uncss、使われていない CSS コンポーネントを除外してくれるらしい。知らなかった。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480581132753203200">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Browserify 便利だよねえ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480581273094615041">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>glup-styledocco、glup-iconfont などなど便利そう... <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480581452438847488">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>あくまで趣味だし最近は時間も使えてなかったので、単純に知らないことばっかで「おおー」って言いっぱなしだった。</p>
+
+<p>個人的にはサーバエンジニアもフロントエンジニアが何やってんのかぐらいは知ってないと行けないと思っていて、</p>
+
+<p>そういうのを知るとってもいい機会だったなあと思っている。会場のみなさんも割と「おおー」って言ってたし。</p>
+
+<p>JavaScript、時間を見つけてもっと書いていきたい。</p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#f40">F40: Serfでシステム監視と運用を楽しくする話</a></h1>
+
+<p>界隈では有名も有名、<a href="https://twitter.com/zembutsu">@zembutsu</a> さんの講演。</p>
+
+<p>スライドまだっぽい。上げるとおっしゃっていたので待ちます。</p>
+
+<p>ちなみにめっっっっっっっっちゃ濃い資料で、中身も多くて発表中は 5 割ぐらい飛ばしてた感覚あるので、</p>
+
+<p>僕もまだ読むのが楽しみです。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>F 会場の椅子が斬新なシステムで 1 秒程度困惑したが割と快適な椅子だった <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480585638622687232">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>「ご注文は監視自動化ですか？ Serf と Consul を使って運用を楽しくする話」zembutsu さん節が出てる <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480586769495126016">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>今日のまとめ(早)：Serf, Consul は軽量シンプルでありながら様々なシーンに利用できる。他の類似ツールより利用の敷居が低い。使うことで煩雑な業務から開放され、人間しか出来ない仕事に集中でき、仕事が楽しく出来る。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480590857418985473">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>zembutsu さん「Docker の話はどっかでやります」<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480592177819447297">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Serf、軽量オーケストレーションツール。Go 言語製なので wget してきてすぐ使える。メンバ一覧、イベント発生を管理、しかもめっちゃ早い。障害検知・フェイルオーバ機能。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480592907733172224">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Serf、Gossip Protocol を使ってノード間を連携。互いに定期的に情報を送り合う。クラスタに新しくノードを追加する時はどれか 1 つのノードに対して join すれば伝達してくれる。確か Amazon S3 も Gossip Protocol <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480594376469389312">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>パァ( ᐛ ) <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480595181473767424">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>consul の障害検知、/etc/consul.d 配下に json の設定ファイルを書く。check の所にスクリプトを指定する。ちなみに consul の WebUI はこんな感じ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/rkYBY5jKSP">pic.twitter.com/rkYBY5jKSP</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480598332717268992">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>consul の KVS は WebUI からもいじれる <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/CSabhMCR3n">pic.twitter.com/CSabhMCR3n</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480598592017539072">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Multi Data-center にすると WebUI がこんな感じになって DC ごとに選べるようになる <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a> <a href="http://t.co/NeX8HViUD1">pic.twitter.com/NeX8HViUD1</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480598749970849792">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>でも僕の所感では Consul の Multi Data-center はあんまり安定してない。設定が悪い気もするけどたまに切断されてしまう。詳しく見れてないので誰か検証して。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480599061351780352">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>envconsul 知らなかった。consul のイベント等をトリガーとして環境変数をいじれる。これを使って障害対応の自動化ができるのでは？と言う話 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480600799324545026">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Serf と Consul には前から注目していて、色々検証はしていたので、</p>
+
+<p>特にとても新しい！ということは無かった。envconsul はあんまり知らなかった。</p>
+
+<p>どちらかといえば @zembutsu さんの頭の中にある Serf や Consul を使ったソリューションみたいなのに興味があって、</p>
+
+<p>スライドはほぼ飛ばされてしまったので、早く上がってくるのを待っている。</p>
+
+<p>あと Multi DC な Consul ちゃんと検証しようかなと思いました。</p>
+
+<p>Serf, Consul を使った自動化の検証もやりたい。</p>
+
+<p>そういえば、オーケストレーションツールの Google Group を @zembutsu さんが作ってました。</p>
+
+<p><a href="https://groups.google.com/forum/?nomobile=true#!forum/orchestration-tech">こちらに参加すると良いと思います！！！</a></p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#specialnote2">特別講演: Dockerのエンタープライズ開発での活用モデル</a></h1>
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#d51">D51: Docker ― 俺の環境ではその不具合は起きないを撲滅する</a></h1>
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#d52">D52: Dockerで考えるマルチクラウドの未来</a></h1>
+
+<p>Docker, 3 つ一気に。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>Docker エンタープライズ活用モデル <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480557870941868032">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Docker のパフォーマンス計測、ハードウェア仮想化と物理と Docker で比較した時、物理と Docker はほぼ同等の速度が出ていたそうで <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480560209140539392">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/search?q=%23ljstudy&amp;src=hash">#ljstudy</a> に出た人はこのへんのかなりディープな話を聞いてしまったので、この辺のやや抽象化された話に気持ち悪さを感じてしまうかもしれないなー、初めて聞いた人には分かりやすい気がするけど。色々説明するのって難しいなー。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480562925615083521">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Docker、軽くて使いやすい！だけじゃなくてハードウェア仮想化じゃないのでディスク周りとか NIC 周りとか割と色々大変な事があるけどその辺ちゃんと気をつければそれなりに使いやすくて便利だよ。という認識でしか無い。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480564169880514560">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>Docker が実運用されて Docker 上でサイトを運営してるよ！とか Blue-Green Deployment してるよ！とかそういう話かと思ったら特にそういうわけではなかった <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480568274451566592">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>D51･D52 で座席難民と化した <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480605511008542721">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>カーネル 2.6 の Docker は割と地獄感ある。分かる。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480607181599830018">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>このへんで Mac の電池がもたなさそうだったので全然つぶやけなかった。</p>
+
+<p>6/19 の <a href="http://ljstudy.connpass.com/event/6318/">#ljstudy Docker 勉強会</a> に出てたのもあるし、</p>
+
+<p>Docker 割と触ってたので、とっても新しいということは無かった。</p>
+
+<p>ljstudy の内容が Docker をオーバーキルしてたので、</p>
+
+<p>ljstudy に参加していた人はもしかしたら物足りなかったかもしれない。</p>
+
+<p>Docker に入門する人には良いセッションだったのかも。</p>
+
+<p>みんなどちらかと言うと、</p>
+
+<p>タイトルから、「Docker の本番運用！？」って感じで期待して聞きに来てたかもしれない。</p>
+
+<p>(僕もそのクチだったんだけど。)</p>
+
+<p>でも混乱してきて、Docker を本番運用するメリットみたいなのがあまりよく分からなくなってきてたりもする。</p>
+
+<p>クラウドサービスの一環的な話なら分かる気がするけど、普通のサイトやるにはどうなのかな。</p>
+
+<p>CoreOS の fleet とか etcd とか systemd とかと組み合わせるというのなら未来感ありそうだし、</p>
+
+<p>その辺ももうちょっと色々考える必要がありそう。</p>
+
+<p>流行ってるのですぐ本番運用みたいなのは怖い。(割と痛い目見た)</p>
+
+<p>とはいえ検証環境とか CI 環境とかには本当に本当に便利なので、そういう用途ならどんどん使っていくべきだと思った。</p>
+
+<hr />
+
+<h1><a href="http://2014.techfesta.jp/p/program.html#invitednote">招待講演: 大規模エンターテイメントサイトを支える技術</a></h1>
+
+<p>ツチノコと噂の DMM.com の中の人による講演。</p>
+
+<p>トラフィックが異常に多い大規模インフラの裏の話が聞けるのは大変おもしろかった。</p>
+
+<blockquote class="twitter-tweet" lang="ja"><p>最後。大規模エンターテイメントサイトを支える技術 〜<a href="http://t.co/Ng1Ih0AUit">http://t.co/Ng1Ih0AUit</a> の裏側をお見せします〜 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480621323303923712">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p><a href="http://t.co/Ng1Ih0AUit">http://t.co/Ng1Ih0AUit</a> 東京に三拠点、九州に一拠点、ダークファイバーで DC 感接続。対外接続合計  180Gbps。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480624135513468928">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>物理サーバ 2500〜、仮想サーバ 2000〜、LB 50〜。HyperVisor は VMWare, KVM, Xen... <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480624369492705280">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>最近オープンしたシステム、全て仮想インスタンス。HyperVisor は VMWare。DB 部は LVS 使った冗長構成。プロビジョニングツールは Ansible。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480625251986841602">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>負荷分散。DC 間は GSLB・DNS。Web は SNAT でバランシング。一部 URL マッチによる L7 バランシング。DB サーバは基本的に L2DSR を使っている。A10 や LVS を使っているケースがある。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480626155100184576">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>動画配信の難しさ。ファイルサイズが大きい (大きいストレージが必要)。マルチデバイス対応 (エンコーディングの種類が多い)。負荷予測の困難さ (ロングテールである)。 <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480626991377297409">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>大容量分散ファイルシステム GlusterFS！大容量・拡張性・対障害性・低コスト。苦手な部分があるがちゃんと動いてる。毎日 2TB ずつ増えてる。こわ。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480627315068530688">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>エンコーディング、サーバ 300 台が並列で 24 時間延々とエンコーディング作業を行ってるらしい。ひえー <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480627692983693312">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>メンバ 2 名ぐらいが監視して、コンテンツの負荷に応じてサーバ移動やキャッシュの移動を手動で行っているらしい。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480627896759746561">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>艦◯れのイベント開始時で API サーバの Load が異常に跳ね上がってる。認証画面のトラフィック増で負荷増。Web サーバを増やして対応したらしい。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480628658239836160">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>画像専用サーバに NAND フラッシュメモリを使うことで、低コスト+速さを実現したらしい。<a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480629242196004866">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>ログ収集+解析、fluentd→elasticsearch(json)→kibana (ビジュアライゼーション) <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480629492533059584">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<blockquote class="twitter-tweet" lang="ja"><p>うちのチームの朝会メニューとほぼ一緒だ <a href="https://twitter.com/search?q=%23techfesta&amp;src=hash">#techfesta</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/statuses/480630731094241280">2014, 6月 22</a></blockquote>
+
+
+<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>ちなみにここで電池が切れた。</p>
+
+<p>DMM 程大きくても、使ってるツールや機器が被ってたり、</p>
+
+<p>朝会のメニューが一緒だったりで、遠くて近い未来という感じがした。</p>
+
+<p>セミナーとか勉強会とか講演とか聞くと、</p>
+
+<p>他の会社はアレコレ自動化されてて便利で一方自分はア〜〜〜という感じになるのだが、</p>
+
+<p>その実、全然遠いというわけでもなくて、とはいえ近いというわけでもないのだけど、</p>
+
+<p>無理ではない程度には近い範囲にいて、すごい努力すると登壇者の領域まで行けるのかもしれないと思った。</p>
+
+<hr />
+
+<h1>懇親会</h1>
+
+<p>ビールのんだ。iPad とか MacBookAir とか貰ってる人が居た。</p>
+
+<hr />
+
+<h1>まとめ</h1>
+
+<p>遠くて近い未来の話を聞いた。</p>
+
+<p>多分大事なのは遠いと思わない事なんだと思う。</p>
+
+<p>とはいえ近いわけでもないので、色々頑張る必要がある。</p>
+
+<p>具体的にはコードを書くとか、同じ作業は三回以上やらない、とか。それはもう基本的な事なんだけど。</p>
+
+<p><a href="http://rrreeeyyy.com/blog/2013/07/15/15-techfesta/">去年参加した時に書いた稚拙な記事</a> に比べると、</p>
+
+<p>ほぼ全てのセッションについていくことが出来たし、自分なりに色々考えることも出来た。</p>
+
+<p>(去年はまさにインフラコード化みたいな領域にまさに踏み込んだ段階で雑魚だった)</p>
+
+<p>そうはいってもまだ雑魚なので、来年参加するときにはもっと進化しておきたい。</p>
+
+<p>LT ぐらいは出来るような実績ができてるといいね。あくまで目標で。</p>
+
+<hr />
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#16 #isucon 3 に学生枠で出て惨敗してました]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/"/>
+    <updated>2013-11-11T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2013/11/11/isucon-3</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
+
+<p><a href="http://isucon.net/">isucon</a>というやつに出てました。</p>
+
+<!--more-->
+
+
+<h1>isucon(iikanjini speed up contest)</h1>
+
+<blockquote><p>お題となるWebサービスを決められたレギュレーションの中で限界まで高速化を図るチューニングバトル、</p>
+
+<p>それがISUCONです。</p></blockquote>
+
+<p>とのことです</p>
+
+<hr />
+
+<h1>チーム</h1>
+
+<p>「( (0) / (0)) ☆祝☆」という読めないチーム名で参加してました。</p>
+
+<p>「omedeto くん」という名前が付いているらしいです。</p>
+
+<p>詳しくは後述のnari_exさんのblogを読んでください。</p>
+
+<p><a href="https://twitter.com/nari_ex">nari_ex</a> さん と <a href="https://twitter.com/kur_neko">kur_neko</a> さんと僕の3人チームです。</p>
+
+<p>3人とも電気通信大学と言うところの大学生で、</p>
+
+<p>nari_exさんと僕は学部4年生で、kur_nekoさんは入学年度が1つ下です。(※)</p>
+
+<hr />
+
+<h1>予選(2013/10/5)</h1>
+
+<p>この日は確か体中に謎の腫瘍(恐らく粉瘤腫)が炎症を起こしてから3日目ぐらいで、</p>
+
+<p>朝からロキソニンを飲んで予選に参加していた記憶があります。</p>
+
+<p>と言ったコンディションだったので、毛ほどもチームの役に立った記憶がありません。</p>
+
+<p>何をしていたのか定かではないですが、</p>
+
+<p>Varnishを入れようと思って諦めたり、Redisでいくつかの値をキャッシュしようとしたりしてました。</p>
+
+<p>(いずれも時間内に終わらずに挫折している)</p>
+
+<p>あ、Markdownの外部プロセスの呼び出しをやめてRedcarpetを使うようにしました。</p>
+
+<p>予選も本選もRubyを使っていました。</p>
+
+<p>Ruby/Python/Nodeは経験があったので、</p>
+
+<p>そのどれかにしようということだったのですが特に決めておらず、</p>
+
+<p>予選でベンチマークを取った結果Rubyが一番早かったのでRubyにしました。</p>
+
+<p>主にnari_exさんがクエリをチューニングして、</p>
+
+<p>kur_nekoさんがNginxとMySQLのパラメータチューニングをしてました。</p>
+
+<p>僕は痛みと闘いながら呻いてました。みんなありがとう。</p>
+
+<p>お陰で途中の発表では1位になって場が沸き立ったりしました。</p>
+
+<p>が、その後伸び悩んだのでスコアとしては全然低い感じで落ち着いてしまったのでした。</p>
+
+<p>学生枠で確か2位(繰り上がり1位)の成績で本選出場を決めたのでした。</p>
+
+<hr />
+
+<h1>本選(2013/11/9)</h1>
+
+<p>場所は渋谷ヒカリエのLINE株式会社オフィス！</p>
+
+<p><img src="/images/blog/isucon-line.jpg" alt="渋谷ヒカリエLINE株式会社オフィス" /></p>
+
+<p>めっちゃ綺麗だった。いつもLINE使ってます。ありがとうございます。</p>
+
+<p>クリアファイル貰ったりもしました。</p>
+
+<p><img src="/images/blog/isucon-filer.jpg" alt="こいつの名前なんていうんだったっけ..." /></p>
+
+<p>始まる直前までめっちゃドキドキしてました。</p>
+
+<p>Redbullを買ったのにモンスターエナジーを貰ってしまったので両方飲んだりして過ごしてました。</p>
+
+<p>開会式の時にレギュレーションを聞いてから、18時になってしまうまでは一瞬のような感じでした。</p>
+
+<p>僕らのチームがやったことは、nari_exさんが既に素晴らしくまとめてくださってました。</p>
+
+<p><a href="http://www.nari64.com/?p=221">ISUCON 決勝に学生枠で出場してきました(惨敗)</a></p>
+
+<p>僕は主にRubyの実装を担当してました。</p>
+
+<p>実装スピードが単純に遅いのも反省点ですし、</p>
+
+<p>今回目指した構成の場合、各サーバ毎にアプリケーションのコードを微妙に変えなければならなかったので、</p>
+
+<p>その辺をうまーく調整できなかったので大分時間を食ってしまった感じがします。</p>
+
+<p>あとは、ミドルウェアをいじってる側とかなり競合してしまい、</p>
+
+<p>待ち時間が発生したりデバッグが困難だったりしたのでも時間を食った感じがします。</p>
+
+<p>効率的に開発/デプロイする環境についてもう少し考えて準備しておくべきだったと反省してます。</p>
+
+<p>(というより、この記事を書くにあたって改めて考えた結果、どんどん反省点が出てきたので書きながら反省している)</p>
+
+<p>まあ結果はタイトルにある通り惨敗でございます。</p>
+
+<p>(もしスコアが出ていれば学生1位のチームと同じぐらいだった気がしますが、</p>
+
+<p>たらればの話となり負け犬の遠吠え感が出ている)</p>
+
+<hr />
+
+<h1>懇親会</h1>
+
+<p>あとはビールを飲んだり(ごちそうさまです)</p>
+
+<p><img src="/images/blog/isucon-beer.jpg" alt="ビールごちそうさまです" /></p>
+
+<p>ピザを食べたり(ごちそうさまです)</p>
+
+<p><img src="/images/blog/isucon-pizza.jpg" alt="ピザごちそうさまです" /></p>
+
+<p>夜景を眺めてみたり</p>
+
+<p><img src="/images/blog/isucon-build.jpg" alt="夜景眺めていたら「負けたのそんなにショックだった？飛び降りはダメだよ！！」と説かれた" /></p>
+
+<p>あとは学生枠の方々と喋ったり、他チームの方と喋ったりしていました。</p>
+
+<hr />
+
+<h1>感想</h1>
+
+<p>良くも悪くも自分(そしてチーム)の実力を定量的に評価できたと思っています。</p>
+
+<p>そして己の無力さに打ちひしがれたのでリスヵ…ではなくて研鑽を積みたいと思います。</p>
+
+<p>来年からは新卒1年目という肩書になってしまうので、学生枠参加は無理ですが、</p>
+
+<p>果たせなかった学生枠1位はkur_nekoさんとその後輩達に託し、</p>
+
+<p>社会人枠で参加して1位を目指す予定です。頑張ります。</p>
+
+<h1>余談</h1>
+
+<p>余談ですが、</p>
+
+<p>ISUCON終わったあとnari_exさんと家の近くの公園で寒空の下2時間ほど反省会をした結果、</p>
+
+<p>あまりに寒すぎて風邪を引いておよそ三日三晩寝こむ羽目になりました。</p>
+
+<p>結果としてブログを書くのが遅れることとなりました。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#15 July Tech Festa( #TechFesta )に行きました]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2013/07/15/15-techfesta/"/>
+    <updated>2013-07-15T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2013/07/15/15-techfesta</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
+昨日は<a href="http://www.techfesta.jp/">July Tech Festa</a>というITエンジニア夏の祭典に行って来ました！</p>
+
+<!--more-->
+
+
+<h1>JTF(July Tech Festa)</h1>
+
+<blockquote><p>クラウド環境が普及し，関連した話題が盛り上がり，これにしたがい，
+これらを裏側で実現する開発者の技術修得の意欲が高まってきています。
+また，各種ITトレンドが凄まじい速度で移り変わり，技術者同士が活発に交流し，
+情報交換と人脈構築をしようという動きが顕著にみられます。
+これらの意欲と活動に応じるため，ITに係るエンジニアの知的興味を満足するための夏の祭典として
+「コードの中のインフラ（Infrastructure as Programming）」
+をスローガンに当イベントを開催いたします。</p></blockquote>
+
+<p>(引用: <a href="http://www.techfesta.jp/">July Tech Festa</a>)</p>
+
+<p>※消して手抜きではありません</p>
+
+<hr />
+
+<p>場所は<a href="http://aiit.ac.jp/">産業技術大学院大学</a>！</p>
+
+<p><img src="/images/blog/aiit.jpg" alt="AIIT" /></p>
+
+<p>朝は<a href="http://www.uec.ac.jp/">弊大学</a>の<a href="http://www.uec.ac.jp/admission/open-department/opencampus/">オープンキャンパス</a>だったので、JTF自体はお昼からの参加でした。</p>
+
+<hr />
+
+<p>到着して真っ先に配布されたお弁当を食べ、chefハンズオンに向かいました！</p>
+
+<p><img src="/images/blog/chef-handson.png" alt="chef-handson" /></p>
+
+<p>オープンソースChefはちょっとだけ触ったことがあったのですが、</p>
+
+<p>Hosted Chefを触るのは初めてで、実は<a href="http://www.opscode.com/">Opscode</a>の事も全然知りませんでした。</p>
+
+<p>なのでOpscodeをどう使い、そこからChefをどう使っていくかの流れが分かり、大変良かったです。</p>
+
+<p>実際、部屋には収まりきらないほど人が居て、</p>
+
+<p>ITインフラの自動化やchefが注目を浴びている事がよく分かりました。</p>
+
+<p>(chefの記事もそのうち書きたいですね…)</p>
+
+<hr />
+
+<p><img src="/images/blog/serverspec.jpg" alt="serverspec" /></p>
+
+<p>続いては &ldquo;serverspec: Chef/Puppetと一緒に使うサーバテストのためのテスティングフレームワーク&rdquo;</p>
+
+<p>お馴染み paperboy&amp;co. の <a href="http://mizzy.org/">mizzy</a> さんです。</p>
+
+<p>実は <a href="http://connpass.com/event/2580/">hbstudy#45</a> でこの話を聞けているはずだったのですが…当日電車が止まりいけず…</p>
+
+<p>大変悔しい思いをしていたのですが、JTFで聞ける！ということで楽しみでした。</p>
+
+<p>内容はhbstudy#45の<a href="http://www.slideshare.net/mizzy/serverspec-hbstudy45">このスライド</a>とほぼ同じで、</p>
+
+<p>serverspec開発の経緯や実際のデモ、サーバのCIについてなどの話でした。</p>
+
+<hr />
+
+<p><img src="/images/blog/cupa.jpg" alt="cupa" /></p>
+
+<p>さてさて続いてはクラウド運用管理研究会のお話です。</p>
+
+<p>まずはMySQLの冗長構成のお話でした。</p>
+
+<p>(クラウド運用管理研究会、なのでクラウドの話からスタートかと思いきやでびっくりしました…ｗ)</p>
+
+<p>時代の流れと共に変化するMySQLの冗長構成について、</p>
+
+<p>それぞれのメリット/デメリットや運用上のノウハウ等を交えたお話をされてました。</p>
+
+<p>おおまかに分けると、</p>
+
+<ul>
+<li>Heartbeat + mon</li>
+<li>Heartbeat + DRBD</li>
+<li>AmazonRDS</li>
+<li>MHA</li>
+</ul>
+
+
+<p>の話をされてたかなーと思います。</p>
+
+<p>MHAに関しては最近興味が湧いてきていたので、話が聞けてすごくラッキーだったと思います。</p>
+
+<p>これは必ずあとで検証してみようと思います。</p>
+
+<p>余談ですがMHAでググったら2番目に<a href="http://heartbeats.jp/hbblog/2013/05/mysql-mha-haproxy.html">弊社ブログ記事</a>がヒットしてました。</p>
+
+<p>社内勉強会のネタとかデモとかになったりしないかな…。(チラッ)</p>
+
+<hr />
+
+<p>その後、オープンソースのクラウドマネジメントツール Scalrのお話がありました。</p>
+
+<p>Scalrの存在を実は全く知らなかったのですが、いやーこれはすごい。こういうのがあるんですねぇ世の中…。</p>
+
+<p>個人レベルだとあんまり使えないかもしれないですが、ちょっと触ってみたい、</p>
+
+<p>と思わせてくれる魅力があるOSSでした。</p>
+
+<hr />
+
+<p><img src="/images/blog/kaju.jpg" alt="kaju" /></p>
+
+<p>道中でスポンサーの<a href="https://www.oisix.com/">Oisix</a>さんのジュースをゲットしたりしながらラストのLTへ向かいました。</p>
+
+<hr />
+
+<p><img src="/images/blog/lt.jpg" alt="LT" /></p>
+
+<p>Zabbixの拡張ツール <a href="http://tech-sketch.github.io/hyclops/jp/">Hyclops</a> を開発された話とか、</p>
+
+<p>3連続でLTされた方が居たりとか(すごい話が面白い方でした)、</p>
+
+<p>地味に嬉しかったのは馬場さんの<a href="http://www.slideshare.net/toshiak_netmark/nouka-inventry-manager">nouka</a>の話を聞けたことですかねｗ</p>
+
+<p>(実は1回も聞いたことが無かった)</p>
+
+<p>講演されてた方はもちろんLTの方もすごく為になる話ばっかりで、</p>
+
+<p>いつかは前に出て話して見たいなぁと思わせてくれました。</p>
+
+<hr />
+
+<p><img src="/images/blog/beer.jpg" alt="beer" /></p>
+
+<p>そして懇親会でビールを飲みました。</p>
+
+<p>勉強会は懇親会が本番とよく聞きますが、そりゃもうすごい人がバンバン出てきて…</p>
+
+<p>色んな話を聞かせて貰ってすごく楽しかったです！</p>
+
+<p>あと年が近い方もいらっしゃって、お知り合いになれてよかったです。</p>
+
+<p>(年が近い人と勉強会で会うことがあまり多くないので)</p>
+
+<p>そんなこんなで大変楽しかったです。ほんとに行ってよかった。</p>
+
+<hr />
+
+<p><img src="/images/blog/end.jpg" alt="end" /></p>
+
+<p>実は終わった後、運営の方と2次会に参加させて貰っていましたｗ</p>
+
+<p>こちらも皆さんすごい人で、なぜ僕があそこにいたのか皆さん疑問だったと思うんですが、</p>
+
+<p>またまたとても楽しい話を聞けて、ほんとによかったです。ありがとうございました。</p>
+
+<hr />
+
+<p>余談: このブログを書こうと思っていたらいつの間にかブログの移設作業をしてました。</p>
+
+<p>何か変な所とかがあったらこっそりTwitterかなにかで教えて下さい。</p>
+
+<p>ブログ移設に関するブログも書きたいですね…。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#12 djangoにて、AjaxでPOSTをする]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post/"/>
+    <updated>2013-01-03T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post</id>
+    <content type="html"><![CDATA[<p>皆さんあけましておめでとうございます。<br/>
+2013年もどうぞよろしくお願いします、れいです。</p>
+
+<p>さて、へび年です。<br/>
+へびと言えば？</p>
+
+<p>…そう。<a href="http://ja.wikipedia.org/wiki/Python">Python</a>ですよね。</p>
+
+<p>今日はdjangoのちょっとしたメモを残します。ただの備忘録になってますが。</p>
+
+<!--more-->
+
+
+<p>PythonのWebフレームワークと言えばお馴染み<a href="http://ja.wikipedia.org/wiki/Django">Django</a><br/>
+<a href="http://docs.pylonsproject.jp/projects/pyramid-doc-ja/en/latest/index.html">Pyramid</a>もありますが、今日はdjangoの話です。</p>
+
+<p>さて、djangoは1.2系から<a href="http://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%B5%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%AA">CSRF</a>を防ぐために、csrf_tokenを導入しています。</p>
+
+<p>HTMLのformでPOSTをする際には、テンプレートに以下のように書かなければなりません。</p>
+
+<p><code>html
+&lt;form action="#" method="POST"&gt;{\% csrf_token \%}
+  &lt;input type= ...
+</code></p>
+
+<p>こんな風に書くと、実際のhtmlは以下のように出力されます。</p>
+
+<p>``` html
+<form action="#" method="POST"></p>
+
+<div style='display:none'>
+<input type='hidden' name='csrfmiddlewaretoken' value='XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' />
+</div>
+
+
+<p>```</p>
+
+<p>ところで、時代はAjaxです。<br/>
+非同期で、対話的で、ダイナミックで、リアルタイムなウェブサイトを作るためには、<br/>
+Ajaxの力を借りるのが一般的でしょう。</p>
+
+<p>こんな風にしましょう</p>
+
+<p><code>html
+&lt;input type="text" id="test" \&gt;
+&lt;input type="data" id="data" \&gt;
+</code></p>
+
+<p>これを別のページにPOSTして、<br/>
+その結果をresultというIDに入れたい！</p>
+
+<p>おそらく、こう書くでしょう。</p>
+
+<p><code>javascript
+$("#result").load("/other/page",
+ { 'test' : $('#test').val() ,
+   'data' : $('#data').val() });
+</code></p>
+
+<p>ところが、これではdjangoに怒られて、403が帰ってきてしまいます。<br/>
+それもそのはず、csrf_tokenが無いからです。</p>
+
+<p>対策はいくつかありそうですが、こんなのが推奨されていました。<br/>
+jQueryのAjaxSend関数を以下のようにする方法です。</p>
+
+<p>``` javascript
+jQuery(document).ajaxSend(function(event, xhr, settings) {</p>
+
+<pre><code>function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie &amp;&amp; document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i &lt; cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+function sameOrigin(url) {
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = '//' + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
+        // or any other URL that isn't scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+function safeMethod(method) {
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+
+if (!safeMethod(settings.type) &amp;&amp; sameOrigin(settings.url)) {
+    xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+}
+</code></pre>
+
+<p>});
+```</p>
+
+<p>何をしているのかというと、XMLHttpRequestに対し、<br/>
+X-CSRFTokenヘッダの値にcsrftokenの値を付加しています。<br/>
+(※jQuery1.5以上でしか動作しない模様です)</p>
+
+<p>上記のスクリプトを、ajaxを利用するスクリプトファイルの上部に記述しましょう。<br/>
+そうすると、特に何も考えずにdjangoのページにAjaxでPOSTすることが出来るようになります。</p>
+
+<p>これで皆さんはdjangoを使って簡単に、<br/>
+そしてAjaxを使って対話的に、ダイナミックに、インタラクティブに、<br/>
+Webサイトを作ることが出来るでしょう:&ndash;)<br/>
+(※個人の能力によります)</p>
+
+<p>さて、今日書いた事は実は<a href="https://docs.djangoproject.com/en/dev/ref/contrib/csrf/">ここ</a>に書いてあります。<br/>
+こちらを読むほうが正確でしょう。</p>
+
+<p>へび年なので、新年の挨拶がてらpythonネタを書いてみたかっただけです。<br/>
+しかしdjangoは本当に簡単でいいですね。<br/>
+あとjQueryも最近覚え始めましたが、javascriptをベタ書きするより遥かに楽ですごくいいですね。</p>
+
+<p>それでは。</p>
+]]></content>
+  </entry>
+  
+</feed>

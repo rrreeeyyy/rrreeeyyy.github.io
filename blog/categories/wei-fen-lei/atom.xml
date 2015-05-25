@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 未分類 | rrreeeyyy.com]]></title>
+  <link href="http://rrreeeyyy.github.io/blog/categories/wei-fen-lei/atom.xml" rel="self"/>
+  <link href="http://rrreeeyyy.github.io/"/>
+  <updated>2015-05-25T10:32:41+09:00</updated>
+  <id>http://rrreeeyyy.github.io/</id>
+  <author>
+    <name><![CDATA[rrreeeyyy]]></name>
+    <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[#9 phpのsession storeをredisにする]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis/"/>
+    <updated>2012-06-12T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
+
+<p>今日はphpのsession storeをredisにしてみようと思います。</p>
+
+<!--more-->
+
+
+<p>負荷分散するときに、セッション、どうしてますか？<br/>
+keepalivedやapacheのmod_proxy_balancerを使ってバランシングする時に、<br/>
+バックエンドのAPサーバでセッションを管理していると、困りますよね。</p>
+
+<p>従来は、DBやnfsやmemcachedやrepcachedに入れる方法が主流でしたね。<br/>
+でも、ちょっと遅かったり再起動をしたら消えてしまったり負荷が心配だったり&#8230;<br/>
+といくつか問題があったようにも思います。</p>
+
+<p>そこで、最近流行りのKVSにphpのセッションを入れて<br/>
+管理する方法を紹介します。<br/>
+今回使うのはRedisです。<br/>
+色んなKVSの中でかなり早い部類に入るのと、<br/>
+レプリケーションを組むのが非常に簡単であること、<br/>
+あと僕が使ったことがあるKVSがMongoDBとRedisしかないので、<br/>
+なんとなく選びました。<br/>
+(余談ですが、TopotalではRedisを使っています)</p>
+
+<p>phpとRedisのインストールは、もっと詳細に紹介している他サイトさんがあると思うので、<br/>
+そこに任せます。<br/>
+(需要があったら書きます)</p>
+
+<p>phpとredisはインストール済みとして話を進めます。<br/>
+まず、phpでredisを使うために、<br/>
+phpredisを入れます。<br/>
+→phpredis( <a href="http://github.com/owlient/phpredis" title="http://github.com/owlient/phpredis">http://github.com/owlient/phpredis</a> )</p>
+
+<p>多分phpizeが要ります。</p>
+
+<p>```</p>
+
+<h1>git clone <a href="https://github.com/owlient/phpredis.git">https://github.com/owlient/phpredis.git</a></h1>
+
+<h1>cd phpredis</h1>
+
+<h1>phpize</h1>
+
+<h1>./configure</h1>
+
+<p>```</p>
+
+<p>僕はphpをソースからインストールしていたので、<br/>
+php-configがどこにあるか指定しろのエラーが出ました。<br/>
+ので、以下のようにしました。</p>
+
+<p>```</p>
+
+<h1>./configure &mdash;with-php-config=/usr/local/php/bin/php-config</h1>
+
+<h1>make</h1>
+
+<h1>make install</h1>
+
+<p>```</p>
+
+<p>これで終わりです。<br/>
+php-fpmを使っていたのでrestartしておきました。<br/>
+apacheを使っている人はapacheをrestartしておくと、<br/>
+よいかもしれません。</p>
+
+<p>phpとredisが正常に連携できているか調べるために、<br/>
+こんな感じのことをしました。<br/>
+[php]php -r &#8216; $redis = new Redis();<br/>
+$redis->connect(&#8220;127.0.0.1&#8243;,6379);<br/>
+$redis->set(&#8220;redis-test&#8221;,&#8221;test&#8221;);<br/>
+echo $redis->get(&#8220;redis-test&#8221;); &#8216;[/php]<br/>
+これで、test と表示されればOKです。<br/>
+(redisが127.0.0.1:6379で待ち受けていることが必要です。)</p>
+
+<p>次に、php.iniの設定をします。<br/>
+普通は/etc/php.iniとかに入ってるような気がします。</p>
+
+<p>```</p>
+
+<h1>vim /usr/local/php/lib/php.ini</h1>
+
+<p>```</p>
+
+<p><code>
+extension=redis.so
+</code></p>
+
+<p>の記述があることを確認します。無ければ追記します。<br/>
+(ないと多分phpとredisの連携テストでこけますが…)</p>
+
+<p>次に、session.save_handlerを以下のように変更します。</p>
+
+<p><code>
+session.save_handler = redis
+</code></p>
+
+<p>そして、session.save_pathを例えばこんな感じに書きます。</p>
+
+<p><code>
+session.save_path = "tcp://127.0.0.1:6379?weight=1"
+</code></p>
+
+<p>基本的な記法は、</p>
+
+<p><code>
+tcp://${HOST_ADDRESS}:${HOST_PORT}?${OPTION1}&amp;#038;${OPTION2}...
+</code></p>
+
+<p>のような感じです。</p>
+
+<p>使えるオプションは、</p>
+
+<p><code>
+weight
+timeout
+persistent
+prefix
+auth
+</code></p>
+
+<p>にだと思います。<br/>
+・weight<br/>
+weight=INT で指定して、複数のサーバにバランシングすることが出来るみたいです。<br/>
+デフォルト値は1になってます。<br/>
+・timeout<br/>
+timeout=FLOAT で指定して、redisサーバとのタイムアウト値を設定します。<br/>
+デフォルト値は86400と長いです。<br/>
+・persistent<br/>
+0か1を指定出来ます、が、ちょっとちゃんと動いてるか検証出来なかった上に、<br/>
+公式で実験的な設定というふうな記述があるので、今は触らないほうがいいでしょう。<br/>
+・prefix<br/>
+prefix=STRINGで指定して、redisにsessionを格納する際のkey値を指定できます。<br/>
+デフォルトは&#8221;PHPREDIS_SESSION:&#8221;になってます。<br/>
+・auth<br/>
+redis-serverでAUTHが設定されてる時に設定します。<br/>
+デフォルトは設定されてません。</p>
+
+<p>3つのサーバにsessionをバランシングしたい時は、次のように書くのがいいでしょう。</p>
+
+<p><code>
+session.save_path = "tcp://10.0.0.1:6379?weight=1&amp;#038;timeout=3.0,tcp://10.0.0.2:6379?weight=2&amp;#038;timeout=3.0,tcp://10.0.0.3:6379?weight=2&amp;#038;timeout=3.0"
+</code></p>
+
+<p>こーんなテストページを作って、実際にSESSIONが入ってるか見てみましょう。</p>
+
+<p>``` php
+&lt;?php
+session_start();
+if (isset( $_SESSION[&ldquo;count&rdquo;] )) {</p>
+
+<pre><code>$_SESSION["count"]++;
+</code></pre>
+
+<p>}else{</p>
+
+<pre><code>$_SESSION["count"] = 1;
+</code></pre>
+
+<p>}
+?>;</p>
+
+<p>&lt;?php echo htmlspecialchars($_SESSION[&ldquo;count&rdquo;]) ?></p>
+
+<p>```</p>
+
+<p>redis-cliに入って、monitorコマンドを実行して、ページにアクセスしてみましょう。</p>
+
+<p><code>
+[root@coco-01 ~]# redis-cli
+redis 127.0.0.1:6379&gt;; monitor
+OK
+"monitor"
+</code></p>
+
+<p>作ったテストページに実際にアクセスしてみると、こんな感じになります。</p>
+
+<p><code>
+"GET" "PHPREDIS_SESSION:~~~~~"
+"SETEX" "PHPREDIS_SESSION:~~~~~" "1440" "count|i:2;"
+</code></p>
+
+<p>どうですか？ちゃんとredisにセッションは入ったでしょうか？</p>
+
+<p>ここに書いたことは、実は大体このページを見れば分かることです。↓<br/>
+<a href="https://github.com/nicolasff/phpredis" title="https://github.com/nicolasff/phpredis">https://github.com/nicolasff/phpredis</a></p>
+
+<p>それではみなさん愉快なセッションライフを！<br/>
+(記事の中に間違いとかがあったら、どんどん指摘してくださいね！)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[#8 トラブルしゅーたーずに参加してきたんだよ]]></title>
+    <link href="http://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters/"/>
+    <updated>2012-04-08T00:00:00+09:00</updated>
+    <id>http://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters</id>
+    <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
+長らく(4ヶ月)日記書いてなかったですねーごめんなさい。<br/>
+(いろいろ書きたいこととか溜まってるんですけどね…<br/>
+ブログの未公開記事がどんどん溜まっていく…)</p>
+
+<p>さて、今日は昨日(4/7)に行われた<br/>
+hbstudy , ncstudy , odstudy 合同開催勉強会の<br/>
+「トラブル☆しゅーたーず」に参加してきたのでそのお話です〜。</p>
+
+<!--more-->
+
+
+<p><a href="http://www.zusaar.com/event/231008">トラブルしゅーたーず</a>、どんな勉強会だったかというと、</p>
+
+<p><strong>障害が起こったサイトを復旧させて、障害報告書を書く！</strong></p>
+
+<p>ちょっと簡単にまとめすぎた感ありますが、<br/>
+これをやってグループごと発表！<br/>
+っていうような感じでした。</p>
+
+<p>僕はチーム5に分けられたのですが、<br/>
+なんとも素晴らしいチームに巡りあうことが出来まして、<br/>
+とても楽しく障害復旧・究明・報告書作成まで行うことが出来ました！<br/>
+(これらがあんなに明るく楽しくできるなんて一生であと何回あるか………)</p>
+
+<p>さて、どんなことをしたかーですが、<br/>
+まず、障害対応前に資料として、<br/>
+<a href="https://docs.google.com/presentation/d/1aIAh6JAzHHufsc_O1Xb0o_CY1pnJQgXxYfhep1rp-n0/edit?pli=1#slide=id.p28">これ</a> を渡されますｗ</p>
+
+<p><em>あとはチームごとに自由にやってください！</em></p>
+
+<p>で、発表。</p>
+
+<p>という感じだったので、かなりリアルな障害対応と言った感じでした…。</p>
+
+<p>ちなみに、自分のチーム(チーム5)で作成した障害対応報告書は<br/>
+<a href="https://docs.google.com/document/d/1RMlPbkkKpHksoXCNOBJrSdQqv9I_7FbaLhjgy2ZPc5c/edit?pli=1">こんな感じ</a> でした。<br/>
+(かなり本気で作り込んであって、<br/>
+作成過程を見ながら感心しっぱなしでした……)</p>
+
+<p>(具体的な解答編は、<a href="https://docs.google.com/presentation/d/117SdD0NjMaunm1UfFBFPPaXxdrgvvkeXnmMETConnMI/edit?pli=1#slide=id.p22">こちら</a> から見れます。)</p>
+
+<p>その後の懇親会では、<br/>
+技術の話とか<del datetime="2012-04-08T03:16:36+00:00">合コンの話とか</del>色々聞けて本当に楽しかったです！</p>
+
+<p>さて、ここから先は感じた事とか反省とかです！<br/>
+(面倒なので箇条書きにしてしまいました。。)</p>
+
+<ul>
+<li><strong>普段業務でやっているような事だったので、</strong><br/>
+<strong> 思っていたよりちゃんとできた！</strong></li>
+</ul>
+
+
+<p>(それでもまだまだだなーと思うところが<br/>
+ボロボロボロボロ出てきましたが。。。<br/>
+でも褒めてくださる方もいてちょっと自信がつきました)</p>
+
+<ul>
+<li><strong>全く見知らぬサーバ(とその構成)に出会った時に、</strong><br/>
+<strong> 最も大事なのは &#8220;基本&#8221; だなと感じた。</strong></li>
+</ul>
+
+
+<p>(頭からデータフローを追う、ってやつですね<br/>
+どんな風にパケットが流れてどこに問題があるのか、<br/>
+を意識しないと、関係ないものに惑わされる…)</p>
+
+<ul>
+<li><strong>チームの中での連携・情報共有がうまくいっていると</strong><br/>
+<strong> 作業効率が何倍にでも上がるなーと思った。</strong></li>
+</ul>
+
+
+<p>(それぞれの得意分野があってできることがあって、<br/>
+リーダがそれをまとめて…ってするとすごく楽になる)</p>
+
+<ul>
+<li><strong>常に エンジニア目線 だけじゃなくて、</strong><br/>
+<strong> 必ず お客さん目線 を持たないとダメだなーと思った。</strong></li>
+</ul>
+
+
+<p>(今回これが一番ずっしり来ました…。<br/>
+お客さんにとってどうなのか、なんなのかが非常に重要。)</p>
+
+<ul>
+<li><strong>文章を書くのも技術の一環だなーと思った。</strong></li>
+</ul>
+
+
+<p>(乱雑に書いた作業メモのような物がどんどん障害報告書に<br/>
+姿を変えていくのを眺めて本当にそう感じました…。)</p>
+
+<ul>
+<li><strong>障害対応は落ち着いてやろう</strong></li>
+</ul>
+
+
+<p>(決められたタイムリミットの中でいかに早く・冷静に対応出来るか<br/>
+っていうのはめちゃくちゃ大事なスキルですね…<br/>
+実際に終わって緊張がとれてから「あー！あれはああだった…」<br/>
+とか思うことが結構多かったです…深呼吸大事)</p>
+
+<p>&#8230;と、大体こんな感じでした。<br/>
+また思いついたら随時追加しようかなと思います！</p>
+
+<p>本当に楽しく、そして勉強になる勉強会でした。<br/>
+同じチームとなった皆さん、運営の方々、<br/>
+懇親会でお話ししてくださった方々、<br/>
+素晴らしい発表を聞かせてくれた参加者の方々、<br/>
+本当にありがとうございました！<br/>
+次回があったらぜひまた参加したいと思います！</p>
+
+<p>それではー。</p>
+]]></content>
+  </entry>
+  
+</feed>
