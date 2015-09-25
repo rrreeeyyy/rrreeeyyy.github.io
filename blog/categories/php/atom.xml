@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: PHP | rrreeeyyy.com]]></title>
-  <link href="http://rrreeeyyy.github.io/blog/categories/php/atom.xml" rel="self"/>
-  <link href="http://rrreeeyyy.github.io/"/>
-  <updated>2015-05-25T10:32:41+09:00</updated>
-  <id>http://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.github.io/blog/categories/php/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.github.io/"/>
+  <updated>2015-09-25T12:12:47+09:00</updated>
+  <id>https://rrreeeyyy.github.io/</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#7 nagios+lighttpd]]></title>
-    <link href="http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/"/>
+    <link href="https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/"/>
     <updated>2011-12-29T00:00:00+09:00</updated>
-    <id>http://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd</id>
+    <id>https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd</id>
     <content type="html"><![CDATA[<p>今日はさくっと設定の紹介をして終わりです。</p>
 
 <p>nagiosをlighttpdで動かすときの設定例です。</p>

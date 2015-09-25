@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Python | rrreeeyyy.com]]></title>
-  <link href="http://rrreeeyyy.github.io/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://rrreeeyyy.github.io/"/>
-  <updated>2015-05-25T10:32:41+09:00</updated>
-  <id>http://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.github.io/"/>
+  <updated>2015-09-25T12:12:47+09:00</updated>
+  <id>https://rrreeeyyy.github.io/</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#12 djangoにて、AjaxでPOSTをする]]></title>
-    <link href="http://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post/"/>
+    <link href="https://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post/"/>
     <updated>2013-01-03T00:00:00+09:00</updated>
-    <id>http://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post</id>
+    <id>https://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post</id>
     <content type="html"><![CDATA[<p>皆さんあけましておめでとうございます。<br/>
 2013年もどうぞよろしくお願いします、れいです。</p>
 

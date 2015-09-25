@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Advent Calendar | rrreeeyyy.com]]></title>
-  <link href="http://rrreeeyyy.github.io/blog/categories/advent-calendar/atom.xml" rel="self"/>
-  <link href="http://rrreeeyyy.github.io/"/>
-  <updated>2015-05-25T10:32:41+09:00</updated>
-  <id>http://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.github.io/blog/categories/advent-calendar/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.github.io/"/>
+  <updated>2015-09-25T12:12:47+09:00</updated>
+  <id>https://rrreeeyyy.github.io/</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#17 最高の学内無線LANにしようぜ]]></title>
-    <link href="http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/"/>
+    <link href="https://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/"/>
     <updated>2013-12-13T00:00:00+09:00</updated>
-    <id>http://rrreeeyyy.github.io/blog/2013/12/13/uecwutn</id>
+    <id>https://rrreeeyyy.github.io/blog/2013/12/13/uecwutn</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
 
 <p><a href="http://www.adventar.org/calendars/113">UEC Advent Calendar</a> の13日目の記事です。</p>
@@ -46,7 +46,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>uecwutnはゴミ</p>&mdash; こはく (@alstamber) <a href="https://twitter.com/alstamber/statuses/400537218663460864">2013, 11月 13</a></blockquote>
 
 
-<script async src="http://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>そもそも、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> で割り当てられるIP帯では</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 自己紹介 | rrreeeyyy.com]]></title>
-  <link href="http://rrreeeyyy.github.io/blog/categories/zi-ji-shao-jie/atom.xml" rel="self"/>
-  <link href="http://rrreeeyyy.github.io/"/>
-  <updated>2015-05-25T10:32:41+09:00</updated>
-  <id>http://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.github.io/blog/categories/zi-ji-shao-jie/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.github.io/"/>
+  <updated>2015-09-25T12:12:47+09:00</updated>
+  <id>https://rrreeeyyy.github.io/</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#1 blogはじめました。]]></title>
-    <link href="http://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post/"/>
+    <link href="https://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post/"/>
     <updated>2011-11-07T00:00:00+09:00</updated>
-    <id>http://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post</id>
+    <id>https://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post</id>
     <content type="html"><![CDATA[<p>どうもこんにちわ。れいです。</p>
 
 <p>なんとなく、日々思った事とか、技術的な事とか、<br/>
