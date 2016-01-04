@@ -1,119 +1,119 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/11/07/1-initial-post/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/11/07/1-initial-post/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/11/12/2-nginx-install/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/11/12/2-nginx-install/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/12/04/3-shikkou/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/12/04/3-shikkou/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/12/08/glusterfs-install/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/12/08/glusterfs-install/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/12/14/5-keepalived-install/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/12/14/5-keepalived-install/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/12/15/6-20th-infra/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/12/15/6-20th-infra/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/</loc>
+        <loc>https://rrreeeyyy.com//blog/2011/12/29/7-nagioslighttpd/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters/</loc>
+        <loc>https://rrreeeyyy.com//blog/2012/04/08/8-trouble-shooters/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis/</loc>
+        <loc>https://rrreeeyyy.com//blog/2012/06/12/9-php-session-store-redis/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2012/09/11/10-usagee/</loc>
+        <loc>https://rrreeeyyy.com//blog/2012/09/11/10-usagee/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2012/12/17/11-mixi-scrap/</loc>
+        <loc>https://rrreeeyyy.com//blog/2012/12/17/11-mixi-scrap/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/01/03/12-django-ajax-post/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/01/09/13-vim-markdown-live-preview/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/01/09/13-vim-markdown-live-preview/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/02/25/14-tmuxinator/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/07/15/15-techfesta/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/07/15/15-techfesta/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/11/11/isucon-3/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/</loc>
+        <loc>https://rrreeeyyy.com//blog/2013/12/13/uecwutn/</loc>
         <lastmod>2014-01-08T13:47:46+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/03/17/mruby-ipvs/</loc>
+        <loc>https://rrreeeyyy.com//blog/2014/03/17/mruby-ipvs/</loc>
         <lastmod>2014-03-18T21:14:04+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/04/21/set-euo-pipefail/</loc>
-        <lastmod>2014-04-21T22:52:47+09:00</lastmod>
+        <loc>https://rrreeeyyy.com//blog/2014/04/21/set-euo-pipefail/</loc>
+        <lastmod>2014-04-21T22:52:44+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/</loc>
+        <loc>https://rrreeeyyy.com//blog/2014/05/12/serverspec-and-infrataster/</loc>
         <lastmod>2014-05-16T13:19:03+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/06/23/techfesta/</loc>
-        <lastmod>2015-07-26T17:13:42+09:00</lastmod>
+        <loc>https://rrreeeyyy.com//blog/2014/06/23/techfesta/</loc>
+        <lastmod>2015-07-26T18:11:45+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/12/13/webapp/</loc>
+        <loc>https://rrreeeyyy.com//blog/2014/12/13/webapp/</loc>
         <lastmod>2014-12-13T04:50:25+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2014/12/31/2014/</loc>
+        <loc>https://rrreeeyyy.com//blog/2014/12/31/2014/</loc>
         <lastmod>2014-12-31T20:12:52+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2015/02/23/infra-younger/</loc>
+        <loc>https://rrreeeyyy.com//blog/2015/02/23/infra-younger/</loc>
         <lastmod>2015-02-23T11:21:41+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/2015/12/31/2015/</loc>
+        <loc>https://rrreeeyyy.com//blog/2015/12/31/2015/</loc>
         <lastmod>2015-12-31T23:50:06+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/about/</loc>
+        <loc>https://rrreeeyyy.com//about/</loc>
         <lastmod>2015-04-17T02:32:32+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/blog/archives/</loc>
+        <loc>https://rrreeeyyy.com//blog/archives/</loc>
         <lastmod>2015-12-31T23:50:06+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/</loc>
+        <loc>https://rrreeeyyy.com//</loc>
         <lastmod>2015-12-31T23:50:06+09:00</lastmod>
     </url>
     <url>
-        <loc>https://rrreeeyyy.github.io/robots.txt</loc>
-        <lastmod>2013-12-06T22:14:13+09:00</lastmod>
+        <loc>https://rrreeeyyy.com//robots.txt</loc>
+        <lastmod>2013-07-15T04:47:39+09:00</lastmod>
     </url>
 </urlset>

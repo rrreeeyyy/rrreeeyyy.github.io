@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[2015 年振り返り]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2015/12/31/2015/"/>
+    <link href="https://rrreeeyyy.com//blog/2015/12/31/2015/"/>
     <updated>2015-12-31T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2015/12/31/2015</id>
+    <id>https://rrreeeyyy.com//blog/2015/12/31/2015</id>
     <content type="html"><![CDATA[<p>2015 年もありがとうございました。2016 年も皆様よろしくお願いします。</p>
 
 <!--more-->
@@ -111,20 +111,20 @@
 </ul>
 
 
-<iframe src="https://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/key/dtvTbjTMyyF02V" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://rrreeeyyy.com///www.slideshare.net/slideshow/embed_code/key/dtvTbjTMyyF02V" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117/20141106-44533560" title="【Topotal輪読会】JavaScript で学ぶ関数型プログラミング 2 章" target="_blank">【Topotal輪読会】JavaScript で学ぶ関数型プログラミング 2 章</a> </strong> from <strong><a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117/20141106-44533560" title="【Topotal輪読会】JavaScript で学ぶ関数型プログラミング 2 章" target="_blank">【Topotal輪読会】JavaScript で学ぶ関数型プログラミング 2 章</a> </strong> from <strong><a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
 
 <ul>
 <li>モニカジ #7 (前日に繰り上がって大変だった記憶がある)</li>
 </ul>
 
 
-<iframe src="https://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/key/nfCIDaLLaioBY0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://rrreeeyyy.com///www.slideshare.net/slideshow/embed_code/key/nfCIDaLLaioBY0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117/ss-44072323" title="モニタリングシステムのこれまでとこれから (2015-01-30)" target="_blank">モニタリングシステムのこれまでとこれから (2015-01-30)</a> </strong> from <strong><a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></strong></p>
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117/ss-44072323" title="モニタリングシステムのこれまでとこれから (2015-01-30)" target="_blank">モニタリングシステムのこれまでとこれから (2015-01-30)</a> </strong> from <strong><a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></strong></p>
 
 <ul>
 <li>若手インフラエンジニア現状確認会
@@ -138,10 +138,10 @@
 
 <p>みんな本当に優秀で、年も近いので刺激を受けることばかりなので面白ユニット結成できてよかったなあという気持ちです。引き続きよろしくお願いします。</p>
 
-<iframe src="https://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/key/JOYFtCNo72Qjix" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://rrreeeyyy.com///www.slideshare.net/slideshow/embed_code/key/JOYFtCNo72Qjix" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117/infra-younger" title="Infra younger" target="_blank">Infra younger</a> </strong> from <strong><a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117/infra-younger" title="Infra younger" target="_blank">Infra younger</a> </strong> from <strong><a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
 
 <ul>
 <li><p>JTF2015 で前述の若者たちと登壇した</p>
@@ -158,7 +158,7 @@
 </ul>
 
 
-<script async class="speakerdeck-embed" data-id="7eef784340a14850ba548a8ca407dbc2" data-ratio="1.77777777777778" src="https://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="7eef784340a14850ba548a8ca407dbc2" data-ratio="1.77777777777778" src="https://rrreeeyyy.com///speakerdeck.com/assets/embed.js"></script>
 
 
 <ul>
@@ -173,7 +173,7 @@
 </ul>
 
 
-<script async class="speakerdeck-embed" data-id="c3636478868244ccab4733b33528fbe4" data-ratio="1.77777777777778" src="https://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="c3636478868244ccab4733b33528fbe4" data-ratio="1.77777777777778" src="https://rrreeeyyy.com///speakerdeck.com/assets/embed.js"></script>
 
 
 <ul>
@@ -203,7 +203,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p lang="ja" dir="ltr">などと言っていたら見本誌を入手できました <a href="http://t.co/GStZ2IRvRY">pic.twitter.com/GStZ2IRvRY</a></p>&mdash; れい (Yoshikawa Ryota) (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/589993073196666880">2015, 4月 20</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <ul>
@@ -283,9 +283,9 @@
   
   <entry>
     <title type="html"><![CDATA[若手インフラエンジニア現状確認会 #wakateinfra に参加したまとめ]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2015/02/23/infra-younger/"/>
+    <link href="https://rrreeeyyy.com//blog/2015/02/23/infra-younger/"/>
     <updated>2015-02-23T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2015/02/23/infra-younger</id>
+    <id>https://rrreeeyyy.com//blog/2015/02/23/infra-younger</id>
     <content type="html"><![CDATA[<p>若手インフラエンジニア現状確認会に参加してきた。とにかく最高だった。</p>
 
 <!--more-->
@@ -300,7 +300,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p><a href="https://twitter.com/rrreeeyyy">@rrreeeyyy</a> <a href="https://twitter.com/deeeet">@deeeet</a> <a href="https://twitter.com/y_uuk1">@y_uuk1</a> 飲み会しよ <a href="http://t.co/zUehyYnP7v">pic.twitter.com/zUehyYnP7v</a></p>&mdash; okumura takahiro (@hfm) <a href="https://twitter.com/hfm/status/558265671209869312">2015, 1月 22</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p><a href="http://blog-ja.mackerel.io/entry/2015/01/08/120457">Mackerel Meetup #3 Tokyo</a> に参加した辺りで若手少ないかつ交流そんなにないよね、みたいになって開催が決定した。</p>
@@ -313,10 +313,10 @@
 
 <hr />
 
-<iframe src="https://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/44922062" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://rrreeeyyy.com///www.slideshare.net/slideshow/embed_code/44922062" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.github.io//www.slideshare.net/hifumis/20150220-wakateinfraengineergenjohkakuninkai" title="若手インフラエンジニア現状確認会 @hfm #wakateinfra" target="_blank">若手インフラエンジニア現状確認会 @hfm #wakateinfra</a> </strong> from <strong><a href="https://rrreeeyyy.github.io//www.slideshare.net/hifumis" target="_blank">Takahiro Okumura</a></strong> </div></strong></p>
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.com///www.slideshare.net/hifumis/20150220-wakateinfraengineergenjohkakuninkai" title="若手インフラエンジニア現状確認会 @hfm #wakateinfra" target="_blank">若手インフラエンジニア現状確認会 @hfm #wakateinfra</a> </strong> from <strong><a href="https://rrreeeyyy.com///www.slideshare.net/hifumis" target="_blank">Takahiro Okumura</a></strong> </div></strong></p>
 
 <p>ペパボ、IRC の様子をみても Twitter の様子を見てもとても良い雰囲気で仕事が出来ているように見えてとても羨ましい。</p>
 
@@ -330,7 +330,7 @@
 
 <hr />
 
-<script async class="speakerdeck-embed" data-id="31149b69a5274faeb04ada21eb26849d" data-ratio="1.77777777777778" src="https://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="31149b69a5274faeb04ada21eb26849d" data-ratio="1.77777777777778" src="https://rrreeeyyy.com///speakerdeck.com/assets/embed.js"></script>
 
 
 <p>個人的な感想だけど、<a href="https://twitter.com/deeeet">@deeeet</a> くんは本当に彗星のように現れたと思っていて、</p>
@@ -393,7 +393,7 @@
 
 <hr />
 
-<script async class="speakerdeck-embed" data-id="853dba70b43c40b49068deb17ef57e29" data-ratio="1.33333333333333" src="https://rrreeeyyy.github.io//speakerdeck.com/assets/embed.js"></script>
+<script async class="speakerdeck-embed" data-id="853dba70b43c40b49068deb17ef57e29" data-ratio="1.33333333333333" src="https://rrreeeyyy.com///speakerdeck.com/assets/embed.js"></script>
 
 
 <p><a href="http://catatsuy.hateblo.jp/entry/2015/02/21/205303">若手インフラエンジニア現状確認会で発表しました #wakateinfra &ndash; catatsuyとは</a></p>
@@ -408,10 +408,10 @@
 
 <hr />
 
-<iframe src="https://rrreeeyyy.github.io//www.slideshare.net/slideshow/embed_code/44931609" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://rrreeeyyy.com///www.slideshare.net/slideshow/embed_code/44931609" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
 
-<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117/infra-younger" title="Infra younger" target="_blank">Infra younger</a> </strong> from <strong><a href="https://rrreeeyyy.github.io//www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117/infra-younger" title="Infra younger" target="_blank">Infra younger</a> </strong> from <strong><a href="https://rrreeeyyy.com///www.slideshare.net/rrreeeyyy117" target="_blank">YOSHIKAWA Ryota</a></strong> </div></p>
 
 <p>そしてこれが私の発表。</p>
 
@@ -455,9 +455,9 @@
   
   <entry>
     <title type="html"><![CDATA[2014 年振り返り]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/12/31/2014/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/12/31/2014/"/>
     <updated>2014-12-31T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/12/31/2014</id>
+    <id>https://rrreeeyyy.com//blog/2014/12/31/2014</id>
     <content type="html"><![CDATA[<p>2014 年もありがとうございました。2015 年も皆様よろしくお願いします。</p>
 
 <!--more-->
@@ -474,7 +474,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>2014 年に読んだ本(物理書籍編) <a href="http://t.co/oopOFneHTb">pic.twitter.com/oopOFneHTb</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/550213629208195072">2014, 12月 31</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -482,7 +482,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>2014 年に読んだ本(電子書籍編) <a href="http://t.co/GHAjbgkw6j">pic.twitter.com/GHAjbgkw6j</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/550216780602302464">2014, 12月 31</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>インフラエンジニアかどうか疑わしいラインナップだったけど来年も本はいっぱい読みたい。</p>
@@ -538,7 +538,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>占有！魔界ブロードバンド→ Poppin☆Candy☆Love→ゆいまーる☆わーるど→ラブリラ☆ジュエリラ→ SNS♡～Special Naughty Secret LOVE～ →理恵のRie☆Ring マーチ！ <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%B4%E3%82%81%E3%82%8D%E3%81%88%E3%81%B3%E3%81%99?src=hash">#はぴめろえびす</a> <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/463181007818985472">2014, 5月 5</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -546,7 +546,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>ゆいまーる☆わーるど → Secret Sequence → リンクなセカイ → 透かし桜 → ALTER BLADE → SNS♡ ～ Special Naughty Love ～ <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/NEVERLAND?src=hash">#NEVERLAND</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/493327945851621376">2014, 7月 27</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -554,7 +554,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>ゆいまーる☆わーるど→ラブリラ☆ジュエリラ→Poppin☆Candy☆Love→占勇！魔界ブロードバンド→SNS♡〜Special Naughty Secret  LOVE〜 <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/%E3%82%82%E3%81%88%E3%81%9F%E3%82%93%E3%81%AF%E3%81%84%E3%81%9F%E3%81%84%E4%B8%83%E8%91%89%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88?src=hash">#もえたんはいたい七葉コラボイベント</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/500518430554873859">2014, 8月 16</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -562,7 +562,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>のみこさんと綾瀬理恵さんによるコラボで 魔法少女マジカルたん! <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/%E3%82%82%E3%81%88%E3%81%9F%E3%82%93%E3%81%AF%E3%81%84%E3%81%9F%E3%81%84%E4%B8%83%E8%91%89%E3%82%B3%E3%83%A9%E3%83%9C%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88?src=hash">#もえたんはいたい七葉コラボイベント</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/500524378702897153">2014, 8月 16</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -570,7 +570,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>ラブリラ☆ジュエリラ→キラリズム!→Immortelle→占勇！魔界ブロードバンド→ゆいまーる☆わーるど→すぺしゃる☆ぱらだいす！→リンクな世界→Shiny Destination→SNS♡ ～Special Naughty Secret-LOVE  <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%B4%E3%82%81%E3%82%8D%E3%81%88%E3%81%B3%E3%81%99?src=hash">#はぴめろえびす</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/505605895611359232">2014, 8月 30</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -578,7 +578,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>占有！魔界ブロードバンド→ラブリラ☆ジュエリラ→ゆいまーる☆わーるど→マテリアルの見る夢→Alter Blade→すぺしゃる☆ぱらだいす <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89?src=hash">#スピード</a>☆スター→vol.1</p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/533881968513916928">2014, 11月 16</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -586,7 +586,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>Poppin☆Candy☆Love→Whip Bunny→memories -winter edit-→Alter Blade→すぺしゃる☆ぱらだいす！ <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/%E3%81%AF%E3%81%B4%E3%82%81%E3%82%8D%E3%81%88%E3%81%B3%E3%81%99?src=hash">#はぴめろえびす</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/538585491344351232">2014, 11月 29</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
@@ -594,7 +594,7 @@
 <blockquote class="twitter-tweet" lang="ja"><p>キラリズム！→Secret Sequence→形のない花→リンクなセカイ→占勇！魔界ブロードバンド→Happy☆Lucky☆Crazy☆Love ！ <a href="https://twitter.com/hashtag/%E7%B6%BE%E7%80%AC%E7%90%86%E6%81%B5?src=hash">#綾瀬理恵</a> <a href="https://twitter.com/hashtag/daylightmoon?src=hash">#daylightmoon</a></p>&mdash; れい (@rrreeeyyy) <a href="https://twitter.com/rrreeeyyy/status/546614912156332032">2014, 12月 21</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <h2>まとめ</h2>
@@ -607,9 +607,9 @@
   
   <entry>
     <title type="html"><![CDATA[IT インフラエンジニアに Web アプリエンジニア養成読本をオススメする 6 個ぐらいの理由]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/12/13/webapp/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/12/13/webapp/"/>
     <updated>2014-12-13T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/12/13/webapp</id>
+    <id>https://rrreeeyyy.com//blog/2014/12/13/webapp</id>
     <content type="html"><![CDATA[<p><a href="http://qiita.com/advent-calendar/2014/webapp_mook">Web アプリエンジニア養成読本 Advent Calendar 2014</a> の 13 日目の記事です。</p>
 
 <p>ここまで著者の方で連続しているので僕が普通の書評記事のようなものを書いていいのかな、と思わなくもないですが、<br/>
@@ -765,9 +765,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[July Tech Festa 2015 ( #jtf2015 ) に行って #wakateinfra として喋りました]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/06/23/techfesta/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/06/23/techfesta/"/>
     <updated>2014-06-23T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/06/23/techfesta</id>
+    <id>https://rrreeeyyy.com//blog/2014/06/23/techfesta</id>
     <content type="html"><![CDATA[<p>一昨年、昨年に引き続き、July Tech Festa (2015) に行きました。</p>
 
 <p>今年は登壇側でした。</p>
@@ -781,9 +781,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[Serverspec と Infrataster でサーバのテストをする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/05/12/serverspec-and-infrataster/"/>
     <updated>2014-05-12T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/05/12/serverspec-and-infrataster</id>
+    <id>https://rrreeeyyy.com//blog/2014/05/12/serverspec-and-infrataster</id>
     <content type="html"><![CDATA[<p>サーバの構築・運用の効率化の為に Test-Driven Infrastructure をする手法として、</p>
 
 <p><a href="http://serverspec.org/">Serverspec</a> が登場して 1 年近く経ちました。</p>
@@ -1444,9 +1444,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[シェルスクリプトを書く時覚えておくこと一選！]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/04/21/set-euo-pipefail/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/04/21/set-euo-pipefail/"/>
     <updated>2014-04-21T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/04/21/set-euo-pipefail</id>
+    <id>https://rrreeeyyy.com//blog/2014/04/21/set-euo-pipefail</id>
     <content type="html"><![CDATA[<!--more-->
 
 
@@ -1461,9 +1461,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#18 mruby-ipvs を実装し卒業論文を書きました]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/03/17/mruby-ipvs/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/03/17/mruby-ipvs/"/>
     <updated>2014-03-17T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/03/17/mruby-ipvs</id>
+    <id>https://rrreeeyyy.com//blog/2014/03/17/mruby-ipvs</id>
     <content type="html"><![CDATA[<p>Linux の L4 ロードバランサ機能である IPVS を、</p>
 
 <p>mruby から利用できるようにする mruby-ipvs という mrbgem を実装し、</p>
@@ -1662,9 +1662,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#17 最高の学内無線LANにしようぜ]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/12/13/uecwutn/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/12/13/uecwutn/"/>
     <updated>2013-12-13T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/12/13/uecwutn</id>
+    <id>https://rrreeeyyy.com//blog/2013/12/13/uecwutn</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
 
 <p><a href="http://www.adventar.org/calendars/113">UEC Advent Calendar</a> の13日目の記事です。</p>
@@ -1693,7 +1693,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 <blockquote class="twitter-tweet" lang="ja"><p>uecwutnはゴミ</p>&mdash; こはく (@alstamber) <a href="https://twitter.com/alstamber/statuses/400537218663460864">2013, 11月 13</a></blockquote>
 
 
-<script async src="https://rrreeeyyy.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://rrreeeyyy.com///platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>そもそも、 <a href="http://www.cc.uec.ac.jp/services/all/wlan.html">全学無線LAN</a> で割り当てられるIP帯では</p>
@@ -2069,9 +2069,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#16 #isucon 3 に学生枠で出て惨敗してました]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/11/11/isucon-3/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/11/11/isucon-3/"/>
     <updated>2013-11-11T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/11/11/isucon-3</id>
+    <id>https://rrreeeyyy.com//blog/2013/11/11/isucon-3</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
 
 <p><a href="http://isucon.net/">isucon</a>というやつに出てました。</p>
@@ -2147,13 +2147,13 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>場所は渋谷ヒカリエのLINE株式会社オフィス！</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/isucon-line.jpg" alt="渋谷ヒカリエLINE株式会社オフィス" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/isucon-line.jpg" alt="渋谷ヒカリエLINE株式会社オフィス" /></p>
 
 <p>めっちゃ綺麗だった。いつもLINE使ってます。ありがとうございます。</p>
 
 <p>クリアファイル貰ったりもしました。</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/isucon-filer.jpg" alt="こいつの名前なんていうんだったっけ..." /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/isucon-filer.jpg" alt="こいつの名前なんていうんだったっけ..." /></p>
 
 <p>始まる直前までめっちゃドキドキしてました。</p>
 
@@ -2193,15 +2193,15 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>あとはビールを飲んだり(ごちそうさまです)</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/isucon-beer.jpg" alt="ビールごちそうさまです" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/isucon-beer.jpg" alt="ビールごちそうさまです" /></p>
 
 <p>ピザを食べたり(ごちそうさまです)</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/isucon-pizza.jpg" alt="ピザごちそうさまです" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/isucon-pizza.jpg" alt="ピザごちそうさまです" /></p>
 
 <p>夜景を眺めてみたり</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/isucon-build.jpg" alt="夜景眺めていたら「負けたのそんなにショックだった？飛び降りはダメだよ！！」と説かれた" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/isucon-build.jpg" alt="夜景眺めていたら「負けたのそんなにショックだった？飛び降りはダメだよ！！」と説かれた" /></p>
 
 <p>あとは学生枠の方々と喋ったり、他チームの方と喋ったりしていました。</p>
 
@@ -2233,9 +2233,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#15 July Tech Festa( #TechFesta )に行きました]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/07/15/15-techfesta/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/07/15/15-techfesta/"/>
     <updated>2013-07-15T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/07/15/15-techfesta</id>
+    <id>https://rrreeeyyy.com//blog/2013/07/15/15-techfesta</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
 昨日は<a href="http://www.techfesta.jp/">July Tech Festa</a>というITエンジニア夏の祭典に行って来ました！</p>
 
@@ -2260,7 +2260,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>場所は<a href="http://aiit.ac.jp/">産業技術大学院大学</a>！</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/aiit.jpg" alt="AIIT" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/aiit.jpg" alt="AIIT" /></p>
 
 <p>朝は<a href="http://www.uec.ac.jp/">弊大学</a>の<a href="http://www.uec.ac.jp/admission/open-department/opencampus/">オープンキャンパス</a>だったので、JTF自体はお昼からの参加でした。</p>
 
@@ -2268,7 +2268,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>到着して真っ先に配布されたお弁当を食べ、chefハンズオンに向かいました！</p>
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/chef-handson.png" alt="chef-handson" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/chef-handson.png" alt="chef-handson" /></p>
 
 <p>オープンソースChefはちょっとだけ触ったことがあったのですが、</p>
 
@@ -2284,7 +2284,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/serverspec.jpg" alt="serverspec" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/serverspec.jpg" alt="serverspec" /></p>
 
 <p>続いては &ldquo;serverspec: Chef/Puppetと一緒に使うサーバテストのためのテスティングフレームワーク&rdquo;</p>
 
@@ -2300,7 +2300,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/cupa.jpg" alt="cupa" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/cupa.jpg" alt="cupa" /></p>
 
 <p>さてさて続いてはクラウド運用管理研究会のお話です。</p>
 
@@ -2344,13 +2344,13 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/kaju.jpg" alt="kaju" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/kaju.jpg" alt="kaju" /></p>
 
 <p>道中でスポンサーの<a href="https://www.oisix.com/">Oisix</a>さんのジュースをゲットしたりしながらラストのLTへ向かいました。</p>
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/lt.jpg" alt="LT" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/lt.jpg" alt="LT" /></p>
 
 <p>Zabbixの拡張ツール <a href="http://tech-sketch.github.io/hyclops/jp/">Hyclops</a> を開発された話とか、</p>
 
@@ -2366,7 +2366,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/beer.jpg" alt="beer" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/beer.jpg" alt="beer" /></p>
 
 <p>そして懇親会でビールを飲みました。</p>
 
@@ -2382,7 +2382,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <hr />
 
-<p><img src="https://rrreeeyyy.github.io/images/blog/end.jpg" alt="end" /></p>
+<p><img src="https://rrreeeyyy.com//images/blog/end.jpg" alt="end" /></p>
 
 <p>実は終わった後、運営の方と2次会に参加させて貰っていましたｗ</p>
 
@@ -2402,9 +2402,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#14 tmuxinatorで開発・運用を便利に]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/02/25/14-tmuxinator/"/>
     <updated>2013-02-25T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator</id>
+    <id>https://rrreeeyyy.com//blog/2013/02/25/14-tmuxinator</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
 今日はtmuxinatorというtmuxのセッション管理ツールを紹介します。</p>
 
@@ -2633,7 +2633,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>上記ファイルで mux Testを行うと、以下のようにtmuxが起動します。</p>
 
-<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator.png"><img class="alignnone size-full wp-image-452" alt="tmuxinator" src="https://rrreeeyyy.github.io/images/blog/tmuxinator.png" width="599" height="337" /></a></p>
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator.png"><img class="alignnone size-full wp-image-452" alt="tmuxinator" src="https://rrreeeyyy.com//images/blog/tmuxinator.png" width="599" height="337" /></a></p>
 
 <p>2番目のウィンドウでは vim  models.py が実行されて、</p>
 
@@ -2708,7 +2708,7 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
 
 <p>mux example してやると以下のようになります。</p>
 
-<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator_example.png"><img class="alignnone size-full wp-image-453" alt="tmuxinator_example" src="https://rrreeeyyy.github.io/images/blog/tmuxinator_example.png" width="600" height="337" /></a></p>
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator_example.png"><img class="alignnone size-full wp-image-453" alt="tmuxinator_example" src="https://rrreeeyyy.com//images/blog/tmuxinator_example.png" width="600" height="337" /></a></p>
 
 <p>&nbsp;</p>
 
@@ -2726,9 +2726,9 @@ Ruby/PHP 界隈で知らない人は居ないであろう方々、
   
   <entry>
     <title type="html"><![CDATA[#13 vimでmarkdownのlive previewをする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/01/09/13-vim-markdown-live-preview/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/01/09/13-vim-markdown-live-preview/"/>
     <updated>2013-01-09T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/01/09/13-vim-markdown-live-preview</id>
+    <id>https://rrreeeyyy.com//blog/2013/01/09/13-vim-markdown-live-preview</id>
     <content type="html"><![CDATA[<p>こんばんわ。れいです。 タイトルの通り、<br/>
 vimでmarkdownのlive previewをする方法を紹介します。</p>
 
@@ -2862,7 +2862,7 @@ vim-markdownプラグインを入れるか、 vimrcに以下の様にかくと�
 <p>後は好きなだけMarkdownを書くだけです。<br/>
 ちなみにgithub-flavored-markdownに対応してます。</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" rel="attachment wp-att-431"><img class="alignnone size-full wp-image-431" alt="live preview" src="https://rrreeeyyy.github.io/images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" width="1057" height="476" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" rel="attachment wp-att-431"><img class="alignnone size-full wp-image-431" alt="live preview" src="https://rrreeeyyy.com//images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" width="1057" height="476" /></a></p>
 
 <p>&nbsp;</p>
 
@@ -2879,9 +2879,9 @@ Thread使ってcurlでPUTすれば…？みたいな事も考えられますね�
   
   <entry>
     <title type="html"><![CDATA[#12 djangoにて、AjaxでPOSTをする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/01/03/12-django-ajax-post/"/>
     <updated>2013-01-03T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/01/03/12-django-ajax-post</id>
+    <id>https://rrreeeyyy.com//blog/2013/01/03/12-django-ajax-post</id>
     <content type="html"><![CDATA[<p>皆さんあけましておめでとうございます。<br/>
 2013年もどうぞよろしくお願いします、れいです。</p>
 
@@ -3055,9 +3055,9 @@ Webサイトを作ることが出来るでしょう:&ndash;)<br/>
   
   <entry>
     <title type="html"><![CDATA[#11 #mixi_scrap に参加してきたよ〜]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/12/17/11-mixi-scrap/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/12/17/11-mixi-scrap/"/>
     <updated>2012-12-17T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/12/17/11-mixi-scrap</id>
+    <id>https://rrreeeyyy.com//blog/2012/12/17/11-mixi-scrap</id>
     <content type="html"><![CDATA[<p>こんにちわ〜。れいです。<br/>
 12/15にmixi社で行われた <a href="http://mixi.co.jp/event/challenge-2012/">Scrap Challenge for security</a> なるイベントに参加してきました。</p>
 
@@ -3069,7 +3069,7 @@ Webサイトを作ることが出来るでしょう:&ndash;)<br/>
 <p>Scrap Challenge for securityは、2〜3人でチームを組んで、<br/>
 仮想環境にあるセキュリティホールを見つけるイベントです！</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/20121215-193752.jpg" rel="attachment wp-att-367"><img class="alignnone size-full wp-image-367" alt="20121215-193752" src="https://rrreeeyyy.github.io/images/blog/20121215-193752.jpg" width="600" height="350" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/20121215-193752.jpg" rel="attachment wp-att-367"><img class="alignnone size-full wp-image-367" alt="20121215-193752" src="https://rrreeeyyy.com//images/blog/20121215-193752.jpg" width="600" height="350" /></a></p>
 
 <h3>開始</h3>
 
@@ -3086,7 +3086,7 @@ Webサイトを作ることが出来るでしょう:&ndash;)<br/>
 なんと昼食が用意されていたのです!!<br/>
 (どこかに食べに行くだろうと思っていたので驚いた)</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/20121215-130613.jpg" rel="attachment wp-att-368"><img class="alignnone size-full wp-image-368" alt="20121215-130613" src="https://rrreeeyyy.github.io/images/blog/20121215-130613.jpg" width="600" height="350" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/20121215-130613.jpg" rel="attachment wp-att-368"><img class="alignnone size-full wp-image-368" alt="20121215-130613" src="https://rrreeeyyy.com//images/blog/20121215-130613.jpg" width="600" height="350" /></a></p>
 
 <p>こんなお弁当でした。<br/>
 非常に美味しかった。<br/>
@@ -3124,7 +3124,7 @@ Webサイトを作ることが出来るでしょう:&ndash;)<br/>
 <p>終わったあとは懇親会です！お酒です！<br/>
 (こちらもなんと用意されていました…感動…。)</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/20121215-175320.jpg" rel="attachment wp-att-372"><img class="alignnone size-full wp-image-372" alt="20121215-175320" src="https://rrreeeyyy.github.io/images/blog/20121215-175320.jpg" width="600" height="350" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/20121215-175320.jpg" rel="attachment wp-att-372"><img class="alignnone size-full wp-image-372" alt="20121215-175320" src="https://rrreeeyyy.com//images/blog/20121215-175320.jpg" width="600" height="350" /></a></p>
 
 <p>こんな盛り合わせがなんかいっぱいあったしお酒もあったし豪華だった。<br/>
 美味しかった。</p>
@@ -3140,7 +3140,7 @@ Webサイトを作ることが出来るでしょう:&ndash;)<br/>
 まあ楽しかったので、問題ないかなと思ってイマス。</p>
 
 <p>あと、いっぱいおみやげもらいました！<br/>
-<a href="https://rrreeeyyy.github.io/images/blog/20121217-025925.jpg" rel="attachment wp-att-375"><img src="https://rrreeeyyy.github.io/images/blog/20121217-025925.jpg" alt="20121217-025925" width="600" height="350" class="alignnone size-full wp-image-375" /></a></p>
+<a href="https://rrreeeyyy.com//images/blog/20121217-025925.jpg" rel="attachment wp-att-375"><img src="https://rrreeeyyy.com//images/blog/20121217-025925.jpg" alt="20121217-025925" width="600" height="350" class="alignnone size-full wp-image-375" /></a></p>
 
 <p>楽しかったので、みなさん是非参加するといいと思います。<br/>
 そんなに知識がないからちょっと…と思う人は、<br/>
@@ -3161,9 +3161,9 @@ XSSって何かとか、CSRFって何かとか、どんな風に行われるか�
   
   <entry>
     <title type="html"><![CDATA[#10 ウサギィ見てきました]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/09/11/10-usagee/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/09/11/10-usagee/"/>
     <updated>2012-09-11T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/09/11/10-usagee</id>
+    <id>https://rrreeeyyy.com//blog/2012/09/11/10-usagee</id>
     <content type="html"><![CDATA[<p>こんにちわ、れいです。</p>
 
 <p>友人と一緒に株式会社ウサギィ(<a title="usagee.co.jp" href="http://usagee.co.jp/" target="_blank">usagee.co.jp</a>)の見学に行って来ました。</p>
@@ -3177,7 +3177,7 @@ XSSって何かとか、CSRFって何かとか、どんな風に行われるか�
 <p>UIの悪いと言うエレベータに乗って8階へ。<br/>
 ロゴの入った表札が迎えてくれます。</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/IMG_20120911_162057.jpg" target="_blank"><img class="alignnone size-full wp-image-318" title="ウサギィの表札" src="https://rrreeeyyy.github.io/images/blog/IMG_20120911_162057.jpg" alt="" width="400" height="400" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/IMG_20120911_162057.jpg" target="_blank"><img class="alignnone size-full wp-image-318" title="ウサギィの表札" src="https://rrreeeyyy.com//images/blog/IMG_20120911_162057.jpg" alt="" width="400" height="400" /></a></p>
 
 <p>中の写真は撮るの忘れたんでありません。<br/>
 (ちょっと緊張してました)</p>
@@ -3203,7 +3203,7 @@ Webとかスマートフォンアプリたくさんやってるのかなーと�
 
 <p>お昼は噂のアレをご馳走になってしまいました。</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/IMG_20120911_121836.jpg" target="_blank"><img src="https://rrreeeyyy.github.io/images/blog/IMG_20120911_121836.jpg" alt="海鮮丼" title="海鮮丼" width="400" height="400" class="alignnone size-full wp-image-337" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/IMG_20120911_121836.jpg" target="_blank"><img src="https://rrreeeyyy.com//images/blog/IMG_20120911_121836.jpg" alt="海鮮丼" title="海鮮丼" width="400" height="400" class="alignnone size-full wp-image-337" /></a></p>
 
 <p>めっちゃ美味しかったです。<br/>
 ご馳走様でした。</p>
@@ -3236,15 +3236,15 @@ Twitterからもうちょっとヤバい人かと思ってましたが、<br/>
 
 <p>ウサギィはいいとこでした。</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/IMG_20120911_162232.jpg" target="_blank"><img src="https://rrreeeyyy.github.io/images/blog/IMG_20120911_162232.jpg" alt="うさぎ" title="うさぎ" width="400" height="400" class="alignnone size-full wp-image-348" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/IMG_20120911_162232.jpg" target="_blank"><img src="https://rrreeeyyy.com//images/blog/IMG_20120911_162232.jpg" alt="うさぎ" title="うさぎ" width="400" height="400" class="alignnone size-full wp-image-348" /></a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[#9 phpのsession storeをredisにする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/06/12/9-php-session-store-redis/"/>
     <updated>2012-06-12T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis</id>
+    <id>https://rrreeeyyy.com//blog/2012/06/12/9-php-session-store-redis</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
 
 <p>今日はphpのsession storeをredisにしてみようと思います。</p>
@@ -3454,9 +3454,9 @@ redis-serverでAUTHが設定されてる時に設定します。<br/>
   
   <entry>
     <title type="html"><![CDATA[#8 トラブルしゅーたーずに参加してきたんだよ]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/04/08/8-trouble-shooters/"/>
     <updated>2012-04-08T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters</id>
+    <id>https://rrreeeyyy.com//blog/2012/04/08/8-trouble-shooters</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
 長らく(4ヶ月)日記書いてなかったですねーごめんなさい。<br/>
 (いろいろ書きたいこととか溜まってるんですけどね…<br/>
@@ -3577,9 +3577,9 @@ hbstudy , ncstudy , odstudy 合同開催勉強会の<br/>
   
   <entry>
     <title type="html"><![CDATA[#7 nagios+lighttpd]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/29/7-nagioslighttpd/"/>
     <updated>2011-12-29T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/29/7-nagioslighttpd</id>
     <content type="html"><![CDATA[<p>今日はさくっと設定の紹介をして終わりです。</p>
 
 <p>nagiosをlighttpdで動かすときの設定例です。</p>
@@ -3736,9 +3736,9 @@ nginxは確かに軽量で高速なwebサーバなのですが、cgiの実行に
   
   <entry>
     <title type="html"><![CDATA[#6 20歳までにやりたいこと]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/15/6-20th-infra/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/15/6-20th-infra/"/>
     <updated>2011-12-15T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/15/6-20th-infra</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/15/6-20th-infra</id>
     <content type="html"><![CDATA[<p>こんばんわ、れいです。<br/>
 今日は20歳までにやってみたい事について書こうと思います。<br/>
 (あと1ヶ月+αで20歳なので)</p>

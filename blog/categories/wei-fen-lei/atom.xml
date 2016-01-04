@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 未分類 | rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/blog/categories/wei-fen-lei/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//blog/categories/wei-fen-lei/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#9 phpのsession storeをredisにする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/06/12/9-php-session-store-redis/"/>
     <updated>2012-06-12T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/06/12/9-php-session-store-redis</id>
+    <id>https://rrreeeyyy.com//blog/2012/06/12/9-php-session-store-redis</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。</p>
 
 <p>今日はphpのsession storeをredisにしてみようと思います。</p>
@@ -212,9 +212,9 @@ OK
   
   <entry>
     <title type="html"><![CDATA[#8 トラブルしゅーたーずに参加してきたんだよ]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters/"/>
+    <link href="https://rrreeeyyy.com//blog/2012/04/08/8-trouble-shooters/"/>
     <updated>2012-04-08T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2012/04/08/8-trouble-shooters</id>
+    <id>https://rrreeeyyy.com//blog/2012/04/08/8-trouble-shooters</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
 長らく(4ヶ月)日記書いてなかったですねーごめんなさい。<br/>
 (いろいろ書きたいこととか溜まってるんですけどね…<br/>

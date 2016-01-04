@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: vim | rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/blog/categories/vim/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//blog/categories/vim/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#13 vimでmarkdownのlive previewをする]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/01/09/13-vim-markdown-live-preview/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/01/09/13-vim-markdown-live-preview/"/>
     <updated>2013-01-09T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/01/09/13-vim-markdown-live-preview</id>
+    <id>https://rrreeeyyy.com//blog/2013/01/09/13-vim-markdown-live-preview</id>
     <content type="html"><![CDATA[<p>こんばんわ。れいです。 タイトルの通り、<br/>
 vimでmarkdownのlive previewをする方法を紹介します。</p>
 
@@ -152,7 +152,7 @@ autocmd BufRead,BufNewFile *.md  setfiletype markdown
 <p>後は好きなだけMarkdownを書くだけです。<br/>
 ちなみにgithub-flavored-markdownに対応してます。</p>
 
-<p><a href="https://rrreeeyyy.github.io/images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" rel="attachment wp-att-431"><img class="alignnone size-full wp-image-431" alt="live preview" src="https://rrreeeyyy.github.io/images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" width="1057" height="476" /></a></p>
+<p><a href="https://rrreeeyyy.com//images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" rel="attachment wp-att-431"><img class="alignnone size-full wp-image-431" alt="live preview" src="https://rrreeeyyy.com//images/blog/189c9aab7f8d3f926ad9da018f0e471a.png" width="1057" height="476" /></a></p>
 
 <p>&nbsp;</p>
 

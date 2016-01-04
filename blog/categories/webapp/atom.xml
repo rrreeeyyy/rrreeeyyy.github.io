@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: webapp | rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/blog/categories/webapp/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//blog/categories/webapp/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[IT インフラエンジニアに Web アプリエンジニア養成読本をオススメする 6 個ぐらいの理由]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2014/12/13/webapp/"/>
+    <link href="https://rrreeeyyy.com//blog/2014/12/13/webapp/"/>
     <updated>2014-12-13T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2014/12/13/webapp</id>
+    <id>https://rrreeeyyy.com//blog/2014/12/13/webapp</id>
     <content type="html"><![CDATA[<p><a href="http://qiita.com/advent-calendar/2014/webapp_mook">Web アプリエンジニア養成読本 Advent Calendar 2014</a> の 13 日目の記事です。</p>
 
 <p>ここまで著者の方で連続しているので僕が普通の書評記事のようなものを書いていいのかな、と思わなくもないですが、<br/>

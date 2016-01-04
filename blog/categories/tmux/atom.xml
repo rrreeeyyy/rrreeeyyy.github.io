@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tmux | rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/blog/categories/tmux/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//blog/categories/tmux/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#14 tmuxinatorで開発・運用を便利に]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator/"/>
+    <link href="https://rrreeeyyy.com//blog/2013/02/25/14-tmuxinator/"/>
     <updated>2013-02-25T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2013/02/25/14-tmuxinator</id>
+    <id>https://rrreeeyyy.com//blog/2013/02/25/14-tmuxinator</id>
     <content type="html"><![CDATA[<p>こんにちわ。れいです。<br/>
 今日はtmuxinatorというtmuxのセッション管理ツールを紹介します。</p>
 
@@ -207,7 +207,7 @@ tabs:
 
 <p>上記ファイルで mux Testを行うと、以下のようにtmuxが起動します。</p>
 
-<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator.png"><img class="alignnone size-full wp-image-452" alt="tmuxinator" src="https://rrreeeyyy.github.io/images/blog/tmuxinator.png" width="599" height="337" /></a></p>
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator.png"><img class="alignnone size-full wp-image-452" alt="tmuxinator" src="https://rrreeeyyy.com//images/blog/tmuxinator.png" width="599" height="337" /></a></p>
 
 <p>2番目のウィンドウでは vim  models.py が実行されて、</p>
 
@@ -272,7 +272,7 @@ tabs:
 
 <p>mux example してやると以下のようになります。</p>
 
-<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator_example.png"><img class="alignnone size-full wp-image-453" alt="tmuxinator_example" src="https://rrreeeyyy.github.io/images/blog/tmuxinator_example.png" width="600" height="337" /></a></p>
+<p><a href="http://rrreeeyyy.com/images/blog/tmuxinator_example.png"><img class="alignnone size-full wp-image-453" alt="tmuxinator_example" src="https://rrreeeyyy.com//images/blog/tmuxinator_example.png" width="600" height="337" /></a></p>
 
 <p>&nbsp;</p>
 

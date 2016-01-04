@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: インフラ | rrreeeyyy.com]]></title>
-  <link href="https://rrreeeyyy.github.io/blog/categories/inhura/atom.xml" rel="self"/>
-  <link href="https://rrreeeyyy.github.io/"/>
-  <updated>2016-01-01T00:49:29+09:00</updated>
-  <id>https://rrreeeyyy.github.io/</id>
+  <link href="https://rrreeeyyy.com//blog/categories/inhura/atom.xml" rel="self"/>
+  <link href="https://rrreeeyyy.com//"/>
+  <updated>2016-01-04T17:33:55+09:00</updated>
+  <id>https://rrreeeyyy.com//</id>
   <author>
     <name><![CDATA[rrreeeyyy]]></name>
     <email><![CDATA[yoshikawa@rrreeeyyy.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[#7 nagios+lighttpd]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/29/7-nagioslighttpd/"/>
     <updated>2011-12-29T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/29/7-nagioslighttpd</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/29/7-nagioslighttpd</id>
     <content type="html"><![CDATA[<p>今日はさくっと設定の紹介をして終わりです。</p>
 
 <p>nagiosをlighttpdで動かすときの設定例です。</p>
@@ -141,9 +141,9 @@ nginxは確かに軽量で高速なwebサーバなのですが、cgiの実行に
   
   <entry>
     <title type="html"><![CDATA[#6 20歳までにやりたいこと]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/15/6-20th-infra/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/15/6-20th-infra/"/>
     <updated>2011-12-15T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/15/6-20th-infra</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/15/6-20th-infra</id>
     <content type="html"><![CDATA[<p>こんばんわ、れいです。<br/>
 今日は20歳までにやってみたい事について書こうと思います。<br/>
 (あと1ヶ月+αで20歳なので)</p>
@@ -263,9 +263,9 @@ bonjour-01(P) &#8211; &#8230;9 hosts(V)</p>
   
   <entry>
     <title type="html"><![CDATA[#5 KeepAlivedを入れる(おまけ付)]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/14/5-keepalived-install/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/14/5-keepalived-install/"/>
     <updated>2011-12-14T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/14/5-keepalived-install</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/14/5-keepalived-install</id>
     <content type="html"><![CDATA[<p>入れる。<br/>
 (単なる作業メモ…)</p>
 
@@ -454,9 +454,9 @@ CentOSはyumでレポジトリ追加しなきゃいけないぽくて面倒だ�
   
   <entry>
     <title type="html"><![CDATA[#4 GlusterFSのinstall]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/12/08/glusterfs-install/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/12/08/glusterfs-install/"/>
     <updated>2011-12-08T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/12/08/glusterfs-install</id>
+    <id>https://rrreeeyyy.com//blog/2011/12/08/glusterfs-install</id>
     <content type="html"><![CDATA[<p>こんばんわ、れいです。<br/>
 今日は社内勉強会に参加してきました〜。<br/>
 MySQLの話とか、CTOのscreen捌きとか、readコマンドについてとか、サーバ移設についてとか色々あったのですが、<br/>
@@ -645,9 +645,9 @@ You may redistribute copies of GlusterFS under the terms of the GNU General Publ
   
   <entry>
     <title type="html"><![CDATA[#2 nginxのインストール記]]></title>
-    <link href="https://rrreeeyyy.github.io/blog/2011/11/12/2-nginx-install/"/>
+    <link href="https://rrreeeyyy.com//blog/2011/11/12/2-nginx-install/"/>
     <updated>2011-11-12T00:00:00+09:00</updated>
-    <id>https://rrreeeyyy.github.io/blog/2011/11/12/2-nginx-install</id>
+    <id>https://rrreeeyyy.com//blog/2011/11/12/2-nginx-install</id>
     <content type="html"><![CDATA[<p>どうもこんにちわ。れいです。</p>
 
 <p>今回は、やっぱり技術的な事を一応書いてから公開したいなと思ったので、<br/>
